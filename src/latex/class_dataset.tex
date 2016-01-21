@@ -1,0 +1,561 @@
+\hypertarget{class_dataset}{\section{Dataset Class Reference}
+\label{class_dataset}\index{Dataset@{Dataset}}
+}
+
+
+A Class that Reads a data file format 'C\-S\-V' and Creates a 2\-D array and has methods to extract columns of data.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_dataset_a202d43d91e9362c7a65c677485d80509}{Dataset} ()
+\item 
+String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \hyperlink{class_dataset_ac3f7c9a2ad9d80dcc68577aa9c5db093}{Get\-Array} ()
+\item 
+String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \hyperlink{class_dataset_a5dee243bdd911795f92cc1db5ffe5ad3}{Get\-Array\-Backwards} ()
+\item 
+String\mbox{[}$\,$\mbox{]} \hyperlink{class_dataset_a96f1d135554aa77ded034853a84c4244}{Get\-Col\-Headers} ()
+\item 
+String\mbox{[}$\,$\mbox{]} \hyperlink{class_dataset_a7c28fdc089bb41b8ac7d5ebccb6550b6}{Get\-Column} (int index)
+\item 
+String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \hyperlink{class_dataset_a6be8ec231fcc497e65bfb70cd149a723}{Get\-Damaged\-Array} ()
+\item 
+int \hyperlink{class_dataset_a4a0a7e2a2a175ca3d0cebf9431b0e3f4}{Get\-Errors} ()
+\item 
+String \hyperlink{class_dataset_a91fb1f2a983e9e5bef10864c0f4ec465}{Get\-File\-Location} ()
+\item 
+int \hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{Get\-No\-Of\-Cols} ()
+\item 
+int \hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{Get\-No\-Of\-Rows} ()
+\item 
+boolean \hyperlink{class_dataset_a8de6f8ac02f8378a5510f8014fb2e65f}{Set\-B\-V} (\hyperlink{class_bob_viz}{Bob\-Viz} bv)
+\item 
+boolean \hyperlink{class_dataset_a7848e8739ff4c596cacf2a08815f5ec5}{set\-Errors\-Zero} ()
+\item 
+boolean \hyperlink{class_dataset_a26dd0cb28ef8622366d67e21c38b5b0d}{Set\-File\-Location\-G\-U\-I} ()
+\item 
+boolean \hyperlink{class_dataset_a01147d9ebdff4ce95ed092143b4c5659}{Check\-File\-Type} ()
+\item 
+boolean \hyperlink{class_dataset_a54d25635d79320caa77a9d6695e5cf3d}{Read\-File} ()
+\item 
+boolean \hyperlink{class_dataset_abddca267426cbfcbc9a7d250ec53a5e5}{Read\-File\-Basic} (String location)
+\item 
+double \hyperlink{class_dataset_aea113df645c127e67f241836babeebdc}{Get\-Max} (String\mbox{[}$\,$\mbox{]} data)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_dataset}{Dataset} \hyperlink{class_dataset_adc5340b2970cff5454055f78ed1de23c}{Get\-Test\-Dataset} ()
+\item 
+static void \hyperlink{class_dataset_ac4ae5e8bdbd60953f1eea60aaddc515d}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A Class that Reads a data file format 'C\-S\-V' and Creates a 2\-D array and has methods to extract columns of data. 
+
+\begin{DoxyDate}{Date}
+-\/1st March 2013 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_dataset_a202d43d91e9362c7a65c677485d80509}{\index{Dataset@{Dataset}!Dataset@{Dataset}}
+\index{Dataset@{Dataset}!Dataset@{Dataset}}
+\subsubsection[{Dataset}]{\setlength{\rightskip}{0pt plus 5cm}Dataset.\-Dataset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_a202d43d91e9362c7a65c677485d80509}
+Constructor 
+\begin{DoxyCode}
+28 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_dataset_a01147d9ebdff4ce95ed092143b4c5659}{\index{Dataset@{Dataset}!Check\-File\-Type@{Check\-File\-Type}}
+\index{Check\-File\-Type@{Check\-File\-Type}!Dataset@{Dataset}}
+\subsubsection[{Check\-File\-Type}]{\setlength{\rightskip}{0pt plus 5cm}boolean Dataset.\-Check\-File\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_a01147d9ebdff4ce95ed092143b4c5659}
+\begin{DoxyVerb}    Check file type to match preset CSV format
+\end{DoxyVerb}
+ If file format does not match return false \begin{DoxyReturn}{Returns}
+boolean true if method completed successfully 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+318                                   \{
+319         String filename = m\_File.getName();
+320         String extension = filename.substring( filename.lastIndexOf( \textcolor{stringliteral}{"."} )
+321                                               + 1, filename.length() );
+322         \textcolor{keywordflow}{if}( extension.equals( \textcolor{stringliteral}{"csv"} ) )\{
+323             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+324         \} \textcolor{keywordflow}{else} \{
+325             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+326         \}
+327     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_ac3f7c9a2ad9d80dcc68577aa9c5db093}{\index{Dataset@{Dataset}!Get\-Array@{Get\-Array}}
+\index{Get\-Array@{Get\-Array}!Dataset@{Dataset}}
+\subsubsection[{Get\-Array}]{\setlength{\rightskip}{0pt plus 5cm}String \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} Dataset.\-Get\-Array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_ac3f7c9a2ad9d80dcc68577aa9c5db093}
+Returns Full Array
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+34                                 \{
+35         \textcolor{keywordflow}{return} m\_CompleteArray;
+36     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_a5dee243bdd911795f92cc1db5ffe5ad3}{\index{Dataset@{Dataset}!Get\-Array\-Backwards@{Get\-Array\-Backwards}}
+\index{Get\-Array\-Backwards@{Get\-Array\-Backwards}!Dataset@{Dataset}}
+\subsubsection[{Get\-Array\-Backwards}]{\setlength{\rightskip}{0pt plus 5cm}String \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} Dataset.\-Get\-Array\-Backwards (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_a5dee243bdd911795f92cc1db5ffe5ad3}
+returns full array \mbox{[}rows\mbox{]}\mbox{[}columns\mbox{]} for use with table \hyperlink{class_visualisation}{Visualisation}
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+42                                          \{
+43         \textcolor{keywordflow}{return} m\_CompleteArrayBackwards;
+44     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_a96f1d135554aa77ded034853a84c4244}{\index{Dataset@{Dataset}!Get\-Col\-Headers@{Get\-Col\-Headers}}
+\index{Get\-Col\-Headers@{Get\-Col\-Headers}!Dataset@{Dataset}}
+\subsubsection[{Get\-Col\-Headers}]{\setlength{\rightskip}{0pt plus 5cm}String \mbox{[}$\,$\mbox{]} Dataset.\-Get\-Col\-Headers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_a96f1d135554aa77ded034853a84c4244}
+returns array of columns
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+50                                    \{
+51         \textcolor{keywordflow}{return} m\_ColumnHeaders;
+52     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_a7c28fdc089bb41b8ac7d5ebccb6550b6}{\index{Dataset@{Dataset}!Get\-Column@{Get\-Column}}
+\index{Get\-Column@{Get\-Column}!Dataset@{Dataset}}
+\subsubsection[{Get\-Column}]{\setlength{\rightskip}{0pt plus 5cm}String \mbox{[}$\,$\mbox{]} Dataset.\-Get\-Column (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_a7c28fdc089bb41b8ac7d5ebccb6550b6}
+Returns array or 'column' of data from the 2\-D array
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an array of data from a single column 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+59                                           \{
+60         String[] column = \textcolor{keyword}{new} String[\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}()];
+61         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}(); j++)\{
+62             column[j] = \hyperlink{class_dataset_ac3f7c9a2ad9d80dcc68577aa9c5db093}{GetArray}()[index][j];
+63         \}
+64         \textcolor{keywordflow}{return} column;
+65     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_a6be8ec231fcc497e65bfb70cd149a723}{\index{Dataset@{Dataset}!Get\-Damaged\-Array@{Get\-Damaged\-Array}}
+\index{Get\-Damaged\-Array@{Get\-Damaged\-Array}!Dataset@{Dataset}}
+\subsubsection[{Get\-Damaged\-Array}]{\setlength{\rightskip}{0pt plus 5cm}String \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} Dataset.\-Get\-Damaged\-Array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_a6be8ec231fcc497e65bfb70cd149a723}
+\begin{DoxyVerb}    Returns Array full of damaged data, if method
+\end{DoxyVerb}
+ \char`\"{}\-Read\-File\-Basic\char`\"{} is called 
+\begin{DoxyCode}
+70                                        \{
+71         \textcolor{keywordflow}{return} m\_DamagedArray;
+72     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_a4a0a7e2a2a175ca3d0cebf9431b0e3f4}{\index{Dataset@{Dataset}!Get\-Errors@{Get\-Errors}}
+\index{Get\-Errors@{Get\-Errors}!Dataset@{Dataset}}
+\subsubsection[{Get\-Errors}]{\setlength{\rightskip}{0pt plus 5cm}int Dataset.\-Get\-Errors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_a4a0a7e2a2a175ca3d0cebf9431b0e3f4}
+\begin{DoxyReturn}{Returns}
+number of errors collected whilst reading the C\-S\-V file 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+78                           \{
+79         \textcolor{keywordflow}{return} m\_Errors;
+80     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_a91fb1f2a983e9e5bef10864c0f4ec465}{\index{Dataset@{Dataset}!Get\-File\-Location@{Get\-File\-Location}}
+\index{Get\-File\-Location@{Get\-File\-Location}!Dataset@{Dataset}}
+\subsubsection[{Get\-File\-Location}]{\setlength{\rightskip}{0pt plus 5cm}String Dataset.\-Get\-File\-Location (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_a91fb1f2a983e9e5bef10864c0f4ec465}
+Returns String of file directory
+
+\begin{DoxyReturn}{Returns}
+String 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+86                                    \{
+87         \textcolor{keywordflow}{return} m\_FileLocation;
+88     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_aea113df645c127e67f241836babeebdc}{\index{Dataset@{Dataset}!Get\-Max@{Get\-Max}}
+\index{Get\-Max@{Get\-Max}!Dataset@{Dataset}}
+\subsubsection[{Get\-Max}]{\setlength{\rightskip}{0pt plus 5cm}double Dataset.\-Get\-Max (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{data}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_aea113df645c127e67f241836babeebdc}
+
+\begin{DoxyCode}
+567                                         \{
+568         \textcolor{keywordtype}{double} max = 0;
+569         \textcolor{keywordflow}{try} \{
+570             max = Double.parseDouble(data[0]);
+571             \textcolor{keywordflow}{for}(String element : data) \{
+572                 \textcolor{keywordtype}{double} temp = Double.parseDouble(element);
+573                 \textcolor{keywordflow}{if}(temp > max) \{
+574                     max = temp;
+575                 \}
+576             \}
+577         \} \textcolor{keywordflow}{catch} (Exception e) \{
+578             System.err.println(\textcolor{stringliteral}{"Couldn't get maximum."});
+579         \}
+580         
+581         \textcolor{keywordflow}{return} max;
+582     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_ab922bef50c8aa1531de8704731779246}{\index{Dataset@{Dataset}!Get\-No\-Of\-Cols@{Get\-No\-Of\-Cols}}
+\index{Get\-No\-Of\-Cols@{Get\-No\-Of\-Cols}!Dataset@{Dataset}}
+\subsubsection[{Get\-No\-Of\-Cols}]{\setlength{\rightskip}{0pt plus 5cm}int Dataset.\-Get\-No\-Of\-Cols (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_ab922bef50c8aa1531de8704731779246}
+\begin{DoxyReturn}{Returns}
+number of columns located whilst reading the C\-S\-V file 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+94                             \{
+95         \textcolor{keywordflow}{return} m\_NoOfColumns;
+96     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_a91257a605317576e87e1c32e54739e51}{\index{Dataset@{Dataset}!Get\-No\-Of\-Rows@{Get\-No\-Of\-Rows}}
+\index{Get\-No\-Of\-Rows@{Get\-No\-Of\-Rows}!Dataset@{Dataset}}
+\subsubsection[{Get\-No\-Of\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}int Dataset.\-Get\-No\-Of\-Rows (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_a91257a605317576e87e1c32e54739e51}
+returns how many rows are in the array
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+101                             \{
+102         \textcolor{keywordflow}{return} m\_NoOfRows;
+103     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_adc5340b2970cff5454055f78ed1de23c}{\index{Dataset@{Dataset}!Get\-Test\-Dataset@{Get\-Test\-Dataset}}
+\index{Get\-Test\-Dataset@{Get\-Test\-Dataset}!Dataset@{Dataset}}
+\subsubsection[{Get\-Test\-Dataset}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Dataset} Dataset.\-Get\-Test\-Dataset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_dataset_adc5340b2970cff5454055f78ed1de23c}
+
+\begin{DoxyCode}
+561                                            \{
+562         \hyperlink{class_dataset}{Dataset} testData = \textcolor{keyword}{new} \hyperlink{class_dataset_a202d43d91e9362c7a65c677485d80509}{Dataset}();
+563         
+564         \textcolor{keywordflow}{return} testData;
+565     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_ac4ae5e8bdbd60953f1eea60aaddc515d}{\index{Dataset@{Dataset}!main@{main}}
+\index{main@{main}!Dataset@{Dataset}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Dataset.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_dataset_ac4ae5e8bdbd60953f1eea60aaddc515d}
+Main Method used for Unit testing
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+588                                           \{
+589         \hyperlink{class_dataset}{Dataset} data = \textcolor{keyword}{new} \hyperlink{class_dataset_a202d43d91e9362c7a65c677485d80509}{Dataset}();
+590         System.out.println( \textcolor{stringliteral}{" "} );
+591         System.out.println( \textcolor{stringliteral}{"Unit test 1: null data"} );
+592         
+593         data.setColumnHeaders( null );
+594         data.setCompleteArray( null );
+595         data.setCompleteArrayBackwards( null );
+596         data.setDamagedArray( null );
+597         data.setFileLocation( null );
+598         data.setNoOfColumns( 0 );
+599         data.setNoOfErrors( 0 );
+600         data.setNoOfRows( 0 );
+601         
+602         
+603         System.out.println( \textcolor{stringliteral}{" "} );
+604         System.out.println( \textcolor{stringliteral}{"Unit test data 2: Large Data"} );
+605         data.setFileLocation( \textcolor{stringliteral}{"Fail Fail Fail Fail Fail Fail Fail "}
+606                              + \textcolor{stringliteral}{"Fail Fail Fail Fail Fail Fail Fail Fail Fail Fail "}
+607                              + \textcolor{stringliteral}{"Fail Fail Fail Fail Fail Fail Fail Fail Fail Fail "}
+608                              + \textcolor{stringliteral}{"Fail Fail Fail Fail Fail Fail Fail Fail Fail Fail "}
+609                              + \textcolor{stringliteral}{"Fail Fail Fail Fail Fail Fail Fail Fail Fail Fail "}
+610                              + \textcolor{stringliteral}{"Fail Fail Fail Fail Fail Fail Fail Fail Fail Fail "}
+611                              + \textcolor{stringliteral}{"Fail Fail Fail Fail Fail Fail Fail Fail Fail Fail "}
+612                              + \textcolor{stringliteral}{"Fail Fail Fail Fail Fail Fail Fail Fail Fail Fail "}
+613                              + \textcolor{stringliteral}{"Fail Fail Fail Fail Fail Fail Fail Fail Fail Fail "}
+614                              + \textcolor{stringliteral}{"Fail Fail Fail Fail Fail Fail Fail"} );
+615         \textcolor{comment}{// data.setColumnHeaders();}
+616         data.setCompleteArray( null );
+617         data.setCompleteArrayBackwards( null );
+618         data.setDamagedArray( null );
+619         
+620         data.setNoOfColumns( UNIT\_TEST\_LARGE );
+621         data.setNoOfErrors( UNIT\_TEST\_LARGE );
+622         data.setNoOfRows( UNIT\_TEST\_LARGE );
+623         
+624         System.out.println( \textcolor{stringliteral}{" "} );
+625         System.out.println( \textcolor{stringliteral}{"Unit test 3: Standard data"} );
+626         data.setFileLocation( \textcolor{stringliteral}{"C://Dekstop"} );
+627         data.setColumnHeaders( null );
+628         
+629         data.setCompleteArrayBackwards( null );
+630         data.setDamagedArray( null );
+631         
+632         data.setNoOfColumns( UNIT\_TEST\_STANDARD );
+633         data.setNoOfErrors( UNIT\_TEST\_STANDARD );
+634         data.setNoOfRows( UNIT\_TEST\_STANDARD );
+635     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_a54d25635d79320caa77a9d6695e5cf3d}{\index{Dataset@{Dataset}!Read\-File@{Read\-File}}
+\index{Read\-File@{Read\-File}!Dataset@{Dataset}}
+\subsubsection[{Read\-File}]{\setlength{\rightskip}{0pt plus 5cm}boolean Dataset.\-Read\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_a54d25635d79320caa77a9d6695e5cf3d}
+Reads file populating 2\-D array with Data and returning Boolean
+
+\begin{DoxyReturn}{Returns}
+boolean true if method completed successfully 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+473                               \{
+474         \textcolor{keywordflow}{try} \{
+475             \hyperlink{class_dataset_a7848e8739ff4c596cacf2a08815f5ec5}{setErrorsZero}();
+476             findNoOfColsRows( \hyperlink{class_dataset_a91fb1f2a983e9e5bef10864c0f4ec465}{GetFileLocation}() );
+477             BufferedReader bbrr;
+478             \textcolor{keywordtype}{int} p=0;
+479             
+480             
+481             
+482             String[][] completeArray = \textcolor{keyword}{new} String[\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}()][
+      \hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}()];
+483             String[][] completeArrayBackwards = \textcolor{keyword}{new} String[\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}()][
+      \hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}()];
+484             bbrr = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} FileReader(\hyperlink{class_dataset_a91fb1f2a983e9e5bef10864c0f4ec465}{GetFileLocation}()));
+485             
+486             
+487             String sCurrentLine = bbrr.readLine();
+488             
+489             
+490             \textcolor{keywordflow}{while} ((sCurrentLine = bbrr.readLine()) != null) \{
+491                 sCurrentLine = insertBlankValues(sCurrentLine);
+492                 
+493                 String sep[] = sCurrentLine.split(\textcolor{stringliteral}{","});
+494                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} s = 0; s<\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}(); s++)\{
+495                     System.out.println(sep[s]);
+496                     completeArray[s][p] = sep[s];
+497                     completeArrayBackwards[p][s] = sep[s];
+498                 \}
+499                 p++;
+500             \}
+501             setCompleteArray(completeArray);
+502             setCompleteArrayBackwards(completeArrayBackwards);
+503             bbrr.close();
+504         \} \textcolor{keywordflow}{catch} (IOException e)\{
+505             e.printStackTrace();
+506         \}
+507         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+508     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_abddca267426cbfcbc9a7d250ec53a5e5}{\index{Dataset@{Dataset}!Read\-File\-Basic@{Read\-File\-Basic}}
+\index{Read\-File\-Basic@{Read\-File\-Basic}!Dataset@{Dataset}}
+\subsubsection[{Read\-File\-Basic}]{\setlength{\rightskip}{0pt plus 5cm}boolean Dataset.\-Read\-File\-Basic (
+\begin{DoxyParamCaption}
+\item[{String}]{location}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_abddca267426cbfcbc9a7d250ec53a5e5}
+Reads File into two 2\-D arrays, the first with complete data, the second with missing or corrupt data
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & of the file as a String \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean true if method completed successfully 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+516                                                     \{
+517         \textcolor{keywordflow}{try} \{
+518             \hyperlink{class_dataset_a7848e8739ff4c596cacf2a08815f5ec5}{setErrorsZero}();
+519             findNoOfColsRows( location );
+520             BufferedReader bbrr;
+521             \textcolor{keywordtype}{int} p=0;
+522             
+523             
+524             String[][] completeArray = \textcolor{keyword}{new} String[\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}()][
+      \hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}()];
+525             String[][] completeArrayBackwards = \textcolor{keyword}{new} String
+526             [\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}()][\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}()];
+527             String[][] damagedArray = \textcolor{keyword}{new} String[\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}()][
+      \hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}()];
+528             bbrr = \textcolor{keyword}{new} BufferedReader( \textcolor{keyword}{new} FileReader( location ) );
+529             
+530             
+531             String sCurrentLine = bbrr.readLine();
+532             
+533             
+534             \textcolor{keywordflow}{while} ((sCurrentLine = bbrr.readLine()) != null) \{
+535                 sCurrentLine = insertBlankValues( sCurrentLine );
+536                 \textcolor{keywordflow}{if}( sCurrentLine.contains( \textcolor{stringliteral}{"blank"} ) )\{
+537                     String sep[] = sCurrentLine.split( \textcolor{stringliteral}{","} );
+538                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} s = 0; s != \hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}(); s++)\{
+539                         damagedArray[s][p] = sep[s];
+540                     \}
+541                 \} \textcolor{keywordflow}{else} \{
+542                     String sep[] = sCurrentLine.split(\textcolor{stringliteral}{","});
+543                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} s = 0; s != \hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}(); s++)\{
+544                         completeArray[s][p] = sep[s];
+545                         completeArrayBackwards[p][s] = sep[s];
+546                     \}
+547                 \}
+548                 p++;
+549             \}
+550             setDamagedArray( damagedArray );
+551             setCompleteArray( completeArray );
+552             setCompleteArrayBackwards( completeArrayBackwards );
+553             bbrr.close();
+554         \} \textcolor{keywordflow}{catch} ( IOException e )\{
+555             e.printStackTrace();
+556         \}
+557         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+558     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_a8de6f8ac02f8378a5510f8014fb2e65f}{\index{Dataset@{Dataset}!Set\-B\-V@{Set\-B\-V}}
+\index{Set\-B\-V@{Set\-B\-V}!Dataset@{Dataset}}
+\subsubsection[{Set\-B\-V}]{\setlength{\rightskip}{0pt plus 5cm}boolean Dataset.\-Set\-B\-V (
+\begin{DoxyParamCaption}
+\item[{{\bf Bob\-Viz}}]{bv}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_a8de6f8ac02f8378a5510f8014fb2e65f}
+
+\begin{DoxyParams}{Parameters}
+{\em bv} & -\/ a \hyperlink{class_bob_viz}{Bob\-Viz} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E on success 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+109                                       \{
+110         m\_BV = bv;
+111         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+112     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_a7848e8739ff4c596cacf2a08815f5ec5}{\index{Dataset@{Dataset}!set\-Errors\-Zero@{set\-Errors\-Zero}}
+\index{set\-Errors\-Zero@{set\-Errors\-Zero}!Dataset@{Dataset}}
+\subsubsection[{set\-Errors\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}boolean Dataset.\-set\-Errors\-Zero (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_a7848e8739ff4c596cacf2a08815f5ec5}
+
+\begin{DoxyCode}
+114                                    \{
+115         m\_Errors = 0;
+116         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+117     \}
+\end{DoxyCode}
+\hypertarget{class_dataset_a26dd0cb28ef8622366d67e21c38b5b0d}{\index{Dataset@{Dataset}!Set\-File\-Location\-G\-U\-I@{Set\-File\-Location\-G\-U\-I}}
+\index{Set\-File\-Location\-G\-U\-I@{Set\-File\-Location\-G\-U\-I}!Dataset@{Dataset}}
+\subsubsection[{Set\-File\-Location\-G\-U\-I}]{\setlength{\rightskip}{0pt plus 5cm}boolean Dataset.\-Set\-File\-Location\-G\-U\-I (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dataset_a26dd0cb28ef8622366d67e21c38b5b0d}
+Displays a G\-U\-I for the user to select the file location
+
+\begin{DoxyReturn}{Returns}
+boolean true if method completed successfully 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+236                                        \{
+237         \textcolor{comment}{//Create a file chooser}
+238         \textcolor{keyword}{final} JFileChooser fc = \textcolor{keyword}{new} JFileChooser();
+239         FileFilter ft = \textcolor{keyword}{new} FileNameExtensionFilter( \textcolor{stringliteral}{"CSV Files"}, \textcolor{stringliteral}{"CSV"} );
+240         fc.addChoosableFileFilter( ft );
+241         \textcolor{comment}{//In response to a button click:}
+242         \textcolor{keywordtype}{int} returnVal = fc.showOpenDialog(fc);
+243         \textcolor{keywordflow}{if} ( returnVal == JFileChooser.APPROVE\_OPTION ) \{
+244             m\_File = fc.getSelectedFile();
+245             setFileLocation( m\_File.getPath() );
+246             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+247         \} \textcolor{keywordflow}{else} \{
+248             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+249         \}
+250     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_dataset_8java}{Dataset.\-java}\end{DoxyCompactItemize}

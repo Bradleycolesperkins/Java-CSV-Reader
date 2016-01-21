@@ -1,0 +1,300 @@
+\hypertarget{class_colour}{\section{Colour Class Reference}
+\label{class_colour}\index{Colour@{Colour}}
+}
+
+
+This class provides user with a choice of some colours to be applied on objects from different graphs/charts/diagrams.  
+
+
+Inheritance diagram for Colour\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_colour}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_colour_a1f07651942561c6818bb26268a39609b}{Colour} ()
+\item 
+void \hyperlink{class_colour_abc6cd2a5aad847b118f72892e6b39d5a}{update\-Chooser} ()
+\item 
+void \hyperlink{class_colour_af61690b6ec8f119d9a5f8fc929300b77}{action\-Performed} (Action\-Event e)
+\item 
+String \hyperlink{class_colour_a1f719e93335cc06a8f5c24fbd50d85a4}{get\-Display\-Name} ()
+\item 
+Icon \hyperlink{class_colour_afdc3b34af634f3aa1b88bc080c326787}{get\-Small\-Display\-Icon} ()
+\item 
+Icon \hyperlink{class_colour_a55831e12aaf4110b926ea0240a4fa96f}{get\-Large\-Display\-Icon} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_colour_ade22fa4720bb0fc4d477d21fa4785b8c}{build\-Chooser} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides user with a choice of some colours to be applied on objects from different graphs/charts/diagrams. 
+
+\begin{DoxyDate}{Date}
+-\/10 February 2013 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_colour_a1f07651942561c6818bb26268a39609b}{\index{Colour@{Colour}!Colour@{Colour}}
+\index{Colour@{Colour}!Colour@{Colour}}
+\subsubsection[{Colour}]{\setlength{\rightskip}{0pt plus 5cm}Colour.\-Colour (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_colour_a1f07651942561c6818bb26268a39609b}
+
+\begin{DoxyCode}
+19                      \{
+20         
+21     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_colour_af61690b6ec8f119d9a5f8fc929300b77}{\index{Colour@{Colour}!action\-Performed@{action\-Performed}}
+\index{action\-Performed@{action\-Performed}!Colour@{Colour}}
+\subsubsection[{action\-Performed}]{\setlength{\rightskip}{0pt plus 5cm}void Colour.\-action\-Performed (
+\begin{DoxyParamCaption}
+\item[{Action\-Event}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_colour_af61690b6ec8f119d9a5f8fc929300b77}
+
+\begin{DoxyCode}
+161                                                  \{
+162         Color newColor = null;
+163         String command = ( ( JButton )e.getSource( ) ).getActionCommand( );
+164         
+165         \textcolor{comment}{/* Switch assigns a new colour, depending on what string "command"}
+166 \textcolor{comment}{         * ( which contains the name of the colour ) contains. }
+167 \textcolor{comment}{         */}       
+168         \textcolor{keywordflow}{switch} ( command ) \{
+169             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"green"}:
+170                 newColor = Color.GREEN;
+171                 \textcolor{keywordflow}{break};
+172             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"red"}:
+173                 newColor = Color.RED;
+174                 \textcolor{keywordflow}{break};
+175             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"yellow"}:
+176                 newColor = Color.YELLOW;
+177                 \textcolor{keywordflow}{break};
+178             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"blue"}:
+179                 newColor = Color.BLUE;
+180                 \textcolor{keywordflow}{break};
+181             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"black"}:
+182                 newColor = Color.BLACK;
+183                 \textcolor{keywordflow}{break};
+184             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"cyan"}:
+185                 newColor = Color.CYAN;
+186                 \textcolor{keywordflow}{break};
+187             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"gray"}:
+188                 newColor = Color.GRAY;
+189                 \textcolor{keywordflow}{break};
+190             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"magenta"}:
+191                 newColor = Color.MAGENTA;
+192                 \textcolor{keywordflow}{break};
+193             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"orange"}:
+194                 newColor = Color.ORANGE;
+195                 \textcolor{keywordflow}{break};
+196             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"pink"}:
+197                 newColor = Color.PINK;
+198                 \textcolor{keywordflow}{break};
+199             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"white"}:
+200                 newColor = Color.WHITE;
+201                 \textcolor{keywordflow}{break};
+202             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"lGray"}:
+203                 newColor = Color.LIGHT\_GRAY;
+204                 \textcolor{keywordflow}{break};
+205         \}
+206         
+207         \textcolor{comment}{/* Changes the colour of the object to the new colour. */}
+208         getColorSelectionModel( ).setSelectedColor( newColor );
+209     \}
+\end{DoxyCode}
+\hypertarget{class_colour_ade22fa4720bb0fc4d477d21fa4785b8c}{\index{Colour@{Colour}!build\-Chooser@{build\-Chooser}}
+\index{build\-Chooser@{build\-Chooser}!Colour@{Colour}}
+\subsubsection[{build\-Chooser}]{\setlength{\rightskip}{0pt plus 5cm}void Colour.\-build\-Chooser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_colour_ade22fa4720bb0fc4d477d21fa4785b8c}
+
+\begin{DoxyCode}
+46                                    \{
+47         \textcolor{comment}{/* Colour Buttons Group Row Count */}
+48         \textcolor{keyword}{final} \textcolor{keywordtype}{int} CBG\_ROW\_COUNT = 3;
+49         \textcolor{comment}{/* Colour Button Group Column Count */}
+50         \textcolor{keyword}{final} \textcolor{keywordtype}{int} CBG\_COLUMN\_COUNT = 4;
+51         \textcolor{comment}{/* Colour Button Height */}
+52         \textcolor{keyword}{final} \textcolor{keywordtype}{int} CB\_HEIGHT = 20;
+53         \textcolor{comment}{/* Colour Button Width */}
+54         \textcolor{keyword}{final} \textcolor{keywordtype}{int} CB\_WIDTH = 20;
+55         
+56         setLayout( \textcolor{keyword}{new} GridLayout( CBG\_ROW\_COUNT, CBG\_COLUMN\_COUNT ) );
+57         \textcolor{comment}{/* Groups default colours into specific row and column count */}
+58         
+59         ButtonGroup colourButtons = \textcolor{keyword}{new} ButtonGroup( );
+60         colourButtons.getButtonCount( );
+61         
+62         \textcolor{comment}{/* White Colour Button */}
+63         whiteButton = createColour(\textcolor{stringliteral}{"white"});
+64         whiteButton.setBackground(Color.WHITE);
+65         whiteButton.setPreferredSize(\textcolor{keyword}{new} Dimension(CB\_WIDTH, CB\_HEIGHT));
+66         whiteButton.setOpaque(\textcolor{keyword}{true});
+67         colourButtons.add(whiteButton);
+68         add(whiteButton);
+69         
+70         \textcolor{comment}{/* Light Gray Colour Button */}
+71         lGrayButton = createColour(\textcolor{stringliteral}{"lGray"});
+72         lGrayButton.setBackground(Color.LIGHT\_GRAY);
+73         lGrayButton.setPreferredSize(\textcolor{keyword}{new} Dimension(CB\_WIDTH, CB\_HEIGHT));
+74         lGrayButton.setOpaque(\textcolor{keyword}{true});
+75         colourButtons.add(lGrayButton);
+76         add(lGrayButton);
+77         
+78         \textcolor{comment}{/* Gray Colour Button */}
+79         grayButton = createColour(\textcolor{stringliteral}{"gray"});
+80         grayButton.setBackground(Color.GRAY);
+81         grayButton.setPreferredSize(\textcolor{keyword}{new} Dimension(CB\_WIDTH, CB\_HEIGHT));
+82         grayButton.setOpaque(\textcolor{keyword}{true});
+83         colourButtons.add(grayButton);
+84         add(grayButton);
+85         
+86         \textcolor{comment}{/* Black Colou Button */}
+87         blackButton = createColour(\textcolor{stringliteral}{"black"});
+88         blackButton.setBackground(Color.BLACK);
+89         blackButton.setPreferredSize(\textcolor{keyword}{new} Dimension(CB\_WIDTH, CB\_HEIGHT));
+90         blackButton.setOpaque(\textcolor{keyword}{true});
+91         colourButtons.add(blackButton);
+92         add(blackButton);       
+93         
+94         \textcolor{comment}{/* Yellow Colour Button */}
+95         yellowButton = createColour(\textcolor{stringliteral}{"yellow"});
+96         yellowButton.setBackground(Color.YELLOW);
+97         yellowButton.setPreferredSize(\textcolor{keyword}{new} Dimension(CB\_WIDTH, CB\_HEIGHT));
+98         yellowButton.setOpaque(\textcolor{keyword}{true});
+99         colourButtons.add(yellowButton);
+100         add(yellowButton);
+101         
+102         \textcolor{comment}{/* Green Button Colour */}
+103         greenButton = createColour(\textcolor{stringliteral}{"green"});
+104         greenButton.setBackground(Color.GREEN);
+105         greenButton.setPreferredSize(\textcolor{keyword}{new} Dimension(CB\_WIDTH, CB\_HEIGHT));
+106         greenButton.setOpaque(\textcolor{keyword}{true});
+107         colourButtons.add(greenButton);
+108         add(greenButton);
+109         
+110         \textcolor{comment}{/* Red Button Colour */}
+111         redButton = createColour(\textcolor{stringliteral}{"red"});
+112         redButton.setBackground(Color.RED);
+113         redButton.setPreferredSize(\textcolor{keyword}{new} Dimension(CB\_WIDTH, CB\_HEIGHT));
+114         redButton.setOpaque(\textcolor{keyword}{true});
+115         colourButtons.add(redButton);
+116         add(redButton);
+117         
+118         \textcolor{comment}{/* Cyan Colour Button */}
+119         cyanButton = createColour(\textcolor{stringliteral}{"cyan"});
+120         cyanButton.setBackground(Color.CYAN);
+121         cyanButton.setPreferredSize(\textcolor{keyword}{new} Dimension(CB\_WIDTH, CB\_HEIGHT));
+122         cyanButton.setOpaque(\textcolor{keyword}{true});
+123         colourButtons.add(cyanButton);
+124         add(cyanButton);
+125         
+126         \textcolor{comment}{/* Pink Colour Button */}
+127         pinkButton = createColour(\textcolor{stringliteral}{"pink"});
+128         pinkButton.setBackground(Color.PINK);
+129         pinkButton.setPreferredSize(\textcolor{keyword}{new} Dimension(CB\_WIDTH, CB\_HEIGHT));
+130         pinkButton.setOpaque(\textcolor{keyword}{true});
+131         colourButtons.add(pinkButton);
+132         add(pinkButton);
+133         
+134         \textcolor{comment}{/* Orange Colour Button */}
+135         orangeButton = createColour(\textcolor{stringliteral}{"orange"});
+136         orangeButton.setBackground(Color.ORANGE);
+137         orangeButton.setPreferredSize(\textcolor{keyword}{new} Dimension(CB\_WIDTH, CB\_HEIGHT));
+138         orangeButton.setOpaque(\textcolor{keyword}{true});
+139         colourButtons.add(orangeButton);
+140         add(orangeButton);
+141         
+142         \textcolor{comment}{/* Magenta Colour Button */}
+143         magentaButton = createColour(\textcolor{stringliteral}{"magenta"});
+144         magentaButton.setBackground(Color.MAGENTA);
+145         magentaButton.setPreferredSize(\textcolor{keyword}{new} Dimension(CB\_WIDTH, CB\_HEIGHT));
+146         magentaButton.setOpaque(\textcolor{keyword}{true});
+147         colourButtons.add(magentaButton);
+148         add(magentaButton);
+149         
+150         \textcolor{comment}{/* Blue Colour Button */}
+151         blueButton = createColour(\textcolor{stringliteral}{"blue"});
+152         blueButton.setBackground(Color.BLUE);
+153         blueButton.setPreferredSize(\textcolor{keyword}{new} Dimension(CB\_WIDTH, CB\_HEIGHT));
+154         blueButton.setOpaque(\textcolor{keyword}{true});
+155         colourButtons.add(blueButton);
+156         add(blueButton);
+157                       
+158     \}
+\end{DoxyCode}
+\hypertarget{class_colour_a1f719e93335cc06a8f5c24fbd50d85a4}{\index{Colour@{Colour}!get\-Display\-Name@{get\-Display\-Name}}
+\index{get\-Display\-Name@{get\-Display\-Name}!Colour@{Colour}}
+\subsubsection[{get\-Display\-Name}]{\setlength{\rightskip}{0pt plus 5cm}String Colour.\-get\-Display\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_colour_a1f719e93335cc06a8f5c24fbd50d85a4}
+
+\begin{DoxyCode}
+212                                     \{
+213         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Colours"};
+214     \}
+\end{DoxyCode}
+\hypertarget{class_colour_a55831e12aaf4110b926ea0240a4fa96f}{\index{Colour@{Colour}!get\-Large\-Display\-Icon@{get\-Large\-Display\-Icon}}
+\index{get\-Large\-Display\-Icon@{get\-Large\-Display\-Icon}!Colour@{Colour}}
+\subsubsection[{get\-Large\-Display\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}Icon Colour.\-get\-Large\-Display\-Icon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_colour_a55831e12aaf4110b926ea0240a4fa96f}
+
+\begin{DoxyCode}
+222                                        \{
+223         \textcolor{keywordflow}{return} null;
+224     \}
+\end{DoxyCode}
+\hypertarget{class_colour_afdc3b34af634f3aa1b88bc080c326787}{\index{Colour@{Colour}!get\-Small\-Display\-Icon@{get\-Small\-Display\-Icon}}
+\index{get\-Small\-Display\-Icon@{get\-Small\-Display\-Icon}!Colour@{Colour}}
+\subsubsection[{get\-Small\-Display\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}Icon Colour.\-get\-Small\-Display\-Icon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_colour_afdc3b34af634f3aa1b88bc080c326787}
+
+\begin{DoxyCode}
+217                                        \{
+218         \textcolor{keywordflow}{return} null;
+219     \}
+\end{DoxyCode}
+\hypertarget{class_colour_abc6cd2a5aad847b118f72892e6b39d5a}{\index{Colour@{Colour}!update\-Chooser@{update\-Chooser}}
+\index{update\-Chooser@{update\-Chooser}!Colour@{Colour}}
+\subsubsection[{update\-Chooser}]{\setlength{\rightskip}{0pt plus 5cm}void Colour.\-update\-Chooser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_colour_abc6cd2a5aad847b118f72892e6b39d5a}
+
+\begin{DoxyCode}
+24                                  \{
+25        
+26     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_colour_8java}{Colour.\-java}\end{DoxyCompactItemize}

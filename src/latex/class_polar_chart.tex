@@ -1,0 +1,333 @@
+\hypertarget{class_polar_chart}{\section{Polar\-Chart Class Reference}
+\label{class_polar_chart}\index{Polar\-Chart@{Polar\-Chart}}
+}
+
+
+A class that creates a single Polar \hyperlink{interface_chart}{Chart} or two Polar \hyperlink{interface_chart}{Chart} visualisations from 2\-D Arrays of data \textbackslash{} see \hyperlink{_graph_8java}{Graph.\-java}.  
+
+
+Inheritance diagram for Polar\-Chart\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_polar_chart}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_polar_chart_a5f108692551cb8c74b55fae0138cc2fb}{Polar\-Chart} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_polar_chart_a66861893d4eabbb0f8ab27988ce04e86}{Polar\-Chart} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting, String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} second\-Data, \hyperlink{class_dataset}{Dataset} second\-Dataset, \hyperlink{class_data_attribute}{Data\-Attribute} second\-Setting)
+\item 
+\hyperlink{class_polar_chart_a96a2e0f5e310b4982c03d01f65804d7e}{Polar\-Chart} (\hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_polar_chart_aba50c5e55fd2d54e6fbdc684724d7d31}{Polar\-Chart} (\hyperlink{class_data_attribute}{Data\-Attribute} setting, \hyperlink{class_data_attribute}{Data\-Attribute} second\-Setting)
+\item 
+void \hyperlink{class_polar_chart_a9aadea04bcb9d3419f025dbecc8b18f1}{action\-Performed} (Action\-Event e)
+\item 
+String \hyperlink{class_polar_chart_a2509add6b1beaf9d1c07603dff1b5602}{Set\-Label\-X} (String m\-\_\-x\-Label)
+\item 
+String \hyperlink{class_polar_chart_a625a4bf978d88a6b2accfd1a7b00fcb0}{Set\-Label\-Y} (String m\-\_\-y\-Label)
+\item 
+String \hyperlink{class_polar_chart_a1db3b5708bc341845d92584c28c59d34}{Set\-Title} (String m\-\_\-graph\-Title)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_polar_chart_a01960911aea80dff1e6872504524e797}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that creates a single Polar \hyperlink{interface_chart}{Chart} or two Polar \hyperlink{interface_chart}{Chart} visualisations from 2\-D Arrays of data \textbackslash{} see \hyperlink{_graph_8java}{Graph.\-java}. 
+
+\begin{DoxyDate}{Date}
+14/04/13 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+This class is responsible for making the Polar chart It was made using J\-Free\-Chart and following examples on how to set up the Polar chart It uses the \hyperlink{_graph_8java}{Graph.\-java} to return a J\-Free\-Chart 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_polar_chart_a5f108692551cb8c74b55fae0138cc2fb}{\index{Polar\-Chart@{Polar\-Chart}!Polar\-Chart@{Polar\-Chart}}
+\index{Polar\-Chart@{Polar\-Chart}!PolarChart@{Polar\-Chart}}
+\subsubsection[{Polar\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Polar\-Chart.\-Polar\-Chart (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_polar_chart_a5f108692551cb8c74b55fae0138cc2fb}
+creates a constructor taking in the following parameters\-:
+
+
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+51                                                    \{
+52             
+53             m\_Data = data;
+54             m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+55             m\_Setting = setting;
+56             m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+57             m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+58             m\_Col = dataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+59             m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+60             m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+61             m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+62             
+63             CreateDataset(m\_Data);
+64             ShowChart(m\_Dataset);
+65         \}  
+\end{DoxyCode}
+\hypertarget{class_polar_chart_a66861893d4eabbb0f8ab27988ce04e86}{\index{Polar\-Chart@{Polar\-Chart}!Polar\-Chart@{Polar\-Chart}}
+\index{Polar\-Chart@{Polar\-Chart}!PolarChart@{Polar\-Chart}}
+\subsubsection[{Polar\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Polar\-Chart.\-Polar\-Chart (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{String}]{second\-Data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{second\-Dataset, }
+\item[{{\bf Data\-Attribute}}]{second\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_polar_chart_a66861893d4eabbb0f8ab27988ce04e86}
+creates a constructor taking in the following parameters\-:
+
+
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & second\-Data -\/ second data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & second\-Dataset -\/ the second dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & second\-Setting -\/ Second Data attributes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+78                                              \{
+79             m\_Data = data;
+80             m\_SecondData = secondData;
+81             m\_Setting = setting;
+82             m\_SecondSetting = secondSetting;
+83             m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+84             m\_SecondChartTitle = secondSetting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+85             m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+86             m\_SecondXLabel = secondSetting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+87             m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+88             m\_SecondYLabel = secondSetting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+89             m\_Col = dataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+90             m\_SecondCol = secondDataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+91             m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+92             m\_SecondRow = secondDataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+93             m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+94             m\_SecondC1 = secondSetting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+95             m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+96             m\_SecondC2 = secondSetting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();
+97              
+98              CreateDataset(m\_Data);
+99              CreateSecondDataset(m\_SecondData);
+100              ShowChart(m\_Dataset, m\_SecondDataset);
+101         \}  
+\end{DoxyCode}
+\hypertarget{class_polar_chart_a96a2e0f5e310b4982c03d01f65804d7e}{\index{Polar\-Chart@{Polar\-Chart}!Polar\-Chart@{Polar\-Chart}}
+\index{Polar\-Chart@{Polar\-Chart}!PolarChart@{Polar\-Chart}}
+\subsubsection[{Polar\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Polar\-Chart.\-Polar\-Chart (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_polar_chart_a96a2e0f5e310b4982c03d01f65804d7e}
+constructor for J\-Unit Tests 
+\begin{DoxyCode}
+106                                                   \{
+107              m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+108              m\_Setting = setting;
+109              m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+110              m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+111              m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+112              m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+113             
+114         \}
+\end{DoxyCode}
+\hypertarget{class_polar_chart_aba50c5e55fd2d54e6fbdc684724d7d31}{\index{Polar\-Chart@{Polar\-Chart}!Polar\-Chart@{Polar\-Chart}}
+\index{Polar\-Chart@{Polar\-Chart}!PolarChart@{Polar\-Chart}}
+\subsubsection[{Polar\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Polar\-Chart.\-Polar\-Chart (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{{\bf Data\-Attribute}}]{second\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_polar_chart_aba50c5e55fd2d54e6fbdc684724d7d31}
+second constructor for J\-Unit Tests 
+\begin{DoxyCode}
+118                                                                                \{
+119              m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+120              m\_Setting = setting;
+121              m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+122              m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+123              m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+124              m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+125              
+126              m\_SecondChartTitle = secondSetting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+127              m\_SecondSetting = secondSetting;
+128              m\_SecondXLabel = secondSetting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+129              m\_SecondYLabel = secondSetting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+130              m\_SecondC1 = secondSetting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+131              m\_SecondC2 = secondSetting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();
+132             
+133         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_polar_chart_a9aadea04bcb9d3419f025dbecc8b18f1}{\index{Polar\-Chart@{Polar\-Chart}!action\-Performed@{action\-Performed}}
+\index{action\-Performed@{action\-Performed}!PolarChart@{Polar\-Chart}}
+\subsubsection[{action\-Performed}]{\setlength{\rightskip}{0pt plus 5cm}void Polar\-Chart.\-action\-Performed (
+\begin{DoxyParamCaption}
+\item[{Action\-Event}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_polar_chart_a9aadea04bcb9d3419f025dbecc8b18f1}
+allows user to select the colour of the points on the Polar chart 
+\begin{DoxyCode}
+138                                                      \{
+139             \textcolor{keywordflow}{if}( e.getSource() == m\_ColChangeButton ) \{
+140                 \hyperlink{class_colour_map}{ColourMap} cM = \textcolor{keyword}{new} \hyperlink{class_colour_map}{ColourMap}();
+141                 cM.\hyperlink{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{SetupData}( m\_Plot.getSeriesCount(), 
+142                               m\_Renderer );
+143                 cM.setVisible( \textcolor{keyword}{false} );
+144             \}
+145         \}
+\end{DoxyCode}
+\hypertarget{class_polar_chart_a01960911aea80dff1e6872504524e797}{\index{Polar\-Chart@{Polar\-Chart}!main@{main}}
+\index{main@{main}!PolarChart@{Polar\-Chart}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Polar\-Chart.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_polar_chart_a01960911aea80dff1e6872504524e797}
+main method to carry out J\-Unit Tests 
+\begin{DoxyCode}
+337                                                  \{
+338             
+339             Random generator = \textcolor{keyword}{new} Random();
+340             \textcolor{comment}{// Test to display a single chart}
+341             XYSeriesCollection testCollection = \textcolor{keyword}{new} XYSeriesCollection();
+342             XYSeries testDataset = \textcolor{keyword}{new} XYSeries(\textcolor{stringliteral}{"Test Series"});
+343             
+344             \hyperlink{class_data_attribute}{DataAttribute} test = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+345             \hyperlink{class_polar_chart}{PolarChart} polarChartTest = \textcolor{keyword}{new} \hyperlink{class_polar_chart_a5f108692551cb8c74b55fae0138cc2fb}{PolarChart}(test);
+346             
+347             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0;i< LOOP;i++) \{
+348                 \textcolor{keywordtype}{int} temp1 = generator.nextInt(LIMIT);
+349                 \textcolor{keywordtype}{int} temp2 = generator.nextInt(LIMIT);
+350                 
+351                 testDataset.add(temp1,temp2);
+352             \}
+353             testCollection.addSeries(testDataset);
+354             polarChartTest.ShowChart(testCollection);
+355             
+356             \textcolor{comment}{// Test to display two charts}
+357             XYSeriesCollection secondTestCollection = \textcolor{keyword}{new} XYSeriesCollection();
+358             XYSeries secondTestDataset = \textcolor{keyword}{new} XYSeries(\textcolor{stringliteral}{"Second Test Series"});
+359             
+360             \hyperlink{class_data_attribute}{DataAttribute} secondTest = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+361             \hyperlink{class_polar_chart}{PolarChart} secondPolarChartTest = \textcolor{keyword}{new} \hyperlink{class_polar_chart_a5f108692551cb8c74b55fae0138cc2fb}{PolarChart}(secondTest);
+362             
+363             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0;i< LOOP;i++) \{
+364                 \textcolor{keywordtype}{int} temp1 = generator.nextInt(LIMIT);
+365                 \textcolor{keywordtype}{int} temp2 = generator.nextInt(LIMIT);
+366                 
+367                 secondTestDataset.add(temp1,temp2);
+368             \}
+369             secondTestCollection.addSeries(secondTestDataset);
+370             secondPolarChartTest.ShowChart(testCollection,secondTestCollection);
+371         
+372         
+373         \}
+\end{DoxyCode}
+\hypertarget{class_polar_chart_a2509add6b1beaf9d1c07603dff1b5602}{\index{Polar\-Chart@{Polar\-Chart}!Set\-Label\-X@{Set\-Label\-X}}
+\index{Set\-Label\-X@{Set\-Label\-X}!PolarChart@{Polar\-Chart}}
+\subsubsection[{Set\-Label\-X}]{\setlength{\rightskip}{0pt plus 5cm}String Polar\-Chart.\-Set\-Label\-X (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-x\-Label}
+\end{DoxyParamCaption}
+)}}\label{class_polar_chart_a2509add6b1beaf9d1c07603dff1b5602}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-x\-Label} & -\/ the x axis label passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-label\-X -\/ returns the user's x label value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+152                                                    \{
+153             String m\_labelX = m\_xLabel;
+154             \textcolor{keywordflow}{return} m\_labelX;
+155         \}
+\end{DoxyCode}
+\hypertarget{class_polar_chart_a625a4bf978d88a6b2accfd1a7b00fcb0}{\index{Polar\-Chart@{Polar\-Chart}!Set\-Label\-Y@{Set\-Label\-Y}}
+\index{Set\-Label\-Y@{Set\-Label\-Y}!PolarChart@{Polar\-Chart}}
+\subsubsection[{Set\-Label\-Y}]{\setlength{\rightskip}{0pt plus 5cm}String Polar\-Chart.\-Set\-Label\-Y (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-y\-Label}
+\end{DoxyParamCaption}
+)}}\label{class_polar_chart_a625a4bf978d88a6b2accfd1a7b00fcb0}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-y\-Label} & -\/ the y axis label passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-label\-Y -\/ returns the user's y label value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+162                                                    \{
+163             String m\_labelY = m\_yLabel;
+164             \textcolor{keywordflow}{return} m\_labelY;
+165         \}
+\end{DoxyCode}
+\hypertarget{class_polar_chart_a1db3b5708bc341845d92584c28c59d34}{\index{Polar\-Chart@{Polar\-Chart}!Set\-Title@{Set\-Title}}
+\index{Set\-Title@{Set\-Title}!PolarChart@{Polar\-Chart}}
+\subsubsection[{Set\-Title}]{\setlength{\rightskip}{0pt plus 5cm}String Polar\-Chart.\-Set\-Title (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-graph\-Title}
+\end{DoxyParamCaption}
+)}}\label{class_polar_chart_a1db3b5708bc341845d92584c28c59d34}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-graph\-Title} & -\/ the title passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-title -\/ returns the user's title value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+172                                                       \{
+173             String m\_title = m\_graphTitle;
+174             \textcolor{keywordflow}{return} m\_title;
+175         \} 
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_polar_chart_8java}{Polar\-Chart.\-java}\end{DoxyCompactItemize}

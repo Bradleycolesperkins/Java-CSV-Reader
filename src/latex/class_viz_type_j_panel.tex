@@ -1,0 +1,380 @@
+\hypertarget{class_viz_type_j_panel}{\section{Viz\-Type\-J\-Panel Class Reference}
+\label{class_viz_type_j_panel}\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}}
+}
+
+
+This class provides the user with a list of different visualisation types to choose from.  
+
+
+Inheritance diagram for Viz\-Type\-J\-Panel\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_viz_type_j_panel}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_viz_type_j_panel_ade1f7a00feed7a67bffabbaf9762f20f}{Viz\-Type\-J\-Panel} ()
+\item 
+\hyperlink{class_viz_type_j_panel_ab94442b4a1e1906ca3121fefcead19fa}{Viz\-Type\-J\-Panel} (boolean b)
+\item 
+J\-Toggle\-Button \hyperlink{class_viz_type_j_panel_a1d7f828f25ee2f352df65055e206178a}{Get\-Column\-Chart\-Button} ()
+\item 
+J\-Toggle\-Button \hyperlink{class_viz_type_j_panel_ae0e3195c99ed0025b23fb1dc72268b86}{Get\-Pie\-Chart\-Button} ()
+\item 
+J\-Toggle\-Button \hyperlink{class_viz_type_j_panel_a0550cb9b18806122a76a5dc600ad861a}{Get\-Line\-Chart\-Button} ()
+\item 
+J\-Toggle\-Button \hyperlink{class_viz_type_j_panel_a1d11994e9ddc79724ff8891280a71b32}{Get\-Bubble\-Chart\-Button} ()
+\item 
+J\-Toggle\-Button \hyperlink{class_viz_type_j_panel_aa16fca19c0ef36ff6cdf5b408ba2fbf1}{Get\-Scatter\-Chart\-Button} ()
+\item 
+J\-Toggle\-Button \hyperlink{class_viz_type_j_panel_aff060b4c6d74adbe43c674e007ff632a}{Get\-Area\-Chart\-Button} ()
+\item 
+J\-Toggle\-Button \hyperlink{class_viz_type_j_panel_a901113d4dd60480e8322182dc81de871}{Get\-Polar\-Chart\-Button} ()
+\item 
+J\-Toggle\-Button \hyperlink{class_viz_type_j_panel_a48853498dd3ae16b395b1a84044531d2}{Get\-Table\-View\-Button} ()
+\item 
+Boolean \hyperlink{class_viz_type_j_panel_a2dffefeb21c55d793593b1dacb364cf9}{Bubble\-Chart\-Button} ()
+\item 
+boolean \hyperlink{class_viz_type_j_panel_a83704bbce2513028139d3acea7a85907}{Set\-B\-V} (\hyperlink{class_bob_viz}{Bob\-Viz} bv)
+\item 
+int \hyperlink{class_viz_type_j_panel_adfd6c664764e55323f59ec7991be02d6}{Get\-Panel\-Width} ()
+\item 
+int \hyperlink{class_viz_type_j_panel_afabba3b86d50daf0627d3f5a1ced0681}{Get\-Panel\-Height} ()
+\item 
+void \hyperlink{class_viz_type_j_panel_a1e5bbe625fdca3098a662b73fa252fae}{Set\-Table\-View\-Button} (J\-Toggle\-Button m\-\_\-\-Table\-View\-Button)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_viz_type_j_panel_aac218445a0f5192f93b9e5d034d4cf71}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides the user with a list of different visualisation types to choose from. 
+
+\begin{DoxyDate}{Date}
+30/04/2013 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{_dataset_8java}{Dataset.\-java} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_viz_type_j_panel_ade1f7a00feed7a67bffabbaf9762f20f}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}}
+\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Viz\-Type\-J\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}Viz\-Type\-J\-Panel.\-Viz\-Type\-J\-Panel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_ade1f7a00feed7a67bffabbaf9762f20f}
+Adding them to a button group will allow only a single button to be toggled at any time
+\begin{DoxyCode}
+36                            \{
+37         \textcolor{comment}{/* set new dimension for VizTypeJPanel */}
+38         Dimension size = getPreferredSize();
+39         
+40         \textcolor{comment}{/* set height and size for VizTypeJPanel */}
+41         size.width = PAN\_WIDTH;
+42         size.height = PAN\_HEIGHT;
+43         setPreferredSize( size );
+44         
+45         setBorder( BorderFactory.createTitledBorder(
+46                 BorderFactory.createLineBorder( Color.GRAY ), \textcolor{stringliteral}{"Select visualisation"}) );
+47         
+48         \textcolor{comment}{/* set new layout */}
+49         setLayout( \textcolor{keyword}{new} FlowLayout( FlowLayout.CENTER ) );
+50         
+51         \textcolor{comment}{/* create new JPanel */}
+52         JPanel centerJPan = \textcolor{keyword}{new} JPanel();
+53         \textcolor{comment}{/* set new layout for centerJPan */}
+54         centerJPan.setLayout( \textcolor{keyword}{new} GridLayout( GRID\_ROW, GRID\_COL, GRID\_VGAP, 
+55                 GRID\_HGAP ) );
+56        
+61         ButtonGroup buttonGroup = \textcolor{keyword}{new} ButtonGroup();
+62         buttonGroup.add(m\_ColumnChartButton);
+63         buttonGroup.add(m\_PieChartButton);
+64         buttonGroup.add(m\_LineChartButton);
+65         buttonGroup.add(m\_BubbleChartButton);
+66         buttonGroup.add(m\_ScatterPlotButton);
+67         buttonGroup.add(m\_AreaChartButton);
+68         buttonGroup.add(m\_PolarChartButton);
+69         
+70         centerJPan.add(m\_ColumnChartButton);
+71         m\_ColumnChartButton.setSelected(\textcolor{keyword}{true});
+72         centerJPan.add(m\_PieChartButton);
+73         centerJPan.add(m\_LineChartButton);
+74         centerJPan.add(m\_BubbleChartButton);
+75         centerJPan.add(m\_ScatterPlotButton);
+76         centerJPan.add(m\_AreaChartButton);
+77         centerJPan.add(m\_PolarChartButton);
+78         centerJPan.add(m\_TableViewButton);
+79         
+80          \textcolor{comment}{/* add centerJPan to VizTypeJPanel */}
+81         add( centerJPan );
+82         
+83         \textcolor{comment}{/* set listeners */}
+84         VizTypeJPanelEventHandler vTEventHandler = \textcolor{keyword}{new} 
+85                 VizTypeJPanelEventHandler();
+86         m\_BubbleChartButton.addItemListener(vTEventHandler);
+87     \}
+\end{DoxyCode}
+\hypertarget{class_viz_type_j_panel_ab94442b4a1e1906ca3121fefcead19fa}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}}
+\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Viz\-Type\-J\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}Viz\-Type\-J\-Panel.\-Viz\-Type\-J\-Panel (
+\begin{DoxyParamCaption}
+\item[{boolean}]{b}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_ab94442b4a1e1906ca3121fefcead19fa}
+
+\begin{DoxyCode}
+89 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_viz_type_j_panel_a2dffefeb21c55d793593b1dacb364cf9}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Bubble\-Chart\-Button@{Bubble\-Chart\-Button}}
+\index{Bubble\-Chart\-Button@{Bubble\-Chart\-Button}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Bubble\-Chart\-Button}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Viz\-Type\-J\-Panel.\-Bubble\-Chart\-Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_a2dffefeb21c55d793593b1dacb364cf9}
+
+\begin{DoxyCode}
+147                                       \{
+148         \textcolor{keywordflow}{return} m\_BubbleChartButton.isSelected();
+149     \}
+\end{DoxyCode}
+\hypertarget{class_viz_type_j_panel_aff060b4c6d74adbe43c674e007ff632a}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Get\-Area\-Chart\-Button@{Get\-Area\-Chart\-Button}}
+\index{Get\-Area\-Chart\-Button@{Get\-Area\-Chart\-Button}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Get\-Area\-Chart\-Button}]{\setlength{\rightskip}{0pt plus 5cm}J\-Toggle\-Button Viz\-Type\-J\-Panel.\-Get\-Area\-Chart\-Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_aff060b4c6d74adbe43c674e007ff632a}
+Area \hyperlink{interface_chart}{Chart} Button \begin{DoxyReturn}{Returns}
+Are \hyperlink{interface_chart}{Chart} m\-\_\-\-Area\-Chart\-Button 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+130                                               \{
+131         \textcolor{keywordflow}{return} m\_AreaChartButton;
+132     \}
+\end{DoxyCode}
+\hypertarget{class_viz_type_j_panel_a1d11994e9ddc79724ff8891280a71b32}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Get\-Bubble\-Chart\-Button@{Get\-Bubble\-Chart\-Button}}
+\index{Get\-Bubble\-Chart\-Button@{Get\-Bubble\-Chart\-Button}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Get\-Bubble\-Chart\-Button}]{\setlength{\rightskip}{0pt plus 5cm}J\-Toggle\-Button Viz\-Type\-J\-Panel.\-Get\-Bubble\-Chart\-Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_a1d11994e9ddc79724ff8891280a71b32}
+Bubble \hyperlink{interface_chart}{Chart} Button \begin{DoxyReturn}{Returns}
+Bubble \hyperlink{interface_chart}{Chart} m\-\_\-\-Bubble\-Chart\-Button 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+116                                                 \{
+117         \textcolor{keywordflow}{return} m\_BubbleChartButton;
+118     \}
+\end{DoxyCode}
+\hypertarget{class_viz_type_j_panel_a1d7f828f25ee2f352df65055e206178a}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Get\-Column\-Chart\-Button@{Get\-Column\-Chart\-Button}}
+\index{Get\-Column\-Chart\-Button@{Get\-Column\-Chart\-Button}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Get\-Column\-Chart\-Button}]{\setlength{\rightskip}{0pt plus 5cm}J\-Toggle\-Button Viz\-Type\-J\-Panel.\-Get\-Column\-Chart\-Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_a1d7f828f25ee2f352df65055e206178a}
+Column \hyperlink{interface_chart}{Chart} Button \begin{DoxyReturn}{Returns}
+Column \hyperlink{interface_chart}{Chart} m\-\_\-\-Column\-Chart\-Button 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+95                                                 \{
+96         \textcolor{keywordflow}{return} m\_ColumnChartButton;
+97     \}
+\end{DoxyCode}
+\hypertarget{class_viz_type_j_panel_a0550cb9b18806122a76a5dc600ad861a}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Get\-Line\-Chart\-Button@{Get\-Line\-Chart\-Button}}
+\index{Get\-Line\-Chart\-Button@{Get\-Line\-Chart\-Button}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Get\-Line\-Chart\-Button}]{\setlength{\rightskip}{0pt plus 5cm}J\-Toggle\-Button Viz\-Type\-J\-Panel.\-Get\-Line\-Chart\-Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_a0550cb9b18806122a76a5dc600ad861a}
+Line \hyperlink{interface_chart}{Chart} Button \begin{DoxyReturn}{Returns}
+Line \hyperlink{interface_chart}{Chart} m\-\_\-\-Line\-Chart\-Button 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+109                                               \{
+110         \textcolor{keywordflow}{return} m\_LineChartButton;
+111     \}
+\end{DoxyCode}
+\hypertarget{class_viz_type_j_panel_afabba3b86d50daf0627d3f5a1ced0681}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Get\-Panel\-Height@{Get\-Panel\-Height}}
+\index{Get\-Panel\-Height@{Get\-Panel\-Height}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Get\-Panel\-Height}]{\setlength{\rightskip}{0pt plus 5cm}int Viz\-Type\-J\-Panel.\-Get\-Panel\-Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_afabba3b86d50daf0627d3f5a1ced0681}
+Gets Panel Height \begin{DoxyReturn}{Returns}
+P\-A\-N\-\_\-\-Height 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+194                                 \{
+195         \textcolor{keywordflow}{return} PAN\_HEIGHT;
+196     \}
+\end{DoxyCode}
+\hypertarget{class_viz_type_j_panel_adfd6c664764e55323f59ec7991be02d6}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Get\-Panel\-Width@{Get\-Panel\-Width}}
+\index{Get\-Panel\-Width@{Get\-Panel\-Width}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Get\-Panel\-Width}]{\setlength{\rightskip}{0pt plus 5cm}int Viz\-Type\-J\-Panel.\-Get\-Panel\-Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_adfd6c664764e55323f59ec7991be02d6}
+Gets Panel Width \begin{DoxyReturn}{Returns}
+P\-A\-N\-\_\-\-W\-I\-D\-T\-H 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+187                                \{
+188         \textcolor{keywordflow}{return} PAN\_WIDTH;
+189     \}
+\end{DoxyCode}
+\hypertarget{class_viz_type_j_panel_ae0e3195c99ed0025b23fb1dc72268b86}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Get\-Pie\-Chart\-Button@{Get\-Pie\-Chart\-Button}}
+\index{Get\-Pie\-Chart\-Button@{Get\-Pie\-Chart\-Button}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Get\-Pie\-Chart\-Button}]{\setlength{\rightskip}{0pt plus 5cm}J\-Toggle\-Button Viz\-Type\-J\-Panel.\-Get\-Pie\-Chart\-Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_ae0e3195c99ed0025b23fb1dc72268b86}
+Pie \hyperlink{interface_chart}{Chart} Button \begin{DoxyReturn}{Returns}
+Pie \hyperlink{interface_chart}{Chart} m\-\_\-\-Pie\-Chart\-Button 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+102                                              \{
+103         \textcolor{keywordflow}{return} m\_PieChartButton;
+104     \}
+\end{DoxyCode}
+\hypertarget{class_viz_type_j_panel_a901113d4dd60480e8322182dc81de871}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Get\-Polar\-Chart\-Button@{Get\-Polar\-Chart\-Button}}
+\index{Get\-Polar\-Chart\-Button@{Get\-Polar\-Chart\-Button}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Get\-Polar\-Chart\-Button}]{\setlength{\rightskip}{0pt plus 5cm}J\-Toggle\-Button Viz\-Type\-J\-Panel.\-Get\-Polar\-Chart\-Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_a901113d4dd60480e8322182dc81de871}
+Polar \hyperlink{interface_chart}{Chart} Button \begin{DoxyReturn}{Returns}
+Polar \hyperlink{interface_chart}{Chart} m\-\_\-\-Polar\-Chart\-Button 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+137                                                \{
+138         \textcolor{keywordflow}{return} m\_PolarChartButton;
+139     \}
+\end{DoxyCode}
+\hypertarget{class_viz_type_j_panel_aa16fca19c0ef36ff6cdf5b408ba2fbf1}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Get\-Scatter\-Chart\-Button@{Get\-Scatter\-Chart\-Button}}
+\index{Get\-Scatter\-Chart\-Button@{Get\-Scatter\-Chart\-Button}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Get\-Scatter\-Chart\-Button}]{\setlength{\rightskip}{0pt plus 5cm}J\-Toggle\-Button Viz\-Type\-J\-Panel.\-Get\-Scatter\-Chart\-Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_aa16fca19c0ef36ff6cdf5b408ba2fbf1}
+Scatter Plot Button \begin{DoxyReturn}{Returns}
+Scatter Plot \hyperlink{interface_chart}{Chart} m\-\_\-\-Scatter\-Plot\-Button 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+123                                                  \{
+124         \textcolor{keywordflow}{return} m\_ScatterPlotButton;
+125     \}
+\end{DoxyCode}
+\hypertarget{class_viz_type_j_panel_a48853498dd3ae16b395b1a84044531d2}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Get\-Table\-View\-Button@{Get\-Table\-View\-Button}}
+\index{Get\-Table\-View\-Button@{Get\-Table\-View\-Button}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Get\-Table\-View\-Button}]{\setlength{\rightskip}{0pt plus 5cm}J\-Toggle\-Button Viz\-Type\-J\-Panel.\-Get\-Table\-View\-Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_a48853498dd3ae16b395b1a84044531d2}
+\hyperlink{class_table}{Table} View Button \begin{DoxyReturn}{Returns}
+\hyperlink{class_table}{Table} View m\-\_\-\-Table\-View\-Button 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+144                                               \{
+145         \textcolor{keywordflow}{return} m\_TableViewButton;
+146     \}
+\end{DoxyCode}
+\hypertarget{class_viz_type_j_panel_aac218445a0f5192f93b9e5d034d4cf71}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!main@{main}}
+\index{main@{main}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Viz\-Type\-J\-Panel.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_viz_type_j_panel_aac218445a0f5192f93b9e5d034d4cf71}
+
+\begin{DoxyCode}
+198                                            \{
+199         JFrame frame = \textcolor{keyword}{new} JFrame();
+200         \hyperlink{class_viz_type_j_panel}{VizTypeJPanel} vTypeJPan = \textcolor{keyword}{new} \hyperlink{class_viz_type_j_panel_ade1f7a00feed7a67bffabbaf9762f20f}{VizTypeJPanel}();
+201         JPanel panel = \textcolor{keyword}{new} JPanel();
+202         panel.add(vTypeJPan);
+203         frame.setSize(\textcolor{keyword}{new} Dimension(vTypeJPan.\hyperlink{class_viz_type_j_panel_afabba3b86d50daf0627d3f5a1ced0681}{GetPanelHeight}(),vTypeJPan.
+      \hyperlink{class_viz_type_j_panel_adfd6c664764e55323f59ec7991be02d6}{GetPanelWidth}()));
+204         frame.add(panel);
+205         frame.pack();
+206         frame.setVisible(\textcolor{keyword}{true});
+207     \}
+\end{DoxyCode}
+\hypertarget{class_viz_type_j_panel_a83704bbce2513028139d3acea7a85907}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Set\-B\-V@{Set\-B\-V}}
+\index{Set\-B\-V@{Set\-B\-V}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Set\-B\-V}]{\setlength{\rightskip}{0pt plus 5cm}boolean Viz\-Type\-J\-Panel.\-Set\-B\-V (
+\begin{DoxyParamCaption}
+\item[{{\bf Bob\-Viz}}]{bv}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_a83704bbce2513028139d3acea7a85907}
+
+\begin{DoxyParams}{Parameters}
+{\em bv} & -\/ a \hyperlink{class_bob_viz}{Bob\-Viz} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E on success 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+170                                       \{
+171         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+172         \textcolor{keywordflow}{if}( ( test == \textcolor{keyword}{true} ) && ( bv == null ) ) \{
+173             System.err.println( \textcolor{stringliteral}{"VizTypeJPanel::SetBV() ***Warning, object"}
+174                     + \textcolor{stringliteral}{"is null. Value sent: "} + bv );
+175         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( test == \textcolor{keyword}{true} ) \{
+176             System.out.println( \textcolor{stringliteral}{"VizTypeJPanel::SetBV() Object is valid. Value"}
+177                     + \textcolor{stringliteral}{"sent: "} + bv );
+178         \}
+179         m\_BV = bv;
+180         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+181     \}
+\end{DoxyCode}
+\hypertarget{class_viz_type_j_panel_a1e5bbe625fdca3098a662b73fa252fae}{\index{Viz\-Type\-J\-Panel@{Viz\-Type\-J\-Panel}!Set\-Table\-View\-Button@{Set\-Table\-View\-Button}}
+\index{Set\-Table\-View\-Button@{Set\-Table\-View\-Button}!VizTypeJPanel@{Viz\-Type\-J\-Panel}}
+\subsubsection[{Set\-Table\-View\-Button}]{\setlength{\rightskip}{0pt plus 5cm}void Viz\-Type\-J\-Panel.\-Set\-Table\-View\-Button (
+\begin{DoxyParamCaption}
+\item[{J\-Toggle\-Button}]{m\-\_\-\-Table\-View\-Button}
+\end{DoxyParamCaption}
+)}}\label{class_viz_type_j_panel_a1e5bbe625fdca3098a662b73fa252fae}
+
+\begin{DoxyCode}
+209                                                                     \{
+210         this.m\_TableViewButton = m\_TableViewButton;
+211     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_viz_type_j_panel_8java}{Viz\-Type\-J\-Panel.\-java}\end{DoxyCompactItemize}

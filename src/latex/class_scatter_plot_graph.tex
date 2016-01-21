@@ -1,0 +1,389 @@
+\hypertarget{class_scatter_plot_graph}{\section{Scatter\-Plot\-Graph Class Reference}
+\label{class_scatter_plot_graph}\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}}
+}
+
+
+A class that creates a single Scatter Plot \hyperlink{interface_graph}{Graph} or two Scatter Plot \hyperlink{interface_graph}{Graph} visualisations from a 2\-D Array of data.  
+
+
+Inheritance diagram for Scatter\-Plot\-Graph\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_scatter_plot_graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_scatter_plot_graph_ac2fd61853bd154841052c26cb3ffb4be}{Scatter\-Plot\-Graph} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_scatter_plot_graph_a7ef427d6eaea9bd50ac1e3b489ab475e}{Scatter\-Plot\-Graph} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting, String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} second\-Data, \hyperlink{class_dataset}{Dataset} second\-Dataset, \hyperlink{class_data_attribute}{Data\-Attribute} second\-Setting)
+\item 
+\hyperlink{class_scatter_plot_graph_afb2052a677d1caa6fee0897e57f3f964}{Scatter\-Plot\-Graph} (\hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_scatter_plot_graph_a654a461323b804f56e918359fd53895d}{Scatter\-Plot\-Graph} (\hyperlink{class_data_attribute}{Data\-Attribute} setting, \hyperlink{class_data_attribute}{Data\-Attribute} second\-Setting)
+\item 
+\hyperlink{class_scatter_plot_graph_a41ca56e8fb709cf0339e1b3cb46ace51}{Scatter\-Plot\-Graph} ()
+\item 
+void \hyperlink{class_scatter_plot_graph_aebbb9e7e1bab5bebfa9dacdb3c1f33cb}{action\-Performed} (Action\-Event e)
+\item 
+String \hyperlink{class_scatter_plot_graph_a5c475561f712ff1f59a394f799d90bc1}{Set\-Label\-X} (String m\-\_\-x\-Label)
+\item 
+String \hyperlink{class_scatter_plot_graph_a3f1b7d2f08c25432395a50c4c3bd3101}{Set\-Label\-Y} (String m\-\_\-y\-Label)
+\item 
+String \hyperlink{class_scatter_plot_graph_a4d6cbf2ae379db2d6e0e06a1ffb868ca}{Set\-Title} (String m\-\_\-graph\-Title)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_scatter_plot_graph_a9579fc0c252b63f71e608c69c4057bd0}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that creates a single Scatter Plot \hyperlink{interface_graph}{Graph} or two Scatter Plot \hyperlink{interface_graph}{Graph} visualisations from a 2\-D Array of data. 
+
+\begin{DoxyDate}{Date}
+30/04/13 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_scatter_plot_graph_ac2fd61853bd154841052c26cb3ffb4be}{\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}}
+\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!ScatterPlotGraph@{Scatter\-Plot\-Graph}}
+\subsubsection[{Scatter\-Plot\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Scatter\-Plot\-Graph.\-Scatter\-Plot\-Graph (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_scatter_plot_graph_ac2fd61853bd154841052c26cb3ffb4be}
+creates a constructor taking in the following parameters\-:
+
+
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+43                                                       \{
+44         
+45         m\_Data = data;
+46         m\_Setting = setting;
+47         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+48         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+49         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+50         m\_Col = dataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+51         m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+52         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+53         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+54         
+55         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+56         m\_XMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+57         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+58         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+59         
+60         createDataset( m\_Data );
+61         showGraph( m\_Dataset );
+62     \}  
+\end{DoxyCode}
+\hypertarget{class_scatter_plot_graph_a7ef427d6eaea9bd50ac1e3b489ab475e}{\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}}
+\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!ScatterPlotGraph@{Scatter\-Plot\-Graph}}
+\subsubsection[{Scatter\-Plot\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Scatter\-Plot\-Graph.\-Scatter\-Plot\-Graph (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{String}]{second\-Data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{second\-Dataset, }
+\item[{{\bf Data\-Attribute}}]{second\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_scatter_plot_graph_a7ef427d6eaea9bd50ac1e3b489ab475e}
+creates a constructor taking in the following parameters\-:
+
+
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & second\-Data -\/ second data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & second\-Dataset -\/ the second dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & second\-Setting -\/ Second Data attributes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+75                                          \{
+76 
+77         m\_Data = data;
+78         m\_SecondData = secondData;
+79         m\_Setting = setting;
+80         m\_SecondSetting = secondSetting;
+81         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+82         m\_SecondChartTitle = secondSetting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+83         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+84         m\_SecondXLabel = secondSetting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+85         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+86         m\_SecondYLabel = secondSetting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+87         m\_Col = dataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+88         m\_SecondCol = secondDataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+89         m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+90         m\_SecondRow = secondDataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+91         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+92         m\_SecondC1 = secondSetting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+93         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+94         m\_SecondC2 = secondSetting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();
+95         
+96         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+97         m\_XMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+98         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+99         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+100 
+101         m\_SecondXMin = secondSetting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+102         m\_SecondXMax = secondSetting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+103         m\_SecondXScale = secondSetting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+104         m\_SecondYScale = secondSetting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+105         
+106         createDataset( m\_Data );
+107         createSecondDataset(m\_SecondData);
+108         showGraph(m\_Dataset, m\_SecondDataset);
+109     \}  
+\end{DoxyCode}
+\hypertarget{class_scatter_plot_graph_afb2052a677d1caa6fee0897e57f3f964}{\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}}
+\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!ScatterPlotGraph@{Scatter\-Plot\-Graph}}
+\subsubsection[{Scatter\-Plot\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Scatter\-Plot\-Graph.\-Scatter\-Plot\-Graph (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_scatter_plot_graph_afb2052a677d1caa6fee0897e57f3f964}
+constructor for J\-Unit Tests 
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+114                                                    \{
+115         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+116         m\_Setting = setting;
+117         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+118         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+119         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+120         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+121         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+122         m\_XMax = setting.\hyperlink{class_data_attribute_ada370712422c7cbd21b7be4a0d88caf7}{GetXAxisMax}();
+123         m\_YMin = setting.\hyperlink{class_data_attribute_af0786b4de674874c0bb8ca9dbe1519c6}{GetYAxisMin}();
+124         m\_YMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+125         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+126         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+127     \}
+\end{DoxyCode}
+\hypertarget{class_scatter_plot_graph_a654a461323b804f56e918359fd53895d}{\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}}
+\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!ScatterPlotGraph@{Scatter\-Plot\-Graph}}
+\subsubsection[{Scatter\-Plot\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Scatter\-Plot\-Graph.\-Scatter\-Plot\-Graph (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{{\bf Data\-Attribute}}]{second\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_scatter_plot_graph_a654a461323b804f56e918359fd53895d}
+second constructor for J\-Unit Tests 
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+132                                                                                 \{
+133         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+134         m\_Setting = setting;
+135         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+136         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+137         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+138         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+139         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+140         m\_XMax = setting.\hyperlink{class_data_attribute_ada370712422c7cbd21b7be4a0d88caf7}{GetXAxisMax}();
+141         m\_YMin = setting.\hyperlink{class_data_attribute_af0786b4de674874c0bb8ca9dbe1519c6}{GetYAxisMin}();
+142         m\_YMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+143         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+144         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+145         
+146         m\_SecondChartTitle = secondSetting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+147         m\_SecondSetting = secondSetting;
+148         m\_SecondXLabel = secondSetting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+149         m\_SecondYLabel = secondSetting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+150         m\_SecondC1 = secondSetting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+151         m\_SecondC2 = secondSetting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();
+152         m\_SecondXMin = secondSetting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+153         m\_SecondXMax = secondSetting.\hyperlink{class_data_attribute_ada370712422c7cbd21b7be4a0d88caf7}{GetXAxisMax}();
+154         m\_SecondYMin = secondSetting.\hyperlink{class_data_attribute_af0786b4de674874c0bb8ca9dbe1519c6}{GetYAxisMin}();
+155         m\_SecondYMax = secondSetting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+156         m\_SecondXScale = secondSetting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+157         m\_SecondYScale = secondSetting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+158     \}
+\end{DoxyCode}
+\hypertarget{class_scatter_plot_graph_a41ca56e8fb709cf0339e1b3cb46ace51}{\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}}
+\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!ScatterPlotGraph@{Scatter\-Plot\-Graph}}
+\subsubsection[{Scatter\-Plot\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Scatter\-Plot\-Graph.\-Scatter\-Plot\-Graph (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_scatter_plot_graph_a41ca56e8fb709cf0339e1b3cb46ace51}
+second empty constructor for J\-Unit Tests 
+\begin{DoxyCode}
+163 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_scatter_plot_graph_aebbb9e7e1bab5bebfa9dacdb3c1f33cb}{\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!action\-Performed@{action\-Performed}}
+\index{action\-Performed@{action\-Performed}!ScatterPlotGraph@{Scatter\-Plot\-Graph}}
+\subsubsection[{action\-Performed}]{\setlength{\rightskip}{0pt plus 5cm}void Scatter\-Plot\-Graph.\-action\-Performed (
+\begin{DoxyParamCaption}
+\item[{Action\-Event}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_scatter_plot_graph_aebbb9e7e1bab5bebfa9dacdb3c1f33cb}
+allows user to select the colour of the points on the scatter graph 
+\begin{DoxyCode}
+169                                                  \{
+170         \textcolor{keywordflow}{if}( e.getSource() == m\_ColChangeButton ) \{
+171             \hyperlink{class_colour_map}{ColourMap} cM = \textcolor{keyword}{new} \hyperlink{class_colour_map}{ColourMap}();
+172             cM.\hyperlink{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{SetupData}( m\_Plot.getSeriesCount(), 
+173                           m\_Renderer );
+174             cM.setVisible( \textcolor{keyword}{false} );
+175         \}
+176     \}
+\end{DoxyCode}
+\hypertarget{class_scatter_plot_graph_a9579fc0c252b63f71e608c69c4057bd0}{\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!main@{main}}
+\index{main@{main}!ScatterPlotGraph@{Scatter\-Plot\-Graph}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Scatter\-Plot\-Graph.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_scatter_plot_graph_a9579fc0c252b63f71e608c69c4057bd0}
+main method to carry out J\-Unit Tests 
+\begin{DoxyCode}
+393                                              \{
+394          \textcolor{comment}{// Test to display a single chart}
+395         \hyperlink{class_data_attribute}{DataAttribute} test = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+396         \hyperlink{class_scatter_plot_graph}{ScatterPlotGraph} scatterTest = \textcolor{keyword}{new} \hyperlink{class_scatter_plot_graph_a41ca56e8fb709cf0339e1b3cb46ace51}{ScatterPlotGraph}(test);
+397         
+398         Random generator = \textcolor{keyword}{new} Random();
+399         
+400         XYSeriesCollection dataSeries = \textcolor{keyword}{new} XYSeriesCollection();
+401         XYSeries dataset = \textcolor{keyword}{new} XYSeries(\textcolor{stringliteral}{"testSeries"}); 
+402         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0;i < LOOP;i++) \{
+403             \textcolor{keywordtype}{int} temp1 = generator.nextInt();
+404             \textcolor{keywordtype}{int} temp2 = generator.nextInt();
+405             dataset.add(temp1,temp2);
+406         \}
+407         dataSeries.addSeries(dataset);
+408         
+409         scatterTest.showGraph(dataSeries);
+410         
+411         \textcolor{comment}{// Test to display the two charts}
+412         \hyperlink{class_data_attribute}{DataAttribute} firstTest = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+413         \hyperlink{class_data_attribute}{DataAttribute} secondTest = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+414         
+415         XYSeriesCollection secondDataSeries = \textcolor{keyword}{new} XYSeriesCollection();
+416         XYSeries secondDataset = \textcolor{keyword}{new} XYSeries(\textcolor{stringliteral}{"testSeries"}); 
+417         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0;i < LOOP;i++) \{
+418             \textcolor{keywordtype}{int} temp1 = generator.nextInt();
+419             \textcolor{keywordtype}{int} temp2 = generator.nextInt();
+420             dataset.add(temp1,temp2);
+421         \}
+422         secondDataSeries.addSeries(dataset);
+423         secondDataSeries.addSeries(secondDataset);
+424         
+425         scatterTest.showGraph(dataSeries, secondDataSeries);
+426     \}
+\end{DoxyCode}
+\hypertarget{class_scatter_plot_graph_a5c475561f712ff1f59a394f799d90bc1}{\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!Set\-Label\-X@{Set\-Label\-X}}
+\index{Set\-Label\-X@{Set\-Label\-X}!ScatterPlotGraph@{Scatter\-Plot\-Graph}}
+\subsubsection[{Set\-Label\-X}]{\setlength{\rightskip}{0pt plus 5cm}String Scatter\-Plot\-Graph.\-Set\-Label\-X (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-x\-Label}
+\end{DoxyParamCaption}
+)}}\label{class_scatter_plot_graph_a5c475561f712ff1f59a394f799d90bc1}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-x\-Label} & -\/ the x axis label passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-label\-X -\/ returns the user's x label value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+183                                                \{
+184     String m\_labelX = m\_xLabel;
+185         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};                   
+186         \textcolor{keywordflow}{return} m\_labelX;
+187     \}
+\end{DoxyCode}
+\hypertarget{class_scatter_plot_graph_a3f1b7d2f08c25432395a50c4c3bd3101}{\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!Set\-Label\-Y@{Set\-Label\-Y}}
+\index{Set\-Label\-Y@{Set\-Label\-Y}!ScatterPlotGraph@{Scatter\-Plot\-Graph}}
+\subsubsection[{Set\-Label\-Y}]{\setlength{\rightskip}{0pt plus 5cm}String Scatter\-Plot\-Graph.\-Set\-Label\-Y (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-y\-Label}
+\end{DoxyParamCaption}
+)}}\label{class_scatter_plot_graph_a3f1b7d2f08c25432395a50c4c3bd3101}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-y\-Label} & -\/ the y axis label passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-label\-Y -\/ returns the user's y label value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+194                                                \{
+195         String m\_labelY = m\_yLabel;
+196         \textcolor{keywordflow}{return} m\_labelY;
+197     \}
+\end{DoxyCode}
+\hypertarget{class_scatter_plot_graph_a4d6cbf2ae379db2d6e0e06a1ffb868ca}{\index{Scatter\-Plot\-Graph@{Scatter\-Plot\-Graph}!Set\-Title@{Set\-Title}}
+\index{Set\-Title@{Set\-Title}!ScatterPlotGraph@{Scatter\-Plot\-Graph}}
+\subsubsection[{Set\-Title}]{\setlength{\rightskip}{0pt plus 5cm}String Scatter\-Plot\-Graph.\-Set\-Title (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-graph\-Title}
+\end{DoxyParamCaption}
+)}}\label{class_scatter_plot_graph_a4d6cbf2ae379db2d6e0e06a1ffb868ca}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-graph\-Title} & -\/ the title passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-title -\/ returns the user's title value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+204                                                   \{
+205         String m\_title = m\_graphTitle;
+206         
+207         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+208         \textcolor{keywordflow}{return} m\_title;
+209     \} 
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_scatter_plot_graph_8java}{Scatter\-Plot\-Graph.\-java}\end{DoxyCompactItemize}

@@ -1,0 +1,359 @@
+\hypertarget{class_area_chart}{\section{Area\-Chart Class Reference}
+\label{class_area_chart}\index{Area\-Chart@{Area\-Chart}}
+}
+
+
+A class that creates a single Area \hyperlink{interface_chart}{Chart} or two Area Charts visualizations from a 2\-D Array of data \textbackslash{} see \hyperlink{_graph_8java}{Graph.\-java}.  
+
+
+Inheritance diagram for Area\-Chart\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_area_chart}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_area_chart_ac274b6648f7927c1b21a5f2ccacdf015}{Area\-Chart} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_area_chart_a89ef5b5df7dc6ca9aaa96987860bde17}{Area\-Chart} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting, String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} second\-Data, \hyperlink{class_dataset}{Dataset} second\-Dataset, \hyperlink{class_data_attribute}{Data\-Attribute} second\-Setting)
+\item 
+\hyperlink{class_area_chart_a7648545bfd821120ba898a1fbe693cd9}{Area\-Chart} (\hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_area_chart_a0fa85df1c042914db3ad989ebca7be30}{Area\-Chart} (\hyperlink{class_data_attribute}{Data\-Attribute} setting, \hyperlink{class_data_attribute}{Data\-Attribute} second\-Setting)
+\item 
+void \hyperlink{class_area_chart_a5d3648cf5639db988d10eb250058a362}{action\-Performed} (Action\-Event e)
+\item 
+String \hyperlink{class_area_chart_af7d8c59fa546b0f754adc9785fa4fb95}{Set\-Label\-X} (String m\-\_\-x\-Label)
+\item 
+String \hyperlink{class_area_chart_aa748c5e3dfc96c261f97673b5b51ecb5}{Set\-Label\-Y} (String m\-\_\-y\-Label)
+\item 
+String \hyperlink{class_area_chart_a0eec1001412cfee1b2d696addf56cdab}{Set\-Title} (String m\-\_\-graph\-Title)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_area_chart_a804e349cf99c84a448b31ab5968d266b}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that creates a single Area \hyperlink{interface_chart}{Chart} or two Area Charts visualizations from a 2\-D Array of data \textbackslash{} see \hyperlink{_graph_8java}{Graph.\-java}. 
+
+\begin{DoxyDate}{Date}
+30/04/13 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+This class is responsible for making the Area chart It was made using J\-Free\-Chart and following examples on how to set up the Area chart It uses the \hyperlink{_graph_8java}{Graph.\-java} to return a J\-Free\-Chart 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_area_chart_ac274b6648f7927c1b21a5f2ccacdf015}{\index{Area\-Chart@{Area\-Chart}!Area\-Chart@{Area\-Chart}}
+\index{Area\-Chart@{Area\-Chart}!AreaChart@{Area\-Chart}}
+\subsubsection[{Area\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Area\-Chart.\-Area\-Chart (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_area_chart_ac274b6648f7927c1b21a5f2ccacdf015}
+creates a constructor taking in the following parameters\-:
+
+
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+48                                                \{
+49         
+50         m\_Data = data;
+51         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+52         m\_Setting = setting;
+53         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+54         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+55         m\_Col = dataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+56         m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+57         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+58         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+59         
+60         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+61         m\_XMax = setting.\hyperlink{class_data_attribute_ada370712422c7cbd21b7be4a0d88caf7}{GetXAxisMax}();
+62         m\_YMin = setting.\hyperlink{class_data_attribute_af0786b4de674874c0bb8ca9dbe1519c6}{GetYAxisMin}();
+63         m\_YMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+64         
+65         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+66         setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+67         
+68         createDataset(m\_Data);
+69         showChart( m\_Dataset );
+70     \}  
+\end{DoxyCode}
+\hypertarget{class_area_chart_a89ef5b5df7dc6ca9aaa96987860bde17}{\index{Area\-Chart@{Area\-Chart}!Area\-Chart@{Area\-Chart}}
+\index{Area\-Chart@{Area\-Chart}!AreaChart@{Area\-Chart}}
+\subsubsection[{Area\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Area\-Chart.\-Area\-Chart (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{String}]{second\-Data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{second\-Dataset, }
+\item[{{\bf Data\-Attribute}}]{second\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_area_chart_a89ef5b5df7dc6ca9aaa96987860bde17}
+creates a constructor taking in the following parameters\-:
+
+
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & second\-Data -\/ second data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & second\-Dataset -\/ the second dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & second\-Setting -\/ Second Data attributes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+83                                           \{
+84     
+85         m\_Data = data;
+86         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+87         m\_Setting = setting;
+88         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+89         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+90         m\_Col = dataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+91         m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+92         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+93         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+94         
+95         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+96         m\_XMax = setting.\hyperlink{class_data_attribute_ada370712422c7cbd21b7be4a0d88caf7}{GetXAxisMax}();
+97         m\_YMin = setting.\hyperlink{class_data_attribute_af0786b4de674874c0bb8ca9dbe1519c6}{GetYAxisMin}();
+98         m\_YMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+99         
+100         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+101         setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+102         
+103         m\_SecondData = secondData;
+104         m\_SecondChartTitle = secondSetting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+105         m\_SecondSetting = secondSetting;
+106         m\_SecondXLabel = secondSetting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+107         m\_SecondYLabel = secondSetting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+108         m\_SecondCol = secondDataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+109         m\_SecondRow = secondDataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+110         m\_SecondC1 = secondSetting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+111         m\_SecondC2 = secondSetting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();
+112 
+113         secondSetting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+114         
+115         createDataset(m\_Data);
+116         createSecondDataset(m\_SecondData);
+117         showChart( m\_Dataset, m\_SecondDataset );
+118     \} 
+\end{DoxyCode}
+\hypertarget{class_area_chart_a7648545bfd821120ba898a1fbe693cd9}{\index{Area\-Chart@{Area\-Chart}!Area\-Chart@{Area\-Chart}}
+\index{Area\-Chart@{Area\-Chart}!AreaChart@{Area\-Chart}}
+\subsubsection[{Area\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Area\-Chart.\-Area\-Chart (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_area_chart_a7648545bfd821120ba898a1fbe693cd9}
+constructor for J\-Unit Tests 
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+124                                             \{       
+125         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+126          m\_Setting = setting;
+127          m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+128          m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+129          m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+130          m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+131     \}
+\end{DoxyCode}
+\hypertarget{class_area_chart_a0fa85df1c042914db3ad989ebca7be30}{\index{Area\-Chart@{Area\-Chart}!Area\-Chart@{Area\-Chart}}
+\index{Area\-Chart@{Area\-Chart}!AreaChart@{Area\-Chart}}
+\subsubsection[{Area\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Area\-Chart.\-Area\-Chart (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{{\bf Data\-Attribute}}]{second\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_area_chart_a0fa85df1c042914db3ad989ebca7be30}
+second empty constructor for J\-Unit Tests 
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+{\em second\-Setting} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+137                                                                          \{       
+138         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+139         m\_Setting = setting;
+140         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+141         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+142         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+143         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+144         m\_SecondChartTitle = secondSetting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+145         m\_SecondSetting = secondSetting;
+146         m\_SecondXLabel = secondSetting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+147         m\_SecondYLabel = secondSetting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+148         m\_SecondC1 = secondSetting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+149         m\_SecondC2 = secondSetting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();
+150     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_area_chart_a5d3648cf5639db988d10eb250058a362}{\index{Area\-Chart@{Area\-Chart}!action\-Performed@{action\-Performed}}
+\index{action\-Performed@{action\-Performed}!AreaChart@{Area\-Chart}}
+\subsubsection[{action\-Performed}]{\setlength{\rightskip}{0pt plus 5cm}void Area\-Chart.\-action\-Performed (
+\begin{DoxyParamCaption}
+\item[{Action\-Event}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_area_chart_a5d3648cf5639db988d10eb250058a362}
+allows user to select the colour of the points on the area chart 
+\begin{DoxyCode}
+155                                                  \{
+156         \textcolor{keywordflow}{if}( e.getSource() == m\_ColChangeButton ) \{
+157             \hyperlink{class_colour_map}{ColourMap} cM = \textcolor{keyword}{new} \hyperlink{class_colour_map}{ColourMap}();
+158             cM.\hyperlink{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{SetupData}( m\_Plot.getSeriesCount(), 
+159                           m\_Renderer );
+160             cM.setVisible( \textcolor{keyword}{false} );
+161         \}
+162     \}
+\end{DoxyCode}
+\hypertarget{class_area_chart_a804e349cf99c84a448b31ab5968d266b}{\index{Area\-Chart@{Area\-Chart}!main@{main}}
+\index{main@{main}!AreaChart@{Area\-Chart}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Area\-Chart.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_area_chart_a804e349cf99c84a448b31ab5968d266b}
+main method to carry out J\-Unit Tests 
+\begin{DoxyCode}
+473                                              \{
+474         \hyperlink{class_data_attribute}{DataAttribute} test = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+475         \hyperlink{class_area_chart}{AreaChart} areaChartTest = \textcolor{keyword}{new} \hyperlink{class_area_chart_ac274b6648f7927c1b21a5f2ccacdf015}{AreaChart}(test);
+476         
+477         \textcolor{keyword}{final} XYDataset testDataset = createDataset();
+478         areaChartTest.showChart(testDataset);
+479         
+480         \hyperlink{class_data_attribute}{DataAttribute} secondTest = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+481         \hyperlink{class_area_chart}{AreaChart} secondAreaChartTest = \textcolor{keyword}{new} \hyperlink{class_area_chart_ac274b6648f7927c1b21a5f2ccacdf015}{AreaChart}(secondTest);
+482         
+483         \textcolor{keyword}{final} XYDataset secondTestDataset = createSecondDataset();
+484         secondAreaChartTest.showChart(testDataset, secondTestDataset);
+485     \}
+\end{DoxyCode}
+\hypertarget{class_area_chart_af7d8c59fa546b0f754adc9785fa4fb95}{\index{Area\-Chart@{Area\-Chart}!Set\-Label\-X@{Set\-Label\-X}}
+\index{Set\-Label\-X@{Set\-Label\-X}!AreaChart@{Area\-Chart}}
+\subsubsection[{Set\-Label\-X}]{\setlength{\rightskip}{0pt plus 5cm}String Area\-Chart.\-Set\-Label\-X (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-x\-Label}
+\end{DoxyParamCaption}
+)}}\label{class_area_chart_af7d8c59fa546b0f754adc9785fa4fb95}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-x\-Label} & -\/ the x axis label passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-label\-X -\/ returns the user's x label value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+169                                                \{
+170     String m\_labelX = m\_xLabel;
+171         
+172         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+173         \textcolor{keywordflow}{if} ( ( ( m\_xLabel.isEmpty() )||( m\_xLabel.length() > MAX\_LABEL\_LENGTH ) ) 
+174                  && ( test == true ) ) \{
+175             System.err.println( \textcolor{stringliteral}{"AreaChart::SetLabelX() "} + 
+176                                 m\_xLabel );
+177         \}
+178         \textcolor{keywordflow}{return} m\_labelX;
+179     \}
+\end{DoxyCode}
+\hypertarget{class_area_chart_aa748c5e3dfc96c261f97673b5b51ecb5}{\index{Area\-Chart@{Area\-Chart}!Set\-Label\-Y@{Set\-Label\-Y}}
+\index{Set\-Label\-Y@{Set\-Label\-Y}!AreaChart@{Area\-Chart}}
+\subsubsection[{Set\-Label\-Y}]{\setlength{\rightskip}{0pt plus 5cm}String Area\-Chart.\-Set\-Label\-Y (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-y\-Label}
+\end{DoxyParamCaption}
+)}}\label{class_area_chart_aa748c5e3dfc96c261f97673b5b51ecb5}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-y\-Label} & -\/ the y axis label passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-label\-Y -\/ returns the user's y label value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+186                                                \{
+187         String m\_labelY = m\_yLabel;
+188         
+189         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+190         \textcolor{keywordflow}{if} ( ( ( m\_yLabel.isEmpty() )||( m\_yLabel.length() > MAX\_LABEL\_LENGTH ) ) 
+191                  && ( test == true ) ) \{
+192             System.err.println( \textcolor{stringliteral}{"AreaChart::SetLabelY() "} + 
+193                                 m\_yLabel );
+194         \}
+195         \textcolor{keywordflow}{return} m\_labelY;
+196     \}
+\end{DoxyCode}
+\hypertarget{class_area_chart_a0eec1001412cfee1b2d696addf56cdab}{\index{Area\-Chart@{Area\-Chart}!Set\-Title@{Set\-Title}}
+\index{Set\-Title@{Set\-Title}!AreaChart@{Area\-Chart}}
+\subsubsection[{Set\-Title}]{\setlength{\rightskip}{0pt plus 5cm}String Area\-Chart.\-Set\-Title (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-graph\-Title}
+\end{DoxyParamCaption}
+)}}\label{class_area_chart_a0eec1001412cfee1b2d696addf56cdab}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-graph\-Title} & -\/ the title passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-label\-Y -\/ returns the user's title value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+203                                                   \{
+204         String m\_title = m\_graphTitle;
+205         
+206         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+207         \textcolor{keywordflow}{if} ( ( ( m\_graphTitle.isEmpty() )||( m\_graphTitle.length() > MAX\_TITLE\_LENGTH ) ) 
+208                  && ( test == true ) ) \{
+209             System.err.println( \textcolor{stringliteral}{"AreaChart::SetTitle() "} + 
+210                                 m\_graphTitle );
+211         \}   
+212         \textcolor{keywordflow}{return} m\_title;
+213     \} 
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_area_chart_8java}{Area\-Chart.\-java}\end{DoxyCompactItemize}

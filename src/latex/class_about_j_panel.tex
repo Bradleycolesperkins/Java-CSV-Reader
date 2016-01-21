@@ -1,0 +1,141 @@
+\hypertarget{class_about_j_panel}{\section{About\-J\-Panel Class Reference}
+\label{class_about_j_panel}\index{About\-J\-Panel@{About\-J\-Panel}}
+}
+
+
+This class provides the user with information about the application.  
+
+
+Inheritance diagram for About\-J\-Panel\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_about_j_panel}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_about_j_panel_a1ddd3b050eb08dd7fca8434cc00e931f}{About\-J\-Panel} ()
+\item 
+\hyperlink{class_about_j_panel_abb77c372f536a4a5728ad792eff280d3}{About\-J\-Panel} (boolean b)
+\item 
+boolean \hyperlink{class_about_j_panel_a134c5a6eee7daba01d35a1ca05ddcca1}{Set\-B\-V} (\hyperlink{class_bob_viz}{Bob\-Viz} bv)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_about_j_panel_ab6b17f3a162421e23430c81eac5e824f}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides the user with information about the application. 
+
+\begin{DoxyDate}{Date}
+30/04/2013 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{_bob_viz_8java}{Bob\-Viz.\-java} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_about_j_panel_a1ddd3b050eb08dd7fca8434cc00e931f}{\index{About\-J\-Panel@{About\-J\-Panel}!About\-J\-Panel@{About\-J\-Panel}}
+\index{About\-J\-Panel@{About\-J\-Panel}!AboutJPanel@{About\-J\-Panel}}
+\subsubsection[{About\-J\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}About\-J\-Panel.\-About\-J\-Panel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_about_j_panel_a1ddd3b050eb08dd7fca8434cc00e931f}
+
+\begin{DoxyCode}
+17                          \{
+18         \textcolor{comment}{/* create dimension for AboutJPanel */}
+19         Dimension size = getPreferredSize();
+20         size.width = WIDTH;
+21         size.height = HEIGHT;
+22         \textcolor{comment}{/* set dimensions for AboutJPanel */}
+23         setPreferredSize( size );
+24         \textcolor{comment}{/* set border with title for AboutJPanel */} 
+25         setBorder(BorderFactory.createTitledBorder(
+26                 BorderFactory.createLineBorder( Color.GRAY ), \textcolor{stringliteral}{"About"}));
+27         \textcolor{comment}{/* create about JLabel */}
+28         JLabel about = \textcolor{keyword}{new} JLabel(\textcolor{stringliteral}{"<HTML><p>BobViz generates an array of charts"}
+29                 + \textcolor{stringliteral}{" and graphs using a CSV file.</p> <p>This program was "}
+30                 + \textcolor{stringliteral}{"created by group PDM1 at Swansea University, </p><p>"} +
+31                 \textcolor{stringliteral}{"and then further implemented by Bradley Coles-Perkins</p></HTML>"});
+32         \textcolor{comment}{/* add about JLabel to AboutJPanel */}
+33         add( about );
+34    
+35     \}
+\end{DoxyCode}
+\hypertarget{class_about_j_panel_abb77c372f536a4a5728ad792eff280d3}{\index{About\-J\-Panel@{About\-J\-Panel}!About\-J\-Panel@{About\-J\-Panel}}
+\index{About\-J\-Panel@{About\-J\-Panel}!AboutJPanel@{About\-J\-Panel}}
+\subsubsection[{About\-J\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}About\-J\-Panel.\-About\-J\-Panel (
+\begin{DoxyParamCaption}
+\item[{boolean}]{b}
+\end{DoxyParamCaption}
+)}}\label{class_about_j_panel_abb77c372f536a4a5728ad792eff280d3}
+
+\begin{DoxyCode}
+36                                     \{
+37             
+38     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_about_j_panel_ab6b17f3a162421e23430c81eac5e824f}{\index{About\-J\-Panel@{About\-J\-Panel}!main@{main}}
+\index{main@{main}!AboutJPanel@{About\-J\-Panel}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void About\-J\-Panel.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_about_j_panel_ab6b17f3a162421e23430c81eac5e824f}
+This method is used for testing. 
+\begin{DoxyParams}{Parameters}
+{\em args} & -\/user input not used \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+61                                            \{
+62         \hyperlink{class_about_j_panel}{AboutJPanel} aJPan = \textcolor{keyword}{new} \hyperlink{class_about_j_panel_a1ddd3b050eb08dd7fca8434cc00e931f}{AboutJPanel}( \textcolor{keyword}{true} );
+63         aJPan.\hyperlink{class_about_j_panel_a134c5a6eee7daba01d35a1ca05ddcca1}{SetBV}( null );
+64     \}
+\end{DoxyCode}
+\hypertarget{class_about_j_panel_a134c5a6eee7daba01d35a1ca05ddcca1}{\index{About\-J\-Panel@{About\-J\-Panel}!Set\-B\-V@{Set\-B\-V}}
+\index{Set\-B\-V@{Set\-B\-V}!AboutJPanel@{About\-J\-Panel}}
+\subsubsection[{Set\-B\-V}]{\setlength{\rightskip}{0pt plus 5cm}boolean About\-J\-Panel.\-Set\-B\-V (
+\begin{DoxyParamCaption}
+\item[{{\bf Bob\-Viz}}]{bv}
+\end{DoxyParamCaption}
+)}}\label{class_about_j_panel_a134c5a6eee7daba01d35a1ca05ddcca1}
+
+\begin{DoxyParams}{Parameters}
+{\em bv} & -\/ a \hyperlink{class_bob_viz}{Bob\-Viz} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E on success 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+44                                       \{
+45         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+46         \textcolor{keywordflow}{if}( ( test == \textcolor{keyword}{true} ) && ( bv == null) ) \{
+47             System.err.println( \textcolor{stringliteral}{"AboutJPanel::SetBV() ***Warning, GroupPDM2"}
+48                     + \textcolor{stringliteral}{"application is null. Value sent: "} + bv );
+49         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( test == \textcolor{keyword}{true} ) \{
+50             System.out.println( \textcolor{stringliteral}{"AboutJPanel::SetBV() GroupPDM2"}
+51                     + \textcolor{stringliteral}{"application. Value sent: "} + bv );
+52         \}
+53         m\_BV = bv;
+54         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+55     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_about_j_panel_8java}{About\-J\-Panel.\-java}\end{DoxyCompactItemize}

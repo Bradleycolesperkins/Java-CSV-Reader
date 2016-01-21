@@ -1,0 +1,589 @@
+\hypertarget{class_colour_map}{\section{Colour\-Map Class Reference}
+\label{class_colour_map}\index{Colour\-Map@{Colour\-Map}}
+}
+
+
+This class provides user with a choice of colours to be applied on objects from different graphs/charts/diagrams, and does all calculations needed in order to get it all working correctly.  
+
+
+Inheritance diagram for Colour\-Map\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_colour_map}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_colour_map_a1d41944f53775bc1a8f633063a69aca5}{action\-Performed} (Action\-Event e)
+\item 
+boolean \hyperlink{class_colour_map_a397ebd08df86cb0bcbc71d3e4e1ebee4}{Close\-Window} ()
+\item 
+\hyperlink{class_colour_map_abba281e323f79dc7dc5f31efe4b67852}{Colour\-Map} ()
+\item 
+boolean \hyperlink{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{Setup\-Data} (int index\-Count, Category\-Item\-Renderer renderer)
+\item 
+boolean \hyperlink{class_colour_map_a08978bcdc84ed70cf1139b166e37d25f}{Setup\-Data} (int index\-Count, Pie\-Plot3\-D renderer)
+\item 
+boolean \hyperlink{class_colour_map_a57b6f3c3f3beff5075bd82e621591138}{Setup\-Data} (int index\-Count, X\-Y\-Item\-Renderer renderer)
+\item 
+boolean \hyperlink{class_colour_map_a952af2354acfb507997b8fc3c38de5f7}{Setup\-Data} (int index\-Count, Default\-Polar\-Item\-Renderer renderer)
+\item 
+void \hyperlink{class_colour_map_a178d4ed4be0c7d2b03d2e990c9b359b0}{state\-Changed} (Change\-Event e)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_colour_map_a2fc22a7c0417a9538a4302be12a7004a}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides user with a choice of colours to be applied on objects from different graphs/charts/diagrams, and does all calculations needed in order to get it all working correctly. 
+
+\begin{DoxyDate}{Date}
+10 February 2013 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_colour_map_abba281e323f79dc7dc5f31efe4b67852}{\index{Colour\-Map@{Colour\-Map}!Colour\-Map@{Colour\-Map}}
+\index{Colour\-Map@{Colour\-Map}!ColourMap@{Colour\-Map}}
+\subsubsection[{Colour\-Map}]{\setlength{\rightskip}{0pt plus 5cm}Colour\-Map.\-Colour\-Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_colour_map_abba281e323f79dc7dc5f31efe4b67852}
+Constructor is being called to construct a new Border\-Layout and to set up the G\-U\-I. 
+\begin{DoxyCode}
+207                          \{
+208         super( \textcolor{keyword}{new} BorderLayout(  ) );
+209         setupGUI(  ); \textcolor{comment}{// Sets up the GUI}
+210     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_colour_map_a1d41944f53775bc1a8f633063a69aca5}{\index{Colour\-Map@{Colour\-Map}!action\-Performed@{action\-Performed}}
+\index{action\-Performed@{action\-Performed}!ColourMap@{Colour\-Map}}
+\subsubsection[{action\-Performed}]{\setlength{\rightskip}{0pt plus 5cm}void Colour\-Map.\-action\-Performed (
+\begin{DoxyParamCaption}
+\item[{Action\-Event}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_colour_map_a1d41944f53775bc1a8f633063a69aca5}
+This method handles all the actions performed by the user. 
+\begin{DoxyCode}
+32                                                  \{
+33         
+34         \textcolor{keywordflow}{if}( e.getSource(  ) == m\_MoreColoursButton ) \{
+35             \textcolor{comment}{// Show advanced colour menu}
+36             
+37             Color newColor = JColorChooser.showDialog( 
+38                                 \hyperlink{class_colour_map}{ColourMap}.this, \textcolor{stringliteral}{"Choose Object Colour"},
+39                                 m\_ObjectColour.getBackground(  ) );
+40             \textcolor{keywordflow}{if}(  newColor != null ) \{
+41                 m\_ObjectColour.setBackground( newColor );
+42                 
+43             \}
+44         \}
+45         
+46         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(  ( e.getSource(  ) == m\_ConfirmOK ) ||
+47                   (  e.getSource(  ) == m\_ConfirmApply ) ) \{
+48             \textcolor{keywordflow}{if}( m\_SchemeSelected ) \{
+49                 
+50             \} \textcolor{keywordflow}{else} \{
+51                 \textcolor{comment}{/* This will check for the correct object, will change its colour}
+52 \textcolor{comment}{                 * and then will close the window */}
+53                 \textcolor{keywordflow}{if}( getObjectType(  ).equals( m\_CategoryItemRendererName ) ) \{
+54                     \textcolor{comment}{// Calls SetColour method for the CategoryItemRenderer type.}
+55                     setColour( getIndexToChange(  ),getCIRToChange(  ),
+56                               m\_ObjectColour.getBackground(  ) );
+57                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( getObjectType(  ).equals( m\_PiePlot3DName ) ) \{
+58                     \textcolor{comment}{// Calls SetColour method for the PiePlot3D type.}
+59                     setColour( getIndexToChange(  ),getPP3DToChange(  ),
+60                               m\_ObjectColour.getBackground(  ) );
+61                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( getObjectType(  ).equals( m\_XYItemRendererName ) ) \{
+62                     \textcolor{comment}{// Calls SetColour method for the XYItemRenderer type.}
+63                     setColour( getIndexToChange(  ),getXYIRToChange(  ),
+64                               m\_ObjectColour.getBackground(  ) );
+65                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( getObjectType(  ).equals( m\_PolarItemRendererName ) ) \{
+66                     \textcolor{comment}{// Calls SetColour method for the XYItemRenderer type.}
+67                     setColour( getIndexToChange(  ),getPolarIRToChange(  ),
+68                               m\_ObjectColour.getBackground(  ) );
+69                 \} \textcolor{keywordflow}{else} \{
+70                     \textcolor{comment}{/* Displays error message, if the renderer/object has not been}
+71 \textcolor{comment}{                     * recognized and/or it is missing an ActionListener condition.}
+72 \textcolor{comment}{                     */}
+73                     System.out.println( m\_ObjectType );
+74                     System.out.println( \textcolor{stringliteral}{"Renderer Type not recognized,"}
+75                                        + \textcolor{stringliteral}{" Missing ActionListener."} );
+76                 \}
+77             \}
+78             \textcolor{keywordflow}{if}( e.getSource(  ) == m\_ConfirmOK ) \{
+79                 \textcolor{comment}{/* Closes the window if changes confirmed. */}
+80                 \hyperlink{class_colour_map_a397ebd08df86cb0bcbc71d3e4e1ebee4}{CloseWindow}(  );
+81             \}
+82         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(  e.getSource(  ) == m\_ConfirmCancel ) \{
+83             \textcolor{comment}{/* Doesn't update the actual object, just closes the window. */}
+84             \hyperlink{class_colour_map_a397ebd08df86cb0bcbc71d3e4e1ebee4}{CloseWindow}(  );
+85         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(  e.getSource(  ) == m\_IndexSelection ) \{
+86             \textcolor{comment}{/* Sets the indexToChange value and updates the colour of}
+87 \textcolor{comment}{             * colour preview(  objectColour ) to match the current colour of}
+88 \textcolor{comment}{             * object on that index.}
+89 \textcolor{comment}{             */}
+90              setIndexToChange( m\_IndexSelection.getSelectedIndex(  ) );
+91             m\_ObjectColour.setBackground( applyPreviousColour(  ) );
+92         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(  e.getSource(  ) == m\_ColourSchemesBox ) \{
+93             m\_SchemeSelected = \textcolor{keyword}{true};
+94             m\_ColourSchemes[0][0]= Color.RED;
+95             m\_ColourSchemes[0][1]= Color.GREEN;
+96             m\_ColourSchemes[0][2]= Color.BLUE;
+97             m\_ColourSchemes[0][3]= Color.YELLOW;
+98             m\_ColourSchemes[0][4]= Color.CYAN;
+99             m\_ColourSchemes[1][0]= Color.ORANGE;
+100             m\_ColourSchemes[1][1]= Color.YELLOW;
+101             m\_ColourSchemes[1][2]= Color.RED;
+102             m\_ColourSchemes[1][3]= Color.PINK;
+103             m\_ColourSchemes[1][4] = Color.MAGENTA;
+104             m\_ColourSchemes[2][0] = Color.LIGHT\_GRAY;
+105             m\_ColourSchemes[2][1] = Color.GRAY;
+106             m\_ColourSchemes[2][2] = Color.DARK\_GRAY;
+107             m\_ColourSchemes[2][3] = Color.BLACK;
+108             m\_ColourSchemes[2][4] = Color.WHITE;
+109             m\_ColourSchemes[3][0] = Color.CYAN;
+110             m\_ColourSchemes[3][1] = Color.PINK;
+111             m\_ColourSchemes[3][2]= Color.MAGENTA;
+112             m\_ColourSchemes[3][3]= Color.YELLOW;
+113             m\_ColourSchemes[3][4]= Color.LIGHT\_GRAY;
+114             m\_ColourSchemes[4][0]= Color.CYAN;
+115             m\_ColourSchemes[4][1]= Color.BLUE;
+116             m\_ColourSchemes[4][2]= Color.PINK;
+117             m\_ColourSchemes[4][3]= Color.MAGENTA;
+118             m\_ColourSchemes[4][4]= Color.BLACK;
+119             
+120             \textcolor{keywordtype}{int} index = m\_ColourSchemesBox.getSelectedIndex(  );
+121             
+122             \textcolor{keywordflow}{if}( getObjectType(  ).equals( m\_CategoryItemRendererName ) ) \{
+123                 \textcolor{comment}{// Calls SetColour method for the CategoryItemRenderer type.}
+124                 \textcolor{keywordtype}{int} j=0;
+125                 \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i=0;i< getIndexCount(  ); i++ ) \{
+126                     setColour( i,m\_C\_objectToChange,m\_ColourSchemes[index][j] );
+127                     
+128                     \textcolor{keywordflow}{if}( j<m\_ColourSchemes[index].length-1 ) \{
+129                         j++;
+130                     \} \textcolor{keywordflow}{else} \{
+131                         j = 0;
+132                     \}
+133                     
+134                 \}
+135                 
+136             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( getObjectType(  ).equals( m\_PiePlot3DName ) ) \{
+137                 \textcolor{comment}{// Calls SetColour method for the PiePlot3D type.}
+138                 \textcolor{keywordtype}{int} j=0;
+139                 \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i=0;i< getIndexCount(  ); i++ ) \{
+140                     setColour( i,m\_P\_objectToChange,m\_ColourSchemes[index][j] );
+141                     
+142                     \textcolor{keywordflow}{if}( j<m\_ColourSchemes[index].length-1 ) \{
+143                         j++;
+144                     \} \textcolor{keywordflow}{else} \{
+145                         j = 0;
+146                     \}
+147                     
+148                 \}
+149             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( getObjectType(  ).equals( m\_XYItemRendererName ) ) \{
+150                 \textcolor{comment}{// Calls SetColour method for the XYItemRenderer type.}
+151                 \textcolor{keywordtype}{int} j=0;
+152                 \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i=0;i< getIndexCount(  ); i++ ) \{
+153                     setColour( i,m\_X\_objectToChange,m\_ColourSchemes[index][j] );
+154                     
+155                     \textcolor{keywordflow}{if}( j<m\_ColourSchemes[index].length-1 ) \{
+156                         j++;
+157                     \} \textcolor{keywordflow}{else} \{
+158                         j = 0;
+159                     \}
+160                     
+161                 \}
+162             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( getObjectType(  ).equals( m\_PolarItemRendererName ) ) \{
+163                 \textcolor{comment}{// Calls SetColour method for the XYItemRenderer type.}
+164                 \textcolor{keywordtype}{int} j=0;
+165                 \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i=0;i< getIndexCount(  ); i++ ) \{
+166                     setColour( i,m\_PO\_objectToChange,m\_ColourSchemes[index][j] );
+167                     
+168                     \textcolor{keywordflow}{if}( j<m\_ColourSchemes[index].length-1 ) \{
+169                         j++;
+170                     \} \textcolor{keywordflow}{else} \{
+171                         j = 0;
+172                     \}
+173                     
+174                 \}
+175             \} \textcolor{keywordflow}{else} \{
+176                 \textcolor{comment}{/* Displays error message, if the renderer/object has not been}
+177 \textcolor{comment}{                 * recognized and/or it is missing an ActionListener condition.}
+178 \textcolor{comment}{                 */}
+179                 System.out.println( m\_ObjectType );
+180                 System.out.println( \textcolor{stringliteral}{"Renderer Type not recognized,"}
+181                                    + \textcolor{stringliteral}{" Missing ActionListener."} );
+182             \}
+183         \}
+184         
+185         
+186     \}
+\end{DoxyCode}
+\hypertarget{class_colour_map_a397ebd08df86cb0bcbc71d3e4e1ebee4}{\index{Colour\-Map@{Colour\-Map}!Close\-Window@{Close\-Window}}
+\index{Close\-Window@{Close\-Window}!ColourMap@{Colour\-Map}}
+\subsubsection[{Close\-Window}]{\setlength{\rightskip}{0pt plus 5cm}boolean Colour\-Map.\-Close\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_colour_map_a397ebd08df86cb0bcbc71d3e4e1ebee4}
+This method closes/hides the window without shutting down the program. It's public, just incase there is a need to close it outside this class. 
+\begin{DoxyCode}
+192                                    \{
+193         \textcolor{keywordtype}{boolean} errorless = \textcolor{keyword}{true};
+194         
+195         \textcolor{keywordflow}{try} \{
+196             m\_MainColourFrame.dispose(  );
+197         \} \textcolor{keywordflow}{catch}(  Exception e ) \{
+198             errorless = \textcolor{keyword}{false};
+199         \}
+200         \textcolor{keywordflow}{return} errorless;
+201     \}
+\end{DoxyCode}
+\hypertarget{class_colour_map_a2fc22a7c0417a9538a4302be12a7004a}{\index{Colour\-Map@{Colour\-Map}!main@{main}}
+\index{main@{main}!ColourMap@{Colour\-Map}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Colour\-Map.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_colour_map_a2fc22a7c0417a9538a4302be12a7004a}
+
+\begin{DoxyCode}
+1080                                              \{
+1081         \textcolor{comment}{/* Unit tests */}
+1082         
+1083         \hyperlink{class_colour_map}{ColourMap} cM = \textcolor{keyword}{new} \hyperlink{class_colour_map_abba281e323f79dc7dc5f31efe4b67852}{ColourMap}(  );
+1084         CategoryItemRenderer nullCIR = null;
+1085         XYItemRenderer nullXYIR = null;
+1086         PiePlot3D nullPP3D = null;
+1087         
+1088         
+1089         System.out.println( \textcolor{stringliteral}{"SetupData CIR Test"} );
+1090         System.out.println( \textcolor{stringliteral}{"Both invalid."} );
+1091         cM.\hyperlink{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{SetupData}( -1, nullCIR ); \textcolor{comment}{//Both invalid inputs}
+1092         System.out.println( \textcolor{stringliteral}{"Invalid Renderer."} );
+1093         cM.\hyperlink{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{SetupData}( 1, nullCIR ); \textcolor{comment}{//Second input invalid}
+1094         System.out.println( \textcolor{stringliteral}{"-------------------------------------------------"} );
+1095         
+1096         System.out.println( \textcolor{stringliteral}{"SetupData XYIR Test"} );
+1097         System.out.println( \textcolor{stringliteral}{"Both invalid."} );
+1098         cM.\hyperlink{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{SetupData}( -1, nullXYIR ); \textcolor{comment}{//Both invalid inputs}
+1099         System.out.println( \textcolor{stringliteral}{"Invalid Renderer."} );
+1100         cM.\hyperlink{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{SetupData}( 1, nullXYIR ); \textcolor{comment}{//Second input invalid}
+1101         System.out.println( \textcolor{stringliteral}{"-------------------------------------------------"} );
+1102         
+1103         
+1104         System.out.println( \textcolor{stringliteral}{"SetupData PP3D Test"} );
+1105         System.out.println( \textcolor{stringliteral}{"Both invalid."} );
+1106         cM.\hyperlink{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{SetupData}( -1, nullPP3D ); \textcolor{comment}{//Both invalid inputs}
+1107         System.out.println( \textcolor{stringliteral}{"Invalid Renderer."} );
+1108         cM.\hyperlink{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{SetupData}( 1, nullPP3D ); \textcolor{comment}{//Second input invalid}
+1109         System.out.println( \textcolor{stringliteral}{"-------------------------------------------------"} );
+1110         
+1111         System.out.println( \textcolor{stringliteral}{"setColour PP3D Test"} );
+1112         System.out.println( \textcolor{stringliteral}{"All invalid."} );
+1113         cM.setColour( -1, nullPP3D, null );
+1114         System.out.println( \textcolor{stringliteral}{"Invalid Renderer."} );
+1115         cM.setColour( 1, nullPP3D, Color.YELLOW );
+1116         System.out.println( \textcolor{stringliteral}{"-------------------------------------------------"} );
+1117         
+1118         System.out.println( \textcolor{stringliteral}{"setColour CIR Test"} );
+1119         System.out.println( \textcolor{stringliteral}{"All invalid."} );
+1120         cM.setColour( -1, nullCIR, null );
+1121         System.out.println( \textcolor{stringliteral}{"Invalid Renderer."} );
+1122         cM.setColour( 1, nullCIR, Color.YELLOW );
+1123         System.out.println( \textcolor{stringliteral}{"-------------------------------------------------"} );
+1124         
+1125         System.out.println( \textcolor{stringliteral}{"setColour XYIR Test"} );
+1126         System.out.println( \textcolor{stringliteral}{"All invalid."} );
+1127         cM.setColour( -1, nullXYIR, null );
+1128         System.out.println( \textcolor{stringliteral}{"Invalid Renderer."} );
+1129         cM.setColour( 1, nullXYIR, Color.YELLOW );
+1130         System.out.println( \textcolor{stringliteral}{"-------------------------------------------------"} );
+1131         
+1132         System.out.println( \textcolor{stringliteral}{"setIndexCount Test"} );
+1133         System.out.println( \textcolor{stringliteral}{"Invalid input."} );
+1134         cM.setIndexCount( -1 );
+1135         System.out.println( \textcolor{stringliteral}{"Valid"} );
+1136         cM.setIndexCount( 3 );
+1137         System.out.println( \textcolor{stringliteral}{"-------------------------------------------------"} );
+1138         
+1139         System.out.println( \textcolor{stringliteral}{"setIndexToChange Test"} );
+1140         System.out.println( \textcolor{stringliteral}{"Invalid input."} );
+1141         cM.setIndexToChange( -1 );
+1142         System.out.println( \textcolor{stringliteral}{"Valid"} );
+1143         cM.setIndexToChange( 3 );
+1144         System.out.println( \textcolor{stringliteral}{"-------------------------------------------------"} );
+1145         
+1146         System.out.println( \textcolor{stringliteral}{"setObjectToChange CIR Test"} );
+1147         System.out.println( \textcolor{stringliteral}{"Invalid input."} );
+1148         cM.setObjectToChange( nullCIR );
+1149         System.out.println( \textcolor{stringliteral}{"-------------------------------------------------"} );
+1150         
+1151         System.out.println( \textcolor{stringliteral}{"setObjectToChange XYIR Test"} );
+1152         System.out.println( \textcolor{stringliteral}{"Invalid input."} );
+1153         cM.setObjectToChange( nullXYIR );
+1154         System.out.println( \textcolor{stringliteral}{"-------------------------------------------------"} );
+1155         
+1156         System.out.println( \textcolor{stringliteral}{"setObjectToChange PP3D Test"} );
+1157         System.out.println( \textcolor{stringliteral}{"Invalid input."} );
+1158         cM.setObjectToChange( nullPP3D );
+1159         System.out.println( \textcolor{stringliteral}{"-------------------------------------------------"} );
+1160         
+1161         System.out.println( \textcolor{stringliteral}{"setObjectType Test"} );
+1162         System.out.println( \textcolor{stringliteral}{"Invalid input."} );
+1163         cM.setObjectType( \textcolor{stringliteral}{""} );
+1164         cM.setObjectType( null );
+1165         System.out.println( \textcolor{stringliteral}{"Valid"} );
+1166         cM.setObjectType( \textcolor{stringliteral}{"Tram!"} );
+1167         System.out.println( \textcolor{stringliteral}{"-------------------------------------------------"} );
+1168     \}
+\end{DoxyCode}
+\hypertarget{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{\index{Colour\-Map@{Colour\-Map}!Setup\-Data@{Setup\-Data}}
+\index{Setup\-Data@{Setup\-Data}!ColourMap@{Colour\-Map}}
+\subsubsection[{Setup\-Data}]{\setlength{\rightskip}{0pt plus 5cm}boolean Colour\-Map.\-Setup\-Data (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Count, }
+\item[{Category\-Item\-Renderer}]{renderer}
+\end{DoxyParamCaption}
+)}}\label{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}
+This method sets up all the needed data to perform colour changes with the Category\-Item\-Renderer type object. 
+\begin{DoxyParams}{Parameters}
+{\em index\-Count} & contains number of indexes the object has. \\
+\hline
+{\em renderer} & contains the object which needs colour adjustments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if it executed without errors, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+219                                                                               \{
+220         \textcolor{keywordtype}{boolean} errorless = \textcolor{keyword}{true};
+221         
+222         \textcolor{keywordflow}{if}( indexCount < 0 ) \{
+223             \textcolor{comment}{/* Checks if the index count is a negative number.}
+224 \textcolor{comment}{             * If true, returns an error message. */}
+225             System.out.println( \textcolor{stringliteral}{"SetupData ERROR:"} );
+226             System.out.println( \textcolor{stringliteral}{"Trying to set indexCount to a negative number. "}
+227                                + \textcolor{stringliteral}{"Index count can't be negative."} );
+228             errorless = \textcolor{keyword}{false};
+229         \}
+230         
+231         \textcolor{keywordflow}{if}(  renderer == null ) \{
+232             \textcolor{comment}{/* Checks if the renderer is null.}
+233 \textcolor{comment}{             * If true, returns an error message. */}
+234             System.out.println( \textcolor{stringliteral}{"SetupData ERROR:"} );
+235             System.out.println( \textcolor{stringliteral}{"Renderer passed in is of a null value. "}
+236                                + \textcolor{stringliteral}{"Renderer can't be null."} );
+237             errorless = \textcolor{keyword}{false};
+238         \}
+239         
+240         \textcolor{keywordflow}{if}( errorless ) \{
+241             \textcolor{comment}{/* If there are no errors detected in the passed in data,}
+242 \textcolor{comment}{             * Initialize all of it and create the GUI. */}
+243             setObjectToChange( renderer );
+244             setIndexCount( indexCount );
+245             setObjectType( m\_CategoryItemRendererName );
+246             
+247             createAndShowGUI(  );
+248         \}
+249         
+250         \textcolor{keywordflow}{return} errorless;
+251     \}
+\end{DoxyCode}
+\hypertarget{class_colour_map_a08978bcdc84ed70cf1139b166e37d25f}{\index{Colour\-Map@{Colour\-Map}!Setup\-Data@{Setup\-Data}}
+\index{Setup\-Data@{Setup\-Data}!ColourMap@{Colour\-Map}}
+\subsubsection[{Setup\-Data}]{\setlength{\rightskip}{0pt plus 5cm}boolean Colour\-Map.\-Setup\-Data (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Count, }
+\item[{Pie\-Plot3\-D}]{renderer}
+\end{DoxyParamCaption}
+)}}\label{class_colour_map_a08978bcdc84ed70cf1139b166e37d25f}
+This method sets up all the needed data to perform colour changes with the Pie\-Plot3\-D type object. 
+\begin{DoxyParams}{Parameters}
+{\em index\-Count} & contains number of indexes the object has. \\
+\hline
+{\em renderer} & contains the object which needs colour adjustments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if it executed without errors, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+260                                                                    \{
+261         \textcolor{keywordtype}{boolean} errorless = \textcolor{keyword}{true};
+262         
+263         \textcolor{keywordflow}{if}( indexCount < 0 ) \{
+264             \textcolor{comment}{/* Checks if the index count is a negative number.}
+265 \textcolor{comment}{             * If true, returns an error message. */}
+266             System.out.println( \textcolor{stringliteral}{"SetupData ERROR:"} );
+267             System.out.println( \textcolor{stringliteral}{"Trying to set indexCount to a negative number. "}
+268                                + \textcolor{stringliteral}{"Index count can't be negative."} );
+269             errorless = \textcolor{keyword}{false};
+270         \}
+271         
+272         \textcolor{keywordflow}{if}( renderer == null ) \{
+273             \textcolor{comment}{/* Checks if the renderer is null.}
+274 \textcolor{comment}{             * If true, returns an error message. */}
+275             System.out.println( \textcolor{stringliteral}{"SetupData ERROR:"} );
+276             System.out.println( \textcolor{stringliteral}{"Renderer passed in is of a null value. "}
+277                                + \textcolor{stringliteral}{"Renderer can't be null."} );
+278             errorless = \textcolor{keyword}{false};
+279         \}
+280         
+281         \textcolor{keywordflow}{if}( errorless )\{
+282             \textcolor{comment}{/* If there are no errors detected in the passed in data,}
+283 \textcolor{comment}{             * Initialize all of it and create the GUI. */}
+284             setObjectToChange( renderer );
+285             setIndexCount( indexCount );
+286             setObjectType( m\_PiePlot3DName );
+287             
+288             createAndShowGUI(  );
+289         \}
+290         
+291         \textcolor{keywordflow}{return} errorless;
+292     \}
+\end{DoxyCode}
+\hypertarget{class_colour_map_a57b6f3c3f3beff5075bd82e621591138}{\index{Colour\-Map@{Colour\-Map}!Setup\-Data@{Setup\-Data}}
+\index{Setup\-Data@{Setup\-Data}!ColourMap@{Colour\-Map}}
+\subsubsection[{Setup\-Data}]{\setlength{\rightskip}{0pt plus 5cm}boolean Colour\-Map.\-Setup\-Data (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Count, }
+\item[{X\-Y\-Item\-Renderer}]{renderer}
+\end{DoxyParamCaption}
+)}}\label{class_colour_map_a57b6f3c3f3beff5075bd82e621591138}
+This method sets up all the needed data to perform colour changes with the X\-Y\-Item\-Renderer type object. 
+\begin{DoxyParams}{Parameters}
+{\em index\-Count} & contains number of indexes the object has. \\
+\hline
+{\em renderer} & contains the object which needs colour adjustments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if it executed without errors, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+302                                                        \{
+303         Boolean errorless = \textcolor{keyword}{true};
+304         \textcolor{keywordflow}{if}( indexCount < 0 ) \{
+305             \textcolor{comment}{/* Checks if the index count is a negative number.}
+306 \textcolor{comment}{             * If true, returns an error message. */}
+307             System.out.println( \textcolor{stringliteral}{"SetupData ERROR:"} );
+308             System.out.println( \textcolor{stringliteral}{"Trying to set indexCount to a negative number. "}
+309                     + \textcolor{stringliteral}{"Index count can't be negative."} );
+310             errorless = \textcolor{keyword}{false};
+311         \}
+312         
+313         \textcolor{keywordflow}{if}(  renderer == null ) \{
+314             \textcolor{comment}{/* Checks if the renderer is null.}
+315 \textcolor{comment}{             * If true, returns an error message. */}
+316             System.out.println( \textcolor{stringliteral}{"SetupData ERROR:"} );
+317             System.out.println( \textcolor{stringliteral}{"Renderer passed in is of a null value. "}
+318                                + \textcolor{stringliteral}{"Renderer can't be null."} );
+319             errorless = \textcolor{keyword}{false};
+320         \}
+321         
+322         \textcolor{keywordflow}{if}( errorless ) \{
+323             \textcolor{comment}{/* If there are no errors detected in the passed in data,}
+324 \textcolor{comment}{             * Initialize all of it and create the GUI. */}
+325             setObjectToChange( renderer );
+326             setIndexCount( indexCount );
+327             setObjectType( m\_XYItemRendererName );
+328             
+329             createAndShowGUI(  );
+330         \}
+331         
+332         \textcolor{keywordflow}{return} errorless;
+333     \}
+\end{DoxyCode}
+\hypertarget{class_colour_map_a952af2354acfb507997b8fc3c38de5f7}{\index{Colour\-Map@{Colour\-Map}!Setup\-Data@{Setup\-Data}}
+\index{Setup\-Data@{Setup\-Data}!ColourMap@{Colour\-Map}}
+\subsubsection[{Setup\-Data}]{\setlength{\rightskip}{0pt plus 5cm}boolean Colour\-Map.\-Setup\-Data (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Count, }
+\item[{Default\-Polar\-Item\-Renderer}]{renderer}
+\end{DoxyParamCaption}
+)}}\label{class_colour_map_a952af2354acfb507997b8fc3c38de5f7}
+This method sets up all the needed data to perform colour changes with the X\-Y\-Item\-Renderer type object. 
+\begin{DoxyParams}{Parameters}
+{\em index\-Count} & contains number of indexes the object has. \\
+\hline
+{\em renderer} & contains the object which needs colour adjustments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if it executed without errors, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+343                                                 \{
+344         Boolean errorless = \textcolor{keyword}{true};
+345         \textcolor{keywordflow}{if}( indexCount < 0 ) \{
+346             \textcolor{comment}{/* Checks if the index count is a negative number.}
+347 \textcolor{comment}{             * If true, returns an error message. */}
+348             System.out.println( \textcolor{stringliteral}{"SetupData ERROR:"} );
+349             System.out.println( \textcolor{stringliteral}{"Trying to set indexCount to a negative number. "}
+350                     + \textcolor{stringliteral}{"Index count can't be negative."} );
+351             errorless = \textcolor{keyword}{false};
+352         \}
+353         
+354         \textcolor{keywordflow}{if}(  renderer == null ) \{
+355             \textcolor{comment}{/* Checks if the renderer is null.}
+356 \textcolor{comment}{             * If true, returns an error message. */}
+357             System.out.println( \textcolor{stringliteral}{"SetupData ERROR:"} );
+358             System.out.println( \textcolor{stringliteral}{"Renderer passed in is of a null value. "}
+359                                + \textcolor{stringliteral}{"Renderer can't be null."} );
+360             errorless = \textcolor{keyword}{false};
+361         \}
+362         
+363         \textcolor{keywordflow}{if}( errorless ) \{
+364             \textcolor{comment}{/* If there are no errors detected in the passed in data,}
+365 \textcolor{comment}{             * Initialize all of it and create the GUI. */}
+366             setObjectToChange( renderer );
+367             setIndexCount( indexCount );
+368             setObjectType( m\_PolarItemRendererName );
+369             
+370             createAndShowGUI(  );
+371         \}
+372         
+373         \textcolor{keywordflow}{return} errorless;
+374     \}
+\end{DoxyCode}
+\hypertarget{class_colour_map_a178d4ed4be0c7d2b03d2e990c9b359b0}{\index{Colour\-Map@{Colour\-Map}!state\-Changed@{state\-Changed}}
+\index{state\-Changed@{state\-Changed}!ColourMap@{Colour\-Map}}
+\subsubsection[{state\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Colour\-Map.\-state\-Changed (
+\begin{DoxyParamCaption}
+\item[{Change\-Event}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_colour_map_a178d4ed4be0c7d2b03d2e990c9b359b0}
+This method is responsible for detecting when the state of the button has changed, thus responding to it with an action. 
+\begin{DoxyParams}{Parameters}
+{\em e} & is a Change\-Event type of event. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+382                                               \{
+383         \textcolor{comment}{//Changes colour depending on what user has clicked}
+384         Color newColor = m\_MoreColours.getColor(  );
+385         m\_ObjectColour.setBackground( newColor );
+386     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_colour_map_8java}{Colour\-Map.\-java}\end{DoxyCompactItemize}

@@ -1,0 +1,490 @@
+\hypertarget{class_bubble_chart}{\section{Bubble\-Chart Class Reference}
+\label{class_bubble_chart}\index{Bubble\-Chart@{Bubble\-Chart}}
+}
+
+
+A class that creates a single Bubble \hyperlink{interface_chart}{Chart} or two Bubble \hyperlink{interface_chart}{Chart} visualizations from a 2\-D Array of data \textbackslash{} see \hyperlink{_graph_8java}{Graph.\-java}.  
+
+
+Inheritance diagram for Bubble\-Chart\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_bubble_chart}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_bubble_chart_abde1df172d8b14212f177e1d4c866f7c}{Bubble\-Chart} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_bubble_chart_afa41fb76ce19f903532f6fef230a4d94}{Bubble\-Chart} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting, String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} second\-Data, \hyperlink{class_dataset}{Dataset} second\-Dataset, \hyperlink{class_data_attribute}{Data\-Attribute} second\-Setting)
+\item 
+\hyperlink{class_bubble_chart_a6c75dda5d1a8e5596652926370ac1e0e}{Bubble\-Chart} (\hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_bubble_chart_a4d6417f505cc2bb349d3c3bce02d185d}{Bubble\-Chart} (\hyperlink{class_data_attribute}{Data\-Attribute} setting, \hyperlink{class_data_attribute}{Data\-Attribute} second\-Setting)
+\item 
+\hyperlink{class_bubble_chart_a90418fabcda19061a4d395f18ee5f48d}{Bubble\-Chart} ()
+\item 
+void \hyperlink{class_bubble_chart_aa0b9dd81383c38083695c6dbab56fc03}{action\-Performed} (Action\-Event e)
+\item 
+String \hyperlink{class_bubble_chart_a57559533fd32fd0af64c1196e7278277}{Set\-Label\-X} (String m\-\_\-x\-Label)
+\item 
+String \hyperlink{class_bubble_chart_a9016f31e007668efd3f8ec384e30c1d9}{Set\-Label\-Y} (String m\-\_\-y\-Label)
+\item 
+String \hyperlink{class_bubble_chart_a0a4eb8d3bd5c2e13229b290e06dff4c7}{Set\-Title} (String m\-\_\-graph\-Title)
+\item 
+\hyperlink{class_data_attribute}{Data\-Attribute} \hyperlink{class_bubble_chart_ad4ed746599c2a16959123ca77d7bea58}{Get\-Setting} ()
+\item 
+X\-Y\-Z\-Dataset \hyperlink{class_bubble_chart_a29cb4d22e401dd9f621501356cd1ebaf}{Create\-Dataset} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data)
+\item 
+X\-Y\-Z\-Dataset \hyperlink{class_bubble_chart_a69a32c69ec1225221e9daf6488d284d3}{Create\-Second\-Dataset} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_bubble_chart_a7f8e8bb3079e6dc19d8e88cd03e71c9e}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that creates a single Bubble \hyperlink{interface_chart}{Chart} or two Bubble \hyperlink{interface_chart}{Chart} visualizations from a 2\-D Array of data \textbackslash{} see \hyperlink{_graph_8java}{Graph.\-java}. 
+
+\begin{DoxyDate}{Date}
+30/04/13 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+This class is responsible for making the Bubble chart It was made using J\-Free\-Chart and following examples on how to set up the Bubble chart It uses the \hyperlink{_graph_8java}{Graph.\-java} to return a J\-Free\-Chart 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_bubble_chart_abde1df172d8b14212f177e1d4c866f7c}{\index{Bubble\-Chart@{Bubble\-Chart}!Bubble\-Chart@{Bubble\-Chart}}
+\index{Bubble\-Chart@{Bubble\-Chart}!BubbleChart@{Bubble\-Chart}}
+\subsubsection[{Bubble\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Bubble\-Chart.\-Bubble\-Chart (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_bubble_chart_abde1df172d8b14212f177e1d4c866f7c}
+creates a constructor taking in the following parameters\-:
+
+
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+49                                                \{
+50         
+51         m\_Data = data;
+52         m\_Setting = setting;
+53         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+54         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+55         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+56         m\_Col = dataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+57         m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+58         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+59         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+60         m\_C3 = setting.\hyperlink{class_data_attribute_a802ca8ea739cff583380ea27647250c7}{GetSelectedZIndex}();
+61         
+62         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+63         m\_XMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+64         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+65         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+66         
+67         \hyperlink{class_bubble_chart_a29cb4d22e401dd9f621501356cd1ebaf}{CreateDataset}( m\_Data );
+68         ShowChart( m\_Dataset );
+69     \} 
+\end{DoxyCode}
+\hypertarget{class_bubble_chart_afa41fb76ce19f903532f6fef230a4d94}{\index{Bubble\-Chart@{Bubble\-Chart}!Bubble\-Chart@{Bubble\-Chart}}
+\index{Bubble\-Chart@{Bubble\-Chart}!BubbleChart@{Bubble\-Chart}}
+\subsubsection[{Bubble\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Bubble\-Chart.\-Bubble\-Chart (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{String}]{second\-Data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{second\-Dataset, }
+\item[{{\bf Data\-Attribute}}]{second\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_bubble_chart_afa41fb76ce19f903532f6fef230a4d94}
+creates a constructor taking in the following parameters\-:
+
+
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & second\-Data -\/ second data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & second\-Dataset -\/ the second dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & second\-Setting -\/ Second Data attributes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+83                                           \{
+84 
+85         m\_Data = data;
+86         m\_Setting = setting;
+87         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+88         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+89         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+90         m\_Col = dataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+91         m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+92         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+93         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+94         m\_C3 = setting.\hyperlink{class_data_attribute_a802ca8ea739cff583380ea27647250c7}{GetSelectedZIndex}();
+95         
+96         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+97         m\_XMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+98         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+99         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+100         
+101         m\_SecondData = secondData;
+102         m\_SecondSetting = secondSetting;
+103         m\_SecondChartTitle = secondSetting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+104         m\_SecondXLabel = secondSetting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+105         m\_SecondYLabel = secondSetting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+106         m\_SecondCol = secondDataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+107         m\_SecondRow = secondDataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+108         m\_SecondC1 = secondSetting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+109         m\_SecondC2 = secondSetting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();
+110         m\_SecondC3 = secondSetting.\hyperlink{class_data_attribute_ab8aad538c86b04b4b9a962b7e07e6bc3}{GetSecondSelectedZIndex}();
+111         
+112          \hyperlink{class_bubble_chart_a29cb4d22e401dd9f621501356cd1ebaf}{CreateDataset}(m\_Data);
+113          \hyperlink{class_bubble_chart_a69a32c69ec1225221e9daf6488d284d3}{CreateSecondDataset}(m\_SecondData);
+114          ShowChart(m\_Dataset, m\_SecondDataset);
+115     \} 
+\end{DoxyCode}
+\hypertarget{class_bubble_chart_a6c75dda5d1a8e5596652926370ac1e0e}{\index{Bubble\-Chart@{Bubble\-Chart}!Bubble\-Chart@{Bubble\-Chart}}
+\index{Bubble\-Chart@{Bubble\-Chart}!BubbleChart@{Bubble\-Chart}}
+\subsubsection[{Bubble\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Bubble\-Chart.\-Bubble\-Chart (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_bubble_chart_a6c75dda5d1a8e5596652926370ac1e0e}
+constructor for J\-Unit Tests 
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+121                                               \{
+122         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+123         m\_Setting = setting;
+124         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+125         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+126         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+127         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+128         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+129         m\_XMax = setting.\hyperlink{class_data_attribute_ada370712422c7cbd21b7be4a0d88caf7}{GetXAxisMax}();
+130         m\_YMin = setting.\hyperlink{class_data_attribute_af0786b4de674874c0bb8ca9dbe1519c6}{GetYAxisMin}();
+131         m\_YMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+132         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+133         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+134     \}
+\end{DoxyCode}
+\hypertarget{class_bubble_chart_a4d6417f505cc2bb349d3c3bce02d185d}{\index{Bubble\-Chart@{Bubble\-Chart}!Bubble\-Chart@{Bubble\-Chart}}
+\index{Bubble\-Chart@{Bubble\-Chart}!BubbleChart@{Bubble\-Chart}}
+\subsubsection[{Bubble\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Bubble\-Chart.\-Bubble\-Chart (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{{\bf Data\-Attribute}}]{second\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_bubble_chart_a4d6417f505cc2bb349d3c3bce02d185d}
+second constructor for J\-Unit Tests 
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+{\em second\-Setting} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+140                                                                            \{
+141         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+142         m\_Setting = setting;
+143         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+144         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+145         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+146         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+147         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+148         m\_XMax = setting.\hyperlink{class_data_attribute_ada370712422c7cbd21b7be4a0d88caf7}{GetXAxisMax}();
+149         m\_YMin = setting.\hyperlink{class_data_attribute_af0786b4de674874c0bb8ca9dbe1519c6}{GetYAxisMin}();
+150         m\_YMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+151         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+152         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+153         
+154         m\_SecondChartTitle = secondSetting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+155         m\_SecondSetting = secondSetting;
+156         m\_SecondXLabel = secondSetting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+157         m\_SecondYLabel = secondSetting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+158         m\_SecondC1 = secondSetting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+159         m\_SecondC2 = secondSetting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();
+160     \}
+\end{DoxyCode}
+\hypertarget{class_bubble_chart_a90418fabcda19061a4d395f18ee5f48d}{\index{Bubble\-Chart@{Bubble\-Chart}!Bubble\-Chart@{Bubble\-Chart}}
+\index{Bubble\-Chart@{Bubble\-Chart}!BubbleChart@{Bubble\-Chart}}
+\subsubsection[{Bubble\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Bubble\-Chart.\-Bubble\-Chart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bubble_chart_a90418fabcda19061a4d395f18ee5f48d}
+second empty constructor for J\-Unit Tests 
+\begin{DoxyCode}
+165 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_bubble_chart_aa0b9dd81383c38083695c6dbab56fc03}{\index{Bubble\-Chart@{Bubble\-Chart}!action\-Performed@{action\-Performed}}
+\index{action\-Performed@{action\-Performed}!BubbleChart@{Bubble\-Chart}}
+\subsubsection[{action\-Performed}]{\setlength{\rightskip}{0pt plus 5cm}void Bubble\-Chart.\-action\-Performed (
+\begin{DoxyParamCaption}
+\item[{Action\-Event}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_bubble_chart_aa0b9dd81383c38083695c6dbab56fc03}
+allows user to select the colour of the points on the Bubble chart 
+\begin{DoxyCode}
+170                                                  \{
+171         \textcolor{keywordflow}{if}( e.getSource() == m\_ColChangeButton ) \{
+172             \hyperlink{class_colour_map}{ColourMap} cM = \textcolor{keyword}{new} \hyperlink{class_colour_map}{ColourMap}();
+173             cM.\hyperlink{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{SetupData}( m\_Plot.getSeriesCount(), 
+174                           m\_Renderer );
+175             cM.setVisible( \textcolor{keyword}{false} );
+176         \}
+177     \}
+\end{DoxyCode}
+\hypertarget{class_bubble_chart_a29cb4d22e401dd9f621501356cd1ebaf}{\index{Bubble\-Chart@{Bubble\-Chart}!Create\-Dataset@{Create\-Dataset}}
+\index{Create\-Dataset@{Create\-Dataset}!BubbleChart@{Bubble\-Chart}}
+\subsubsection[{Create\-Dataset}]{\setlength{\rightskip}{0pt plus 5cm}X\-Y\-Z\-Dataset Bubble\-Chart.\-Create\-Dataset (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{class_bubble_chart_a29cb4d22e401dd9f621501356cd1ebaf}
+Method creates the X\-Y\-Z \hyperlink{class_dataset}{Dataset} needed for the visualisation 
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dataset 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+222                                                      \{
+223         m\_Dataset = \textcolor{keyword}{new} DefaultXYZDataset();
+224         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} r = 0; r < m\_Row;r++) \{
+225             \textcolor{keywordtype}{double} xArray[] = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[m\_Row];
+226             \textcolor{keywordtype}{double} yArray[] = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[m\_Row];
+227             \textcolor{keywordtype}{double} zArray[] = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[m\_Row];
+228             
+229             xArray[r] = Double.parseDouble(data[m\_C1][r]);
+230             yArray[r] = Double.parseDouble(data[m\_C2][r]);
+231             zArray[r] = Double.parseDouble(data[m\_C3][r]);
+232             
+233             \textcolor{keywordtype}{double} ad3[][] = \{
+234                     xArray, yArray, zArray
+235             \};
+236             m\_Dataset.addSeries(\textcolor{stringliteral}{"Series "} + r, ad3);
+237         \}
+238         \textcolor{keywordflow}{return} m\_Dataset;
+239     \}
+\end{DoxyCode}
+\hypertarget{class_bubble_chart_a69a32c69ec1225221e9daf6488d284d3}{\index{Bubble\-Chart@{Bubble\-Chart}!Create\-Second\-Dataset@{Create\-Second\-Dataset}}
+\index{Create\-Second\-Dataset@{Create\-Second\-Dataset}!BubbleChart@{Bubble\-Chart}}
+\subsubsection[{Create\-Second\-Dataset}]{\setlength{\rightskip}{0pt plus 5cm}X\-Y\-Z\-Dataset Bubble\-Chart.\-Create\-Second\-Dataset (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{class_bubble_chart_a69a32c69ec1225221e9daf6488d284d3}
+Method creates the second X\-Y\-Z \hyperlink{class_dataset}{Dataset} needed for the visualisation 
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dataset 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+245                                                            \{    
+246         m\_SecondDataset = \textcolor{keyword}{new} DefaultXYZDataset();
+247         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} r = 0; r < m\_SecondRow;r++) \{
+248             \textcolor{keywordtype}{double} xArray[] = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[m\_SecondRow];
+249             \textcolor{keywordtype}{double} yArray[] = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[m\_SecondRow];
+250             \textcolor{keywordtype}{double} zArray[] = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[m\_SecondRow];
+251             
+252             xArray[r] = Double.parseDouble(data[m\_SecondC1][r]);
+253             yArray[r] = Double.parseDouble(data[m\_SecondC2][r]);
+254             zArray[r] = Double.parseDouble(data[m\_SecondC3][r]);
+255             
+256             \textcolor{keywordtype}{double} ad3[][] = \{
+257                     xArray, yArray, zArray
+258             \};
+259             m\_SecondDataset.addSeries(\textcolor{stringliteral}{"Series "} + r, ad3);
+260         \}
+261         \textcolor{keywordflow}{return} m\_SecondDataset;
+262     \}
+\end{DoxyCode}
+\hypertarget{class_bubble_chart_ad4ed746599c2a16959123ca77d7bea58}{\index{Bubble\-Chart@{Bubble\-Chart}!Get\-Setting@{Get\-Setting}}
+\index{Get\-Setting@{Get\-Setting}!BubbleChart@{Bubble\-Chart}}
+\subsubsection[{Get\-Setting}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data\-Attribute} Bubble\-Chart.\-Get\-Setting (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bubble_chart_ad4ed746599c2a16959123ca77d7bea58}
+Gets the settings \begin{DoxyReturn}{Returns}
+\hyperlink{class_data_attribute}{Data\-Attribute} setting 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+213                                       \{
+214         \textcolor{keywordflow}{return} m\_Setting;
+215     \}
+\end{DoxyCode}
+\hypertarget{class_bubble_chart_a7f8e8bb3079e6dc19d8e88cd03e71c9e}{\index{Bubble\-Chart@{Bubble\-Chart}!main@{main}}
+\index{main@{main}!BubbleChart@{Bubble\-Chart}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Bubble\-Chart.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_bubble_chart_a7f8e8bb3079e6dc19d8e88cd03e71c9e}
+main method to carry out J\-Unit Tests 
+\begin{DoxyCode}
+397                                              \{
+398     
+399         \hyperlink{class_data_attribute}{DataAttribute} test = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+400         \hyperlink{class_bubble_chart}{BubbleChart} bubbleTest = \textcolor{keyword}{new} \hyperlink{class_bubble_chart_a90418fabcda19061a4d395f18ee5f48d}{BubbleChart}(test);
+401         \hyperlink{class_data_attribute}{DataAttribute} secondTest = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+402         \hyperlink{class_bubble_chart}{BubbleChart} secondBubbleTest = \textcolor{keyword}{new} \hyperlink{class_bubble_chart_a90418fabcda19061a4d395f18ee5f48d}{BubbleChart}(secondTest);
+403         
+404         Random gen = \textcolor{keyword}{new} Random();
+405         
+406         \textcolor{keywordtype}{double} x1 = gen.nextDouble() * VALUE\_MULTIPLY + VALUE\_ADD;
+407         \textcolor{keywordtype}{double} x2 = gen.nextDouble() * VALUE\_MULTIPLY + VALUE\_ADD;
+408         \textcolor{keywordtype}{double} x3 = gen.nextDouble() * VALUE\_MULTIPLY + VALUE\_ADD;
+409         \textcolor{keywordtype}{double}[] xTest = \{x1, x2, x3\};      
+410         
+411         \textcolor{keywordtype}{double} y1 = gen.nextDouble() * VALUE\_MULTIPLY + VALUE\_ADD + VALUE\_ADD;
+412         \textcolor{keywordtype}{double} y2 = gen.nextDouble() * VALUE\_MULTIPLY + VALUE\_ADD + VALUE\_ADD;
+413         \textcolor{keywordtype}{double} y3 = gen.nextDouble() * VALUE\_MULTIPLY + VALUE\_ADD + VALUE\_ADD;
+414         \textcolor{keywordtype}{double}[] yTest = \{y1, y2, y3\};
+415         
+416         \textcolor{keywordtype}{double} z1 = gen.nextDouble() * VALUE\_MULTIPLY + VALUE\_ADD + VALUE\_ADD;
+417         \textcolor{keywordtype}{double} z2 = gen.nextDouble() * VALUE\_MULTIPLY + VALUE\_ADD + VALUE\_ADD;
+418         \textcolor{keywordtype}{double} z3 = gen.nextDouble() * VALUE\_MULTIPLY + VALUE\_ADD + VALUE\_ADD;
+419         \textcolor{keywordtype}{double}[] zTest = \{z1, z2, z3\};
+420         
+421         \textcolor{keywordtype}{double}[][] xyzTest = \{xTest, yTest, zTest\};
+422         \textcolor{keywordtype}{double}[][] xyzSecondTest = \{xTest, yTest, zTest\};
+423         
+424         DefaultXYZDataset dataset = \textcolor{keyword}{new} DefaultXYZDataset();
+425         dataset.addSeries(\textcolor{stringliteral}{"testSeries"}, xyzTest);
+426         bubbleTest.\hyperlink{class_bubble_chart_ad4ed746599c2a16959123ca77d7bea58}{GetSetting}().\hyperlink{class_data_attribute_a46b8473768d9ba3609e5f5994e903a7c}{SetUseDefault}(\textcolor{keyword}{false});
+427         bubbleTest.\hyperlink{class_bubble_chart_ad4ed746599c2a16959123ca77d7bea58}{GetSetting}().\hyperlink{class_data_attribute_acd1994e216d21da1f3e7ea2819145fe9}{SetXAxisMin}(MIN);
+428         bubbleTest.\hyperlink{class_bubble_chart_ad4ed746599c2a16959123ca77d7bea58}{GetSetting}().\hyperlink{class_data_attribute_a6aedbe05a82f23d6abca00f8b85bf1ff}{SetXAxisMax}(MAX);
+429         bubbleTest.\hyperlink{class_bubble_chart_ad4ed746599c2a16959123ca77d7bea58}{GetSetting}().\hyperlink{class_data_attribute_afacd93a87dbe8ed03d4dc9a50e44851f}{SetYAxisMin}(MIN);
+430         bubbleTest.\hyperlink{class_bubble_chart_ad4ed746599c2a16959123ca77d7bea58}{GetSetting}().\hyperlink{class_data_attribute_a6aedbe05a82f23d6abca00f8b85bf1ff}{SetXAxisMax}(MAX);
+431         
+432         
+433         secondBubbleTest.ShowChart(dataset);
+434         
+435         DefaultXYZDataset secondDataset = \textcolor{keyword}{new} DefaultXYZDataset();
+436         secondDataset.addSeries(\textcolor{stringliteral}{"SecondTestSeries"}, xyzSecondTest);
+437         
+438         secondBubbleTest.\hyperlink{class_bubble_chart_ad4ed746599c2a16959123ca77d7bea58}{GetSetting}().\hyperlink{class_data_attribute_a46b8473768d9ba3609e5f5994e903a7c}{SetUseDefault}(\textcolor{keyword}{false});
+439         secondBubbleTest.\hyperlink{class_bubble_chart_ad4ed746599c2a16959123ca77d7bea58}{GetSetting}().\hyperlink{class_data_attribute_acd1994e216d21da1f3e7ea2819145fe9}{SetXAxisMin}(MIN);
+440         secondBubbleTest.\hyperlink{class_bubble_chart_ad4ed746599c2a16959123ca77d7bea58}{GetSetting}().\hyperlink{class_data_attribute_a6aedbe05a82f23d6abca00f8b85bf1ff}{SetXAxisMax}(MAX);
+441         secondBubbleTest.\hyperlink{class_bubble_chart_ad4ed746599c2a16959123ca77d7bea58}{GetSetting}().\hyperlink{class_data_attribute_afacd93a87dbe8ed03d4dc9a50e44851f}{SetYAxisMin}(MIN);
+442         secondBubbleTest.\hyperlink{class_bubble_chart_ad4ed746599c2a16959123ca77d7bea58}{GetSetting}().\hyperlink{class_data_attribute_a6aedbe05a82f23d6abca00f8b85bf1ff}{SetXAxisMax}(MAX);
+443         
+444         bubbleTest.ShowChart(dataset, secondDataset);
+445         
+446     \}
+\end{DoxyCode}
+\hypertarget{class_bubble_chart_a57559533fd32fd0af64c1196e7278277}{\index{Bubble\-Chart@{Bubble\-Chart}!Set\-Label\-X@{Set\-Label\-X}}
+\index{Set\-Label\-X@{Set\-Label\-X}!BubbleChart@{Bubble\-Chart}}
+\subsubsection[{Set\-Label\-X}]{\setlength{\rightskip}{0pt plus 5cm}String Bubble\-Chart.\-Set\-Label\-X (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-x\-Label}
+\end{DoxyParamCaption}
+)}}\label{class_bubble_chart_a57559533fd32fd0af64c1196e7278277}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-x\-Label} & -\/ the x axis label passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-label\-X -\/ returns the user's x label value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+184                                                \{
+185         String m\_labelX = m\_xLabel;
+186         \textcolor{keywordflow}{return} m\_labelX;
+187     \}
+\end{DoxyCode}
+\hypertarget{class_bubble_chart_a9016f31e007668efd3f8ec384e30c1d9}{\index{Bubble\-Chart@{Bubble\-Chart}!Set\-Label\-Y@{Set\-Label\-Y}}
+\index{Set\-Label\-Y@{Set\-Label\-Y}!BubbleChart@{Bubble\-Chart}}
+\subsubsection[{Set\-Label\-Y}]{\setlength{\rightskip}{0pt plus 5cm}String Bubble\-Chart.\-Set\-Label\-Y (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-y\-Label}
+\end{DoxyParamCaption}
+)}}\label{class_bubble_chart_a9016f31e007668efd3f8ec384e30c1d9}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-y\-Label} & -\/ the y axis label passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-label\-Y -\/ returns the user's y label value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+194                                                \{
+195         String m\_labelY = m\_yLabel;
+196         \textcolor{keywordflow}{return} m\_labelY;
+197     \}
+\end{DoxyCode}
+\hypertarget{class_bubble_chart_a0a4eb8d3bd5c2e13229b290e06dff4c7}{\index{Bubble\-Chart@{Bubble\-Chart}!Set\-Title@{Set\-Title}}
+\index{Set\-Title@{Set\-Title}!BubbleChart@{Bubble\-Chart}}
+\subsubsection[{Set\-Title}]{\setlength{\rightskip}{0pt plus 5cm}String Bubble\-Chart.\-Set\-Title (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-graph\-Title}
+\end{DoxyParamCaption}
+)}}\label{class_bubble_chart_a0a4eb8d3bd5c2e13229b290e06dff4c7}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-graph\-Title} & -\/ the title passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-label\-Y -\/ returns the user's title value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+204                                                   \{
+205         String m\_title = m\_graphTitle;
+206         \textcolor{keywordflow}{return} m\_title;
+207     \} 
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_bubble_chart_8java}{Bubble\-Chart.\-java}\end{DoxyCompactItemize}

@@ -1,0 +1,185 @@
+\hypertarget{class_table}{\section{Table Class Reference}
+\label{class_table}\index{Table@{Table}}
+}
+
+
+A simple class that displays data in a table visualisation.  
+
+
+Inheritance diagram for Table\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_table}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_table_a55d3afc76dfd94c753fc7e8086c0c02d}{Table} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} m\-\_\-data, String\mbox{[}$\,$\mbox{]} m\-\_\-headers, String table\-Title)
+\item 
+\hyperlink{class_table_ac32e2c58f437c8ee3d576766d2a0f5f8}{Table} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} m\-\_\-data, String\mbox{[}$\,$\mbox{]} m\-\_\-header, String table\-Title, String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} m\-\_\-second\-Data, String\mbox{[}$\,$\mbox{]} m\-\_\-second\-Header, String second\-Table\-Title)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_table_a1484279c07eaa8220aa52c7036d6a2cf}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple class that displays data in a table visualisation. 
+
+\begin{DoxyDate}{Date}
+30/04/2013 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_table_a55d3afc76dfd94c753fc7e8086c0c02d}{\index{Table@{Table}!Table@{Table}}
+\index{Table@{Table}!Table@{Table}}
+\subsubsection[{Table}]{\setlength{\rightskip}{0pt plus 5cm}Table.\-Table (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{String\mbox{[}$\,$\mbox{]}}]{m\-\_\-headers, }
+\item[{String}]{table\-Title}
+\end{DoxyParamCaption}
+)}}\label{class_table_a55d3afc76dfd94c753fc7e8086c0c02d}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-data} & -\/ the data to be passed from users to the table \\
+\hline
+{\em m\-\_\-headers} & -\/ the headers to be passed to the table \\
+\hline
+{\em table\-Title} & -\/ the title to be passed to the table \\
+\hline
+\end{DoxyParams}
+Instantiate a table taking in specific data from users
+
+Create a J\-Scroll\-Pane which adds the J\-Table 
+\begin{DoxyCode}
+20                                                                              \{
+22     JTable table = \textcolor{keyword}{new} JTable( m\_data, m\_headers );
+23     table.setBorder( BorderFactory.createLineBorder( Color.gray ) );
+24         JLabel title = \textcolor{keyword}{new} JLabel( tableTitle );
+25        
+26         JPanel panel = \textcolor{keyword}{new} JPanel();
+27         panel.add( title );
+29         JScrollPane scrollPane = \textcolor{keyword}{new} JScrollPane( table );
+30         scrollPane.setBorder( BorderFactory.createEmptyBorder() );
+31         JPanel tableJPan = \textcolor{keyword}{new} JPanel();
+32         JButton disabledBut = \textcolor{keyword}{new} JButton( \textcolor{stringliteral}{"Change colour"} );
+33         disabledBut.setEnabled( \textcolor{keyword}{false} );
+34         tableJPan.add( scrollPane );
+35         
+36         JFrame test = \textcolor{keyword}{new} JFrame();
+37         test.setLayout( \textcolor{keyword}{new} BorderLayout() );
+38         test.setSize( WIDTH\_FRAME, HEIGHT\_FRAME );
+39         test.setTitle( \textcolor{stringliteral}{"Table"} );
+40         test.setDefaultCloseOperation( JFrame.DISPOSE\_ON\_CLOSE );
+41         test.add( tableJPan, BorderLayout.CENTER );
+42         test.add( panel, BorderLayout.NORTH );
+43         test.setVisible( \textcolor{keyword}{true} );
+44     \}
+\end{DoxyCode}
+\hypertarget{class_table_ac32e2c58f437c8ee3d576766d2a0f5f8}{\index{Table@{Table}!Table@{Table}}
+\index{Table@{Table}!Table@{Table}}
+\subsubsection[{Table}]{\setlength{\rightskip}{0pt plus 5cm}Table.\-Table (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{String\mbox{[}$\,$\mbox{]}}]{m\-\_\-header, }
+\item[{String}]{table\-Title, }
+\item[{Stringm\-\_\-second\-Data}]{\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{String\mbox{[}$\,$\mbox{]}}]{m\-\_\-second\-Header, }
+\item[{String}]{second\-Table\-Title}
+\end{DoxyParamCaption}
+)}}\label{class_table_ac32e2c58f437c8ee3d576766d2a0f5f8}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-data} & -\/ the data to be passed from users to the table \\
+\hline
+{\em m\-\_\-header} & -\/ the headers to be passed to the table \\
+\hline
+{\em table\-Title} & -\/ the title to be passed to the table \\
+\hline
+{\em m\-\_\-second\-Data} & -\/ the second C\-S\-V data to be passed from users to the table \\
+\hline
+{\em m\-\_\-second\-Header} & -\/ the second headers to be passed to the table \\
+\hline
+{\em second\-Table\-Title} & -\/ the second title to be passed to the table \\
+\hline
+\end{DoxyParams}
+Create a J\-Scroll\-Pane which adds the J\-Table 
+\begin{DoxyCode}
+55                                                                                              \{
+56         JTable table = \textcolor{keyword}{new} JTable( m\_data, m\_header );
+57         table.setBorder( BorderFactory.createLineBorder( Color.gray ) );
+58             
+59             JLabel title = \textcolor{keyword}{new} JLabel( tableTitle + \textcolor{stringliteral}{"      "} +
+60                     \textcolor{stringliteral}{"                                      "} +
+61                     \textcolor{stringliteral}{"                                      "} +
+62                     secondTableTitle );
+63             JPanel panel = \textcolor{keyword}{new} JPanel();
+64             panel.add( title );
+65             
+67             JScrollPane scrollPane = \textcolor{keyword}{new} JScrollPane( table );
+68             scrollPane.setBorder( BorderFactory.createEmptyBorder() );
+69             JPanel tableJPan = \textcolor{keyword}{new} JPanel();
+70             JButton disabledBut = \textcolor{keyword}{new} JButton( \textcolor{stringliteral}{"Change colour"} );
+71             disabledBut.setEnabled( \textcolor{keyword}{false} );
+72             tableJPan.add( scrollPane );
+73            
+74         JTable secondTable = \textcolor{keyword}{new} JTable( m\_secondData, m\_secondHeader );
+75         secondTable.setBorder( BorderFactory.createLineBorder( Color.gray ) );
+76             
+77             JScrollPane secondScrollPane = \textcolor{keyword}{new} JScrollPane( secondTable );
+78             secondScrollPane.setBorder( BorderFactory.createEmptyBorder() );
+79             JPanel secondTableJPan = \textcolor{keyword}{new} JPanel();
+80             JButton secondDisabledBut = \textcolor{keyword}{new} JButton( \textcolor{stringliteral}{"Change colour"} );
+81             secondDisabledBut.setEnabled( \textcolor{keyword}{false} );
+82             secondTableJPan.add( secondScrollPane );
+83            
+84         JFrame test = \textcolor{keyword}{new} JFrame();
+85         test.setLayout( \textcolor{keyword}{new} BorderLayout() );
+86         test.setSize( SECOND\_WIDTH\_FRAME, SECOND\_HEIGHT\_FRAME );
+87         test.setTitle( \textcolor{stringliteral}{"Table with two csv files"} );
+88         test.setDefaultCloseOperation( JFrame.DISPOSE\_ON\_CLOSE );
+89         test.add( tableJPan, BorderLayout.WEST);
+90         test.add( panel , BorderLayout.NORTH);
+91         test.add( secondTableJPan, BorderLayout.EAST);        
+92         test.setVisible( \textcolor{keyword}{true} );
+93             
+94        
+95     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_table_a1484279c07eaa8220aa52c7036d6a2cf}{\index{Table@{Table}!main@{main}}
+\index{main@{main}!Table@{Table}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Table.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_table_a1484279c07eaa8220aa52c7036d6a2cf}
+
+\begin{DoxyCode}
+97                                            \{
+98  
+99         String array[][] = arrayTest;
+100         String array1[] = \{\textcolor{stringliteral}{"header1"},\textcolor{stringliteral}{"header2"},\textcolor{stringliteral}{"header3"},\textcolor{stringliteral}{"header4"}\};
+101         \hyperlink{class_table}{Table} Tabletest = \textcolor{keyword}{new} \hyperlink{class_table_a55d3afc76dfd94c753fc7e8086c0c02d}{Table}(array, array1, \textcolor{stringliteral}{"Test Table"});
+102     
+103         String arraya[][] = arrayTest;
+104         String array2[] = \{\textcolor{stringliteral}{"header1"},\textcolor{stringliteral}{"header2"},\textcolor{stringliteral}{"header3"},\textcolor{stringliteral}{"header4"}\};
+105         String arrayb[][] = arrayTest2;
+106         String array3[] = \{\textcolor{stringliteral}{"header5"},\textcolor{stringliteral}{"header6"},\textcolor{stringliteral}{"header7"},\textcolor{stringliteral}{"header8"}\};
+107         
+108         \hyperlink{class_table}{Table} Tabletest2 = \textcolor{keyword}{new} \hyperlink{class_table_a55d3afc76dfd94c753fc7e8086c0c02d}{Table}(arraya, array2, \textcolor{stringliteral}{"Test Table 1"}, arrayb, array3, \textcolor{stringliteral}{"Test Table
+       2"});
+109     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_table_8java}{Table.\-java}\end{DoxyCompactItemize}

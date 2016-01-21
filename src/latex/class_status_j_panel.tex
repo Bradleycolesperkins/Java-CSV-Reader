@@ -1,0 +1,141 @@
+\hypertarget{class_status_j_panel}{\section{Status\-J\-Panel Class Reference}
+\label{class_status_j_panel}\index{Status\-J\-Panel@{Status\-J\-Panel}}
+}
+
+
+This class will display the status of the application.  
+
+
+Inheritance diagram for Status\-J\-Panel\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_status_j_panel}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{class_status_j_panel_ac601eae1536e1a412c71f383cd116610}{Set\-Status} (String status)
+\item 
+String \hyperlink{class_status_j_panel_afea138c52207657b5b3b555ce1a70e42}{Get\-Status} ()
+\item 
+\hyperlink{class_status_j_panel_a2ec0b292761d595f99ac7293398ae97a}{Status\-J\-Panel} ()
+\item 
+boolean \hyperlink{class_status_j_panel_a80d2f3a1eba1516b449115fb8464cfac}{Set\-B\-V} (\hyperlink{class_bob_viz}{Bob\-Viz} bv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class will display the status of the application. 
+
+\begin{DoxyDate}{Date}
+-\/02/03/2013 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{_bob_viz_8java}{Bob\-Viz.\-java} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_status_j_panel_a2ec0b292761d595f99ac7293398ae97a}{\index{Status\-J\-Panel@{Status\-J\-Panel}!Status\-J\-Panel@{Status\-J\-Panel}}
+\index{Status\-J\-Panel@{Status\-J\-Panel}!StatusJPanel@{Status\-J\-Panel}}
+\subsubsection[{Status\-J\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}Status\-J\-Panel.\-Status\-J\-Panel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_status_j_panel_a2ec0b292761d595f99ac7293398ae97a}
+
+\begin{DoxyCode}
+40                           \{
+41         \textcolor{comment}{/* set dimensions of StatusJPanel */}
+42         Dimension size = getPreferredSize();
+43         size.height = PAN\_HEIGHT;
+44         \textcolor{comment}{/* set new layout for FlowLayout */}
+45         setLayout( \textcolor{keyword}{new} FlowLayout( FlowLayout.LEFT ) );
+46         \textcolor{comment}{/* set new size */}
+47         setPreferredSize( size );
+48         \textcolor{comment}{/* set new background colour */}
+49         setBackground( \textcolor{keyword}{new} Color( BACK\_COL, BACK\_COL, BACK\_COL ) );
+50         setBorder( BorderFactory.createMatteBorder( BORD\_TOP, BORD\_BOT, 
+51                 BORD\_LEFT, BORD\_RIGHT, Color.LIGHT\_GRAY ) );
+52         \textcolor{comment}{/* add status label to new StatusJPanel */}
+53         add( statusJLab );
+54     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_status_j_panel_afea138c52207657b5b3b555ce1a70e42}{\index{Status\-J\-Panel@{Status\-J\-Panel}!Get\-Status@{Get\-Status}}
+\index{Get\-Status@{Get\-Status}!StatusJPanel@{Status\-J\-Panel}}
+\subsubsection[{Get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}String Status\-J\-Panel.\-Get\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_status_j_panel_afea138c52207657b5b3b555ce1a70e42}
+\begin{DoxyReturn}{Returns}
+String m\-\_\-\-Status -\/a variable which stores the current status of the program. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+36                               \{
+37         \textcolor{keywordflow}{return} m\_Status;
+38     \}
+\end{DoxyCode}
+\hypertarget{class_status_j_panel_a80d2f3a1eba1516b449115fb8464cfac}{\index{Status\-J\-Panel@{Status\-J\-Panel}!Set\-B\-V@{Set\-B\-V}}
+\index{Set\-B\-V@{Set\-B\-V}!StatusJPanel@{Status\-J\-Panel}}
+\subsubsection[{Set\-B\-V}]{\setlength{\rightskip}{0pt plus 5cm}boolean Status\-J\-Panel.\-Set\-B\-V (
+\begin{DoxyParamCaption}
+\item[{{\bf Bob\-Viz}}]{bv}
+\end{DoxyParamCaption}
+)}}\label{class_status_j_panel_a80d2f3a1eba1516b449115fb8464cfac}
+
+\begin{DoxyParams}{Parameters}
+{\em bv} & -\/ a \hyperlink{class_bob_viz}{Bob\-Viz} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E on success 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+60                                       \{
+61         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+62         \textcolor{keywordflow}{if}( ( test == \textcolor{keyword}{true} ) && ( bv == null ) ) \{
+63             System.err.println( \textcolor{stringliteral}{"StatusJPanel::SetBV() ***Warning, object"}
+64                     + \textcolor{stringliteral}{"is null. Value sent: "} + bv );
+65         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( test == \textcolor{keyword}{true} ) \{
+66             System.out.println( \textcolor{stringliteral}{"StatusJPanel::SetBV() Object is valid. Value"}
+67                     + \textcolor{stringliteral}{"sent: "} + bv );
+68         \}
+69         m\_BV = bv;
+70         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+71     \}
+\end{DoxyCode}
+\hypertarget{class_status_j_panel_ac601eae1536e1a412c71f383cd116610}{\index{Status\-J\-Panel@{Status\-J\-Panel}!Set\-Status@{Set\-Status}}
+\index{Set\-Status@{Set\-Status}!StatusJPanel@{Status\-J\-Panel}}
+\subsubsection[{Set\-Status}]{\setlength{\rightskip}{0pt plus 5cm}boolean Status\-J\-Panel.\-Set\-Status (
+\begin{DoxyParamCaption}
+\item[{String}]{status}
+\end{DoxyParamCaption}
+)}}\label{class_status_j_panel_ac601eae1536e1a412c71f383cd116610}
+This method updates the status of the program. Other classes will call this method to update the status which will inform the user. 
+\begin{DoxyParams}{Parameters}
+{\em status} & -\/ the current status. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolen true if successful 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+26                                               \{
+27         m\_Status = status;
+28         statusJLab.setText( \textcolor{stringliteral}{"Status: "} + \hyperlink{class_status_j_panel_afea138c52207657b5b3b555ce1a70e42}{GetStatus}() );
+29         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+30     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_status_j_panel_8java}{Status\-J\-Panel.\-java}\end{DoxyCompactItemize}

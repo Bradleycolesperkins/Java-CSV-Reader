@@ -1,0 +1,81 @@
+\hypertarget{class_error}{\section{Error Class Reference}
+\label{class_error}\index{Error@{Error}}
+}
+
+
+A class designed to deal with errors and alerts the user.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{class_error_a7736fe0b3537e7a9e092faec37f31557}{File\-Error} ()
+\item 
+boolean \hyperlink{class_error_a56c2216c6ebe6f6b18625d901358ae77}{Read\-Error} (int i)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class designed to deal with errors and alerts the user. 
+
+\begin{DoxyAuthor}{Author}
+Josh Taylor A4
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+1st March 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_error_a7736fe0b3537e7a9e092faec37f31557}{\index{Error@{Error}!File\-Error@{File\-Error}}
+\index{File\-Error@{File\-Error}!Error@{Error}}
+\subsubsection[{File\-Error}]{\setlength{\rightskip}{0pt plus 5cm}boolean Error.\-File\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_error_a7736fe0b3537e7a9e092faec37f31557}
+« File \hyperlink{class_error}{Error} method to display a message box to alert the user the file cannot be read \begin{DoxyReturn}{Returns}
+boolean if completed successfully 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+17                                   \{
+18             JOptionPane.showMessageDialog(null, \textcolor{stringliteral}{"Failed to open file,"}
+19                     + \textcolor{stringliteral}{"File is too currupted"});
+20             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+21         \}
+\end{DoxyCode}
+\hypertarget{class_error_a56c2216c6ebe6f6b18625d901358ae77}{\index{Error@{Error}!Read\-Error@{Read\-Error}}
+\index{Read\-Error@{Read\-Error}!Error@{Error}}
+\subsubsection[{Read\-Error}]{\setlength{\rightskip}{0pt plus 5cm}boolean Error.\-Read\-Error (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_error_a56c2216c6ebe6f6b18625d901358ae77}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & integer representing how many errors exist \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+27                                        \{
+28             \textcolor{keywordtype}{int} reply = JOptionPane.showConfirmDialog(null,
+29 i+\textcolor{stringliteral}{" errors have been detected, would you like to remove the corrupted data?"}, \textcolor{stringliteral}{"choose one"}, JOptionPane.
+      YES\_NO\_OPTION);
+30             \textcolor{keywordflow}{if} (reply == JOptionPane.YES\_OPTION)\{
+31                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+32             \} \textcolor{keywordflow}{else} \{
+33                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+34             \}
+35             
+36         \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_error_8java}{Error.\-java}\end{DoxyCompactItemize}

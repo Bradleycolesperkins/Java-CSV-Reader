@@ -1,0 +1,312 @@
+\hypertarget{class_information_j_panel}{\section{Information\-J\-Panel Class Reference}
+\label{class_information_j_panel}\index{Information\-J\-Panel@{Information\-J\-Panel}}
+}
+
+
+A class designed to deal with the Information panel.  
+
+
+Inheritance diagram for Information\-J\-Panel\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_information_j_panel}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Boolean \hyperlink{class_information_j_panel_a26ab40e4b038442c1d0ad31bb3f5e180}{Set\-Author\-Label} (J\-Label label)
+\item 
+Boolean \hyperlink{class_information_j_panel_a19b28c461ef20fceb876afa04ef56f3e}{Set\-Author\-Field} (String field)
+\item 
+Boolean \hyperlink{class_information_j_panel_af098ca9a5d335f46b9b64b5530dfa326}{Set\-Description\-Label} (J\-Label label)
+\item 
+Boolean \hyperlink{class_information_j_panel_acdc378d528647247674ccf45b071e329}{Set\-Description\-Area} (String area)
+\item 
+Boolean \hyperlink{class_information_j_panel_ac051ccc3facbbb65afcb8e3246157000}{Set\-Data\-Attribute} (\hyperlink{class_data_attribute}{Data\-Attribute} data)
+\item 
+J\-Label \hyperlink{class_information_j_panel_a56627ef87297c80e92b05db708a478e2}{Get\-Author\-Label} ()
+\item 
+J\-Text\-Field \hyperlink{class_information_j_panel_a5a315426cb0994bdcf41713930ffc16c}{Get\-Author\-Field} ()
+\item 
+J\-Label \hyperlink{class_information_j_panel_a6e2933b638efb56af0c3b7a350222e11}{Get\-Description\-Label} ()
+\item 
+J\-Text\-Area \hyperlink{class_information_j_panel_a836fd4b83ed476210ba7cbbc10fcf454}{Get\-Description\-Area} ()
+\item 
+\hyperlink{class_data_attribute}{Data\-Attribute} \hyperlink{class_information_j_panel_aecd081b72d4c75f3a6a92c3edeaf3693}{Get\-Data\-Attribute} ()
+\item 
+\hyperlink{class_information_j_panel_a78d613b372ae117671a19ee3fffea5f3}{Information\-J\-Panel} (\hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_information_j_panel_a09618b33446369cf60d4a9eb2035c4f2}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class designed to deal with the Information panel. 
+
+\begin{DoxyAuthor}{Author}
+P\-D\-M1 A4
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+14/04/2013 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_information_j_panel_a78d613b372ae117671a19ee3fffea5f3}{\index{Information\-J\-Panel@{Information\-J\-Panel}!Information\-J\-Panel@{Information\-J\-Panel}}
+\index{Information\-J\-Panel@{Information\-J\-Panel}!InformationJPanel@{Information\-J\-Panel}}
+\subsubsection[{Information\-J\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}Information\-J\-Panel.\-Information\-J\-Panel (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_information_j_panel_a78d613b372ae117671a19ee3fffea5f3}
+
+\begin{DoxyCode}
+106                                                     \{
+107         
+108         setLayout(\textcolor{keyword}{new} BorderLayout(HGAP,VGAP));
+109         TimeStamp ts = \textcolor{keyword}{new} TimeStamp();
+110         \hyperlink{class_information_j_panel_ac051ccc3facbbb65afcb8e3246157000}{SetDataAttribute}(setting);
+111         \hyperlink{class_information_j_panel_a19b28c461ef20fceb876afa04ef56f3e}{SetAuthorField}(\hyperlink{class_information_j_panel_aecd081b72d4c75f3a6a92c3edeaf3693}{GetDataAttribute}().GetChartAuthor());
+112         \hyperlink{class_information_j_panel_acdc378d528647247674ccf45b071e329}{SetDescriptionArea}(\hyperlink{class_information_j_panel_aecd081b72d4c75f3a6a92c3edeaf3693}{GetDataAttribute}().GetChartDescription());
+113         \hyperlink{class_information_j_panel_a836fd4b83ed476210ba7cbbc10fcf454}{GetDescriptionArea}().append(\textcolor{stringliteral}{"\(\backslash\)n"} + ts.GetTimeStamp());
+114         JScrollPane scrollPane = \textcolor{keyword}{new} JScrollPane(\hyperlink{class_information_j_panel_a836fd4b83ed476210ba7cbbc10fcf454}{GetDescriptionArea}());
+115         \hyperlink{class_information_j_panel_a5a315426cb0994bdcf41713930ffc16c}{GetAuthorField}().setEditable(\textcolor{keyword}{false});
+116         \hyperlink{class_information_j_panel_a836fd4b83ed476210ba7cbbc10fcf454}{GetDescriptionArea}().setEditable(\textcolor{keyword}{false});
+117         \hyperlink{class_information_j_panel_a836fd4b83ed476210ba7cbbc10fcf454}{GetDescriptionArea}().setLineWrap(\textcolor{keyword}{true});
+118         \hyperlink{class_information_j_panel_a836fd4b83ed476210ba7cbbc10fcf454}{GetDescriptionArea}().setWrapStyleWord(\textcolor{keyword}{true});
+119         
+120         JPanel top = \textcolor{keyword}{new} JPanel();
+121         JPanel bot = \textcolor{keyword}{new} JPanel();
+122         
+123         top.add(\hyperlink{class_information_j_panel_a56627ef87297c80e92b05db708a478e2}{GetAuthorLabel}());
+124         top.add(\hyperlink{class_information_j_panel_a5a315426cb0994bdcf41713930ffc16c}{GetAuthorField}());
+125         bot.add(\hyperlink{class_information_j_panel_a6e2933b638efb56af0c3b7a350222e11}{GetDescriptionLabel}());
+126         bot.add(scrollPane);
+127         
+128         add(top, BorderLayout.CENTER);
+129         add(bot, BorderLayout.LINE\_END);
+130     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_information_j_panel_a5a315426cb0994bdcf41713930ffc16c}{\index{Information\-J\-Panel@{Information\-J\-Panel}!Get\-Author\-Field@{Get\-Author\-Field}}
+\index{Get\-Author\-Field@{Get\-Author\-Field}!InformationJPanel@{Information\-J\-Panel}}
+\subsubsection[{Get\-Author\-Field}]{\setlength{\rightskip}{0pt plus 5cm}J\-Text\-Field Information\-J\-Panel.\-Get\-Author\-Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_information_j_panel_a5a315426cb0994bdcf41713930ffc16c}
+\begin{DoxyReturn}{Returns}
+J\-Text\-Field author\-Field 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+84                                        \{
+85         \textcolor{keywordflow}{return} m\_AuthorField;
+86     \}
+\end{DoxyCode}
+\hypertarget{class_information_j_panel_a56627ef87297c80e92b05db708a478e2}{\index{Information\-J\-Panel@{Information\-J\-Panel}!Get\-Author\-Label@{Get\-Author\-Label}}
+\index{Get\-Author\-Label@{Get\-Author\-Label}!InformationJPanel@{Information\-J\-Panel}}
+\subsubsection[{Get\-Author\-Label}]{\setlength{\rightskip}{0pt plus 5cm}J\-Label Information\-J\-Panel.\-Get\-Author\-Label (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_information_j_panel_a56627ef87297c80e92b05db708a478e2}
+\begin{DoxyReturn}{Returns}
+J\-Label author\-Label 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+78                                    \{
+79         \textcolor{keywordflow}{return} m\_AuthorLabel;
+80     \}
+\end{DoxyCode}
+\hypertarget{class_information_j_panel_aecd081b72d4c75f3a6a92c3edeaf3693}{\index{Information\-J\-Panel@{Information\-J\-Panel}!Get\-Data\-Attribute@{Get\-Data\-Attribute}}
+\index{Get\-Data\-Attribute@{Get\-Data\-Attribute}!InformationJPanel@{Information\-J\-Panel}}
+\subsubsection[{Get\-Data\-Attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data\-Attribute} Information\-J\-Panel.\-Get\-Data\-Attribute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_information_j_panel_aecd081b72d4c75f3a6a92c3edeaf3693}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_data_attribute}{Data\-Attribute} data\-Attribute 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+102                                             \{
+103         \textcolor{keywordflow}{return} m\_DataAttribute;
+104     \}
+\end{DoxyCode}
+\hypertarget{class_information_j_panel_a836fd4b83ed476210ba7cbbc10fcf454}{\index{Information\-J\-Panel@{Information\-J\-Panel}!Get\-Description\-Area@{Get\-Description\-Area}}
+\index{Get\-Description\-Area@{Get\-Description\-Area}!InformationJPanel@{Information\-J\-Panel}}
+\subsubsection[{Get\-Description\-Area}]{\setlength{\rightskip}{0pt plus 5cm}J\-Text\-Area Information\-J\-Panel.\-Get\-Description\-Area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_information_j_panel_a836fd4b83ed476210ba7cbbc10fcf454}
+\begin{DoxyReturn}{Returns}
+J\-Text\-Area description\-Area 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+96                                           \{
+97         \textcolor{keywordflow}{return} m\_DescriptionField;
+98     \}
+\end{DoxyCode}
+\hypertarget{class_information_j_panel_a6e2933b638efb56af0c3b7a350222e11}{\index{Information\-J\-Panel@{Information\-J\-Panel}!Get\-Description\-Label@{Get\-Description\-Label}}
+\index{Get\-Description\-Label@{Get\-Description\-Label}!InformationJPanel@{Information\-J\-Panel}}
+\subsubsection[{Get\-Description\-Label}]{\setlength{\rightskip}{0pt plus 5cm}J\-Label Information\-J\-Panel.\-Get\-Description\-Label (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_information_j_panel_a6e2933b638efb56af0c3b7a350222e11}
+\begin{DoxyReturn}{Returns}
+J\-Label description\-Label 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+90                                         \{
+91         \textcolor{keywordflow}{return} m\_DescriptionLabel;
+92     \}
+\end{DoxyCode}
+\hypertarget{class_information_j_panel_a09618b33446369cf60d4a9eb2035c4f2}{\index{Information\-J\-Panel@{Information\-J\-Panel}!main@{main}}
+\index{main@{main}!InformationJPanel@{Information\-J\-Panel}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Information\-J\-Panel.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_information_j_panel_a09618b33446369cf60d4a9eb2035c4f2}
+
+\begin{DoxyCode}
+132                                            \{
+133         JFrame frame = \textcolor{keyword}{new} JFrame(\textcolor{stringliteral}{"Information Window"});
+134         \hyperlink{class_data_attribute}{DataAttribute} data = \textcolor{keyword}{new} \hyperlink{class_data_attribute}{DataAttribute}();
+135         TimeStamp timeStamp = \textcolor{keyword}{new} TimeStamp();
+136         data.\hyperlink{class_data_attribute_ae2965e7960aaf72643f23a1359daf582}{SetChartAuthor}(\textcolor{stringliteral}{"Author"});
+137         data.\hyperlink{class_data_attribute_abbc4a01ce590f81351c3bb527cf18352}{SetChartDesciption}(
+138                 \textcolor{stringliteral}{"This is a description of something describable\(\backslash\)n"});
+139         frame.add(\textcolor{keyword}{new} \hyperlink{class_information_j_panel_a78d613b372ae117671a19ee3fffea5f3}{InformationJPanel}(data));
+140         frame.pack();
+141         frame.setVisible(\textcolor{keyword}{true});
+142     \}
+\end{DoxyCode}
+\hypertarget{class_information_j_panel_a19b28c461ef20fceb876afa04ef56f3e}{\index{Information\-J\-Panel@{Information\-J\-Panel}!Set\-Author\-Field@{Set\-Author\-Field}}
+\index{Set\-Author\-Field@{Set\-Author\-Field}!InformationJPanel@{Information\-J\-Panel}}
+\subsubsection[{Set\-Author\-Field}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Information\-J\-Panel.\-Set\-Author\-Field (
+\begin{DoxyParamCaption}
+\item[{String}]{field}
+\end{DoxyParamCaption}
+)}}\label{class_information_j_panel_a19b28c461ef20fceb876afa04ef56f3e}
+
+\begin{DoxyParams}{Parameters}
+{\em String} & author\-Field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean true -\/ if success 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+45                                                 \{ 
+46         m\_AuthorField.setText(field);
+47         \textcolor{keywordflow}{return} \textcolor{keyword}{true}; 
+48     \}
+\end{DoxyCode}
+\hypertarget{class_information_j_panel_a26ab40e4b038442c1d0ad31bb3f5e180}{\index{Information\-J\-Panel@{Information\-J\-Panel}!Set\-Author\-Label@{Set\-Author\-Label}}
+\index{Set\-Author\-Label@{Set\-Author\-Label}!InformationJPanel@{Information\-J\-Panel}}
+\subsubsection[{Set\-Author\-Label}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Information\-J\-Panel.\-Set\-Author\-Label (
+\begin{DoxyParamCaption}
+\item[{J\-Label}]{label}
+\end{DoxyParamCaption}
+)}}\label{class_information_j_panel_a26ab40e4b038442c1d0ad31bb3f5e180}
+
+\begin{DoxyParams}{Parameters}
+{\em J\-Label} & author\-Label \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean true -\/ if success 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+37                                                 \{ 
+38         m\_AuthorLabel = label;
+39         \textcolor{keywordflow}{return} \textcolor{keyword}{true}; 
+40     \}
+\end{DoxyCode}
+\hypertarget{class_information_j_panel_ac051ccc3facbbb65afcb8e3246157000}{\index{Information\-J\-Panel@{Information\-J\-Panel}!Set\-Data\-Attribute@{Set\-Data\-Attribute}}
+\index{Set\-Data\-Attribute@{Set\-Data\-Attribute}!InformationJPanel@{Information\-J\-Panel}}
+\subsubsection[{Set\-Data\-Attribute}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Information\-J\-Panel.\-Set\-Data\-Attribute (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{data}
+\end{DoxyParamCaption}
+)}}\label{class_information_j_panel_ac051ccc3facbbb65afcb8e3246157000}
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & data\-Attribute \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean true -\/ if success 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+71                                                         \{
+72         m\_DataAttribute = data;
+73         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+74     \}
+\end{DoxyCode}
+\hypertarget{class_information_j_panel_acdc378d528647247674ccf45b071e329}{\index{Information\-J\-Panel@{Information\-J\-Panel}!Set\-Description\-Area@{Set\-Description\-Area}}
+\index{Set\-Description\-Area@{Set\-Description\-Area}!InformationJPanel@{Information\-J\-Panel}}
+\subsubsection[{Set\-Description\-Area}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Information\-J\-Panel.\-Set\-Description\-Area (
+\begin{DoxyParamCaption}
+\item[{String}]{area}
+\end{DoxyParamCaption}
+)}}\label{class_information_j_panel_acdc378d528647247674ccf45b071e329}
+
+\begin{DoxyParams}{Parameters}
+{\em String} & description\-Area \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean true -\/ if success 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+63                                                    \{ 
+64         m\_DescriptionField.setText(area);
+65         \textcolor{keywordflow}{return} \textcolor{keyword}{true}; 
+66     \}
+\end{DoxyCode}
+\hypertarget{class_information_j_panel_af098ca9a5d335f46b9b64b5530dfa326}{\index{Information\-J\-Panel@{Information\-J\-Panel}!Set\-Description\-Label@{Set\-Description\-Label}}
+\index{Set\-Description\-Label@{Set\-Description\-Label}!InformationJPanel@{Information\-J\-Panel}}
+\subsubsection[{Set\-Description\-Label}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Information\-J\-Panel.\-Set\-Description\-Label (
+\begin{DoxyParamCaption}
+\item[{J\-Label}]{label}
+\end{DoxyParamCaption}
+)}}\label{class_information_j_panel_af098ca9a5d335f46b9b64b5530dfa326}
+
+\begin{DoxyParams}{Parameters}
+{\em J\-Label} & description\-Label \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean true -\/ if success 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+53                                                      \{ 
+54         m\_DescriptionLabel = label;
+55         \textcolor{keywordflow}{return} \textcolor{keyword}{true}; 
+56     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_information_j_panel_8java}{Information\-J\-Panel.\-java}\end{DoxyCompactItemize}

@@ -1,0 +1,264 @@
+\hypertarget{class_selection_viz_j_panel}{\section{Selection\-Viz\-J\-Panel Class Reference}
+\label{class_selection_viz_j_panel}\index{Selection\-Viz\-J\-Panel@{Selection\-Viz\-J\-Panel}}
+}
+
+
+This class passes the data from the G\-U\-I to the constructors of the visualisation types.  
+
+
+Inheritance diagram for Selection\-Viz\-J\-Panel\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_selection_viz_j_panel}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_selection_viz_j_panel_ab3acb1051321159e8cfcc251b6adeb9a}{Selection\-Viz\-J\-Panel} ()
+\item 
+boolean \hyperlink{class_selection_viz_j_panel_a6287ea60b41d461f06b609340d9c38b4}{Set\-B\-V} (\hyperlink{class_bob_viz}{Bob\-Viz} bv)
+\item 
+boolean \hyperlink{class_selection_viz_j_panel_ab942f7a1e094e8d3df0df172499c8878}{Set\-Viz\-J\-But\-Enabled} (boolean b)
+\item 
+boolean \hyperlink{class_selection_viz_j_panel_afe28337fc26eb95b02450f6138977c90}{Set\-Slideshow\-Viz\-J\-But\-Enabled} (boolean b)
+\item 
+boolean \hyperlink{class_selection_viz_j_panel_ad60f302412430e0e86fe1a6dc9e65d2a}{Get\-Viz\-J\-But\-Enabled} ()
+\item 
+boolean \hyperlink{class_selection_viz_j_panel_ad585ffba9965244bfe10ce138cc1e3f7}{Get\-Slideshow\-Viz\-J\-But\-Enabled} ()
+\item 
+boolean \hyperlink{class_selection_viz_j_panel_af9db99d82813968723871bb63985618f}{Set\-Data\-Attribute} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class passes the data from the G\-U\-I to the constructors of the visualisation types. 
+
+\begin{DoxyDate}{Date}
+30/04/2013 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{_table_8java}{Table.\-java}, \hyperlink{_column_chart_8java}{Column\-Chart.\-java}, Scatter\-Graph.\-java, \hyperlink{_pie_chart_8java}{Pie\-Chart.\-java} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_selection_viz_j_panel_ab3acb1051321159e8cfcc251b6adeb9a}{\index{Selection\-Viz\-J\-Panel@{Selection\-Viz\-J\-Panel}!Selection\-Viz\-J\-Panel@{Selection\-Viz\-J\-Panel}}
+\index{Selection\-Viz\-J\-Panel@{Selection\-Viz\-J\-Panel}!SelectionVizJPanel@{Selection\-Viz\-J\-Panel}}
+\subsubsection[{Selection\-Viz\-J\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}Selection\-Viz\-J\-Panel.\-Selection\-Viz\-J\-Panel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_selection_viz_j_panel_ab3acb1051321159e8cfcc251b6adeb9a}
+
+\begin{DoxyCode}
+25                                 \{
+26         
+27         \textcolor{comment}{/* create new visualisation button */}
+28         m\_VisualizeJBut = \textcolor{keyword}{new} JButton( \textcolor{stringliteral}{"Generate Visualization!"} );
+29         \textcolor{comment}{/* create new slideshow visualisation button */}
+30         m\_SlideshowVisualizeJBut = \textcolor{keyword}{new} JButton( \textcolor{stringliteral}{"Generate Slideshow!"} );
+31 
+32         \textcolor{comment}{/* set visualisation font */}
+33         m\_VisualizeJBut.setFont( \textcolor{keyword}{new} Font( \textcolor{stringliteral}{"Courier"}, Font.BOLD, FONT\_SIZE ) );
+34         m\_VisualizeJBut.setEnabled( \textcolor{keyword}{false} );
+35         add( m\_VisualizeJBut );
+36         m\_SlideshowVisualizeJBut.setFont( \textcolor{keyword}{new} Font( \textcolor{stringliteral}{"Courier"}, Font.BOLD, FONT\_SIZE ) );
+37         m\_SlideshowVisualizeJBut.setEnabled( \textcolor{keyword}{false} );
+38         add( m\_SlideshowVisualizeJBut );
+39 
+40 
+41         \textcolor{comment}{/* set listeners */}
+42         GenerateVizJPanelEventHandler iJEventHandler = \textcolor{keyword}{new} 
+43                 GenerateVizJPanelEventHandler();
+44         m\_VisualizeJBut.addActionListener( iJEventHandler );
+45         
+46         GenerateSlideshowVizJPanelEventHandler iSlideshowJEventHandler = \textcolor{keyword}{new} 
+47                 GenerateSlideshowVizJPanelEventHandler();
+48         m\_SlideshowVisualizeJBut.addActionListener( iSlideshowJEventHandler );
+49         
+50     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_selection_viz_j_panel_ad585ffba9965244bfe10ce138cc1e3f7}{\index{Selection\-Viz\-J\-Panel@{Selection\-Viz\-J\-Panel}!Get\-Slideshow\-Viz\-J\-But\-Enabled@{Get\-Slideshow\-Viz\-J\-But\-Enabled}}
+\index{Get\-Slideshow\-Viz\-J\-But\-Enabled@{Get\-Slideshow\-Viz\-J\-But\-Enabled}!SelectionVizJPanel@{Selection\-Viz\-J\-Panel}}
+\subsubsection[{Get\-Slideshow\-Viz\-J\-But\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}boolean Selection\-Viz\-J\-Panel.\-Get\-Slideshow\-Viz\-J\-But\-Enabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_selection_viz_j_panel_ad585ffba9965244bfe10ce138cc1e3f7}
+\begin{DoxyReturn}{Returns}
+the state of the slideshow button 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+109                                                 \{
+110         \textcolor{keywordflow}{return} m\_SlideshowVisualizeJBut.isEnabled();
+111     \}
+\end{DoxyCode}
+\hypertarget{class_selection_viz_j_panel_ad60f302412430e0e86fe1a6dc9e65d2a}{\index{Selection\-Viz\-J\-Panel@{Selection\-Viz\-J\-Panel}!Get\-Viz\-J\-But\-Enabled@{Get\-Viz\-J\-But\-Enabled}}
+\index{Get\-Viz\-J\-But\-Enabled@{Get\-Viz\-J\-But\-Enabled}!SelectionVizJPanel@{Selection\-Viz\-J\-Panel}}
+\subsubsection[{Get\-Viz\-J\-But\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}boolean Selection\-Viz\-J\-Panel.\-Get\-Viz\-J\-But\-Enabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_selection_viz_j_panel_ad60f302412430e0e86fe1a6dc9e65d2a}
+\begin{DoxyReturn}{Returns}
+the state of visualise button 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+103                                        \{
+104         \textcolor{keywordflow}{return} m\_VisualizeJBut.isEnabled();
+105     \}
+\end{DoxyCode}
+\hypertarget{class_selection_viz_j_panel_a6287ea60b41d461f06b609340d9c38b4}{\index{Selection\-Viz\-J\-Panel@{Selection\-Viz\-J\-Panel}!Set\-B\-V@{Set\-B\-V}}
+\index{Set\-B\-V@{Set\-B\-V}!SelectionVizJPanel@{Selection\-Viz\-J\-Panel}}
+\subsubsection[{Set\-B\-V}]{\setlength{\rightskip}{0pt plus 5cm}boolean Selection\-Viz\-J\-Panel.\-Set\-B\-V (
+\begin{DoxyParamCaption}
+\item[{{\bf Bob\-Viz}}]{bv}
+\end{DoxyParamCaption}
+)}}\label{class_selection_viz_j_panel_a6287ea60b41d461f06b609340d9c38b4}
+This method will cast the \hyperlink{class_bob_viz}{Bob\-Viz} instance from Bob\-Viz\-Demo. 
+\begin{DoxyParams}{Parameters}
+{\em bv} & -\/a \hyperlink{class_bob_viz}{Bob\-Viz} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean if true 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+58                                       \{
+59         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+60         \textcolor{keywordflow}{if}( ( test == \textcolor{keyword}{true} ) && ( bv == null ) ) \{
+61             System.err.println( \textcolor{stringliteral}{"GenerateVizJPanel::SetBV() ***Warning, object"}
+62                     + \textcolor{stringliteral}{"is null. Value sent: "} + bv );
+63         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( test == \textcolor{keyword}{true} ) \{
+64             System.out.println( \textcolor{stringliteral}{"GenerateVizJPanel::SetBV() Object is valid. "}
+65                     + \textcolor{stringliteral}{"Value sent: "} + bv );
+66         \}
+67         m\_BV = bv;
+68         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+69     \}
+\end{DoxyCode}
+\hypertarget{class_selection_viz_j_panel_af9db99d82813968723871bb63985618f}{\index{Selection\-Viz\-J\-Panel@{Selection\-Viz\-J\-Panel}!Set\-Data\-Attribute@{Set\-Data\-Attribute}}
+\index{Set\-Data\-Attribute@{Set\-Data\-Attribute}!SelectionVizJPanel@{Selection\-Viz\-J\-Panel}}
+\subsubsection[{Set\-Data\-Attribute}]{\setlength{\rightskip}{0pt plus 5cm}boolean Selection\-Viz\-J\-Panel.\-Set\-Data\-Attribute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_selection_viz_j_panel_af9db99d82813968723871bb63985618f}
+Sets X \& Y axis labels in \hyperlink{class_data_attribute}{Data\-Attribute} \begin{DoxyReturn}{Returns}
+boolean true if successful 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+117                                       \{
+118         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_a434e57b34476663c13eb6dc37ef05cd2}{SetTitle}( m\_BV.
+      \hyperlink{class_bob_viz_a10dab616869fe644d16c2ccf78627af5}{GetSettingJPan}().
+119                 GetTitle() );
+120         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_ab7c3ae470051e011aa22725ad9ebab58}{SetSecondTitle}( m\_BV.
+      \hyperlink{class_bob_viz_a10dab616869fe644d16c2ccf78627af5}{GetSettingJPan}().
+121                 GetSecondTitle() );
+122         \textcolor{comment}{/* store axis label x and y in DataAttribute */}
+123         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_a2d8c2f41d2847e3bbcb8b869d15e97f3}{SetAxisLabelX}( m\_BV.
+124                 GetSettingJPan().GetAxisLabelX());        
+125         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_a31655976e5ce4d6be0b07b0a0bdcf3fc}{SetAxisLabelY}( m\_BV.
+126                 GetSettingJPan().GetAxisLabelY());
+127         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_a1b57fd911860c75a1aa5ded4c0c2d707}{SetAxisLabelZ}( m\_BV.
+128                 GetSettingJPan().GetAxisLabelZ());
+129         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_a0749b154967281fc88c3d50b61b82ec7}{SetSecondAxisLabelX}( m\_BV.
+130                 GetSettingJPan().GetSecondAxisLabelX());        
+131         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_aa991ca454981460ff011efa92a63b83c}{SetSecondAxisLabelY}( m\_BV.
+132                 GetSettingJPan().GetSecondAxisLabelY());
+133         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_a1b7436f51b0079c492b6451500230329}{SetSecondAxisLabelZ}( m\_BV.
+134                 GetSettingJPan().GetSecondAxisLabelZ());
+135         
+136         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_acd1994e216d21da1f3e7ea2819145fe9}{SetXAxisMin}( m\_BV.
+137                 GetSettingJPan().GetXAxisMin());
+138         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_a6aedbe05a82f23d6abca00f8b85bf1ff}{SetXAxisMax}( m\_BV.
+139                 GetSettingJPan().GetXAxisMax());
+140         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_afacd93a87dbe8ed03d4dc9a50e44851f}{SetYAxisMin}( m\_BV.
+141                 GetSettingJPan().GetYAxisMin());
+142         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_a0098d5256a1b929cf8a84006bb52d1af}{SetYAxisMax}( m\_BV.
+143                 GetSettingJPan().GetYAxisMax());
+144         
+145         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_ad70067aa2addb581e5d654d1cee4cd97}{SetXAxisScale}( m\_BV.
+146                 GetSettingJPan().GetXAxisScale());
+147         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_a56bf007539747ac6b80c156416336d14}{SetYAxisScale}( m\_BV.
+148                 GetSettingJPan().GetYAxisScale());
+149         
+150         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_ae2965e7960aaf72643f23a1359daf582}{SetChartAuthor}( m\_BV.
+151                 GetSettingJPan().GetAuthor());
+152         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_abbc4a01ce590f81351c3bb527cf18352}{SetChartDesciption}( m\_BV.
+153                 GetSettingJPan().GetDescription());
+154         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_aa3848e837d08789f975e82a9753bda5c}{DisplayAll}();
+155         
+156         m\_BV.\hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{GetDataAttribute}().\hyperlink{class_data_attribute_a46b8473768d9ba3609e5f5994e903a7c}{SetUseDefault}(
+157                 m\_BV.\hyperlink{class_bob_viz_a10dab616869fe644d16c2ccf78627af5}{GetSettingJPan}().\hyperlink{class_setting_j_panel_ab9c3cb39831c331a8a8a041655348cc7}{GetDefaultButton}().isSelected());
+158         
+159         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+160     \}
+\end{DoxyCode}
+\hypertarget{class_selection_viz_j_panel_afe28337fc26eb95b02450f6138977c90}{\index{Selection\-Viz\-J\-Panel@{Selection\-Viz\-J\-Panel}!Set\-Slideshow\-Viz\-J\-But\-Enabled@{Set\-Slideshow\-Viz\-J\-But\-Enabled}}
+\index{Set\-Slideshow\-Viz\-J\-But\-Enabled@{Set\-Slideshow\-Viz\-J\-But\-Enabled}!SelectionVizJPanel@{Selection\-Viz\-J\-Panel}}
+\subsubsection[{Set\-Slideshow\-Viz\-J\-But\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}boolean Selection\-Viz\-J\-Panel.\-Set\-Slideshow\-Viz\-J\-But\-Enabled (
+\begin{DoxyParamCaption}
+\item[{boolean}]{b}
+\end{DoxyParamCaption}
+)}}\label{class_selection_viz_j_panel_afe28337fc26eb95b02450f6138977c90}
+This method changes the enabled state of the \hyperlink{class_slideshow}{Slideshow} button. 
+\begin{DoxyParams}{Parameters}
+{\em b} & -\/a boolean object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean true if successful 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+90                                                            \{
+91         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+92         \textcolor{keywordflow}{if} ( test == \textcolor{keyword}{true} ) \{
+93             System.out.println( \textcolor{stringliteral}{"GenerateVizJPanel::SetSlideshowVizJButEnabled() m\_"}
+94                     + \textcolor{stringliteral}{"SlideshowVisualizeJBut enabled status: "} + b );
+95         \}
+96         m\_SlideshowVisualizeJBut.setEnabled( b );
+97         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+98     \}
+\end{DoxyCode}
+\hypertarget{class_selection_viz_j_panel_ab942f7a1e094e8d3df0df172499c8878}{\index{Selection\-Viz\-J\-Panel@{Selection\-Viz\-J\-Panel}!Set\-Viz\-J\-But\-Enabled@{Set\-Viz\-J\-But\-Enabled}}
+\index{Set\-Viz\-J\-But\-Enabled@{Set\-Viz\-J\-But\-Enabled}!SelectionVizJPanel@{Selection\-Viz\-J\-Panel}}
+\subsubsection[{Set\-Viz\-J\-But\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}boolean Selection\-Viz\-J\-Panel.\-Set\-Viz\-J\-But\-Enabled (
+\begin{DoxyParamCaption}
+\item[{boolean}]{b}
+\end{DoxyParamCaption}
+)}}\label{class_selection_viz_j_panel_ab942f7a1e094e8d3df0df172499c8878}
+This method changes the enabled state of the visualisation button. 
+\begin{DoxyParams}{Parameters}
+{\em b} & -\/a boolean object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean true if successful 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+76                                                   \{
+77         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+78         \textcolor{keywordflow}{if} ( test == \textcolor{keyword}{true} ) \{
+79             System.out.println( \textcolor{stringliteral}{"GenerateVizJPanel::SetVizJButEnabled() m\_"}
+80                     + \textcolor{stringliteral}{"VisualizeJBut enabled status: "} + b );
+81         \}
+82         m\_VisualizeJBut.setEnabled( b );
+83         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+84     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_selection_viz_j_panel_8java}{Selection\-Viz\-J\-Panel.\-java}\end{DoxyCompactItemize}

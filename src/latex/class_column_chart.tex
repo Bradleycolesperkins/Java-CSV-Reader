@@ -1,0 +1,337 @@
+\hypertarget{class_column_chart}{\section{Column\-Chart Class Reference}
+\label{class_column_chart}\index{Column\-Chart@{Column\-Chart}}
+}
+
+
+A class that displays specific data in a Column \hyperlink{interface_chart}{Chart} visualiser.  
+
+
+Inheritance diagram for Column\-Chart\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_column_chart}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_column_chart_a4c421ca57f3eb716949c9e5b06507c3c}{Column\-Chart} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_column_chart_a40f6cc800cef38dde9befc3e24686cc2}{Column\-Chart} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting, String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} second\-Data, \hyperlink{class_dataset}{Dataset} second\-Dataset, \hyperlink{class_data_attribute}{Data\-Attribute} second\-Setting)
+\item 
+\hyperlink{class_column_chart_a8e580c4c64b84f623403bd113d8af320}{Column\-Chart} (\hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_column_chart_a6beb1983d5766b94f56c8f91f2a93ef4}{Column\-Chart} (\hyperlink{class_data_attribute}{Data\-Attribute} setting, \hyperlink{class_data_attribute}{Data\-Attribute} secondsetting)
+\item 
+boolean \hyperlink{class_column_chart_add2a600244d03013679b95eb8f29f09d}{Set\-Chart\-Title} (String Chart\-Title)
+\item 
+boolean \hyperlink{class_column_chart_a35cb0aa2a3888f2f02fe4994842a5741}{Set\-Second\-Chart\-Title} (String Chart\-Title)
+\item 
+void \hyperlink{class_column_chart_aae904321080912d1df80692320b583b5}{action\-Performed} (Action\-Event e)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_column_chart_a078fed3c67b6b8b05cc8fe75c6bcb4eb}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that displays specific data in a Column \hyperlink{interface_chart}{Chart} visualiser. 
+
+\begin{DoxyDate}{Date}
+30/04/2013 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{_dataset_8java}{Dataset.\-java}, \hyperlink{_bob_viz_8java}{Bob\-Viz.\-java} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_column_chart_a4c421ca57f3eb716949c9e5b06507c3c}{\index{Column\-Chart@{Column\-Chart}!Column\-Chart@{Column\-Chart}}
+\index{Column\-Chart@{Column\-Chart}!ColumnChart@{Column\-Chart}}
+\subsubsection[{Column\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Column\-Chart.\-Column\-Chart (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_column_chart_a4c421ca57f3eb716949c9e5b06507c3c}
+Create a constructor taking in the following parameters\-: 
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes Create the column chart dataset and instantiate it. J\-Free\-Chart. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+44                                                 \{
+45         
+46         m\_Data = data;
+47         m\_Setting = setting;
+48         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+49         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+50         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+51         m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+52         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+53         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+54         
+55         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+56         m\_XMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+57         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+58         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+59 
+60         CreateDataset( m\_Data );
+61         ShowGraph( m\_Dataset );
+62         
+63     \}   
+\end{DoxyCode}
+\hypertarget{class_column_chart_a40f6cc800cef38dde9befc3e24686cc2}{\index{Column\-Chart@{Column\-Chart}!Column\-Chart@{Column\-Chart}}
+\index{Column\-Chart@{Column\-Chart}!ColumnChart@{Column\-Chart}}
+\subsubsection[{Column\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Column\-Chart.\-Column\-Chart (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{String}]{second\-Data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{second\-Dataset, }
+\item[{{\bf Data\-Attribute}}]{second\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_column_chart_a40f6cc800cef38dde9befc3e24686cc2}
+Create a constructor taking in the following parameters\-: 
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & second\-Data -\/ second data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & second\-Dataset -\/ the second dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & second\-Setting -\/ Second Data attributes\\
+\hline
+\end{DoxyParams}
+Create both column chart datasets and instantiate it. J\-Free\-Chart. 
+\begin{DoxyCode}
+80                                          \{
+81 
+82         m\_Data = data;
+83         m\_SecondData = secondData;
+84         
+85         m\_Setting = setting;
+86         m\_SecondSetting = secondSetting;
+87         
+88         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+89         m\_SecondChartTitle = secondSetting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+90         
+91         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+92         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+93         m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+94         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+95         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+96         
+97         m\_SecondXLabel = secondSetting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+98         m\_SecondYLabel = secondSetting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+99         m\_SecondRow = secondDataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();    
+100         m\_SecondC1 = secondSetting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+101         m\_SecondC2 = secondSetting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();
+102 
+103         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+104         m\_XMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+105         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+106         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+107 
+108         CreateDataset( m\_Data );
+109         CreateSecondDataset( m\_SecondData );
+110         ShowGraph( m\_Dataset, m\_SecondDataset);
+111     \}   
+\end{DoxyCode}
+\hypertarget{class_column_chart_a8e580c4c64b84f623403bd113d8af320}{\index{Column\-Chart@{Column\-Chart}!Column\-Chart@{Column\-Chart}}
+\index{Column\-Chart@{Column\-Chart}!ColumnChart@{Column\-Chart}}
+\subsubsection[{Column\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Column\-Chart.\-Column\-Chart (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_column_chart_a8e580c4c64b84f623403bd113d8af320}
+constructor for J\-Unit Tests 
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+116                                               \{
+117         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+118         m\_Setting = setting;
+119         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+120         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+121         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+122         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+123         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+124         m\_XMax = setting.\hyperlink{class_data_attribute_ada370712422c7cbd21b7be4a0d88caf7}{GetXAxisMax}();
+125         m\_YMin = setting.\hyperlink{class_data_attribute_af0786b4de674874c0bb8ca9dbe1519c6}{GetYAxisMin}();
+126         m\_YMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+127         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+128         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+129     \}
+\end{DoxyCode}
+\hypertarget{class_column_chart_a6beb1983d5766b94f56c8f91f2a93ef4}{\index{Column\-Chart@{Column\-Chart}!Column\-Chart@{Column\-Chart}}
+\index{Column\-Chart@{Column\-Chart}!ColumnChart@{Column\-Chart}}
+\subsubsection[{Column\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Column\-Chart.\-Column\-Chart (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{{\bf Data\-Attribute}}]{secondsetting}
+\end{DoxyParamCaption}
+)}}\label{class_column_chart_a6beb1983d5766b94f56c8f91f2a93ef4}
+second constructor for J\-Unit Tests 
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+{\em second\-Setting} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+135                                                                            \{
+136         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+137         m\_Setting = setting;
+138         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+139         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+140         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+141         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+142         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+143         m\_XMax = setting.\hyperlink{class_data_attribute_ada370712422c7cbd21b7be4a0d88caf7}{GetXAxisMax}();
+144         m\_YMin = setting.\hyperlink{class_data_attribute_af0786b4de674874c0bb8ca9dbe1519c6}{GetYAxisMin}();
+145         m\_YMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+146         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+147         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+148         
+149         m\_SecondChartTitle = secondsetting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+150         m\_SecondSetting = secondsetting;
+151         m\_SecondXLabel = secondsetting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+152         m\_SecondYLabel = secondsetting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+153         m\_SecondC1 = secondsetting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+154         m\_SecondC2 = secondsetting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();;
+155     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_column_chart_aae904321080912d1df80692320b583b5}{\index{Column\-Chart@{Column\-Chart}!action\-Performed@{action\-Performed}}
+\index{action\-Performed@{action\-Performed}!ColumnChart@{Column\-Chart}}
+\subsubsection[{action\-Performed}]{\setlength{\rightskip}{0pt plus 5cm}void Column\-Chart.\-action\-Performed (
+\begin{DoxyParamCaption}
+\item[{Action\-Event}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_column_chart_aae904321080912d1df80692320b583b5}
+
+\begin{DoxyCode}
+303                                                  \{
+304         \textcolor{keywordflow}{if}( e.getSource() == m\_ColChangeButton ) \{
+305             \hyperlink{class_colour_map}{ColourMap} cM = \textcolor{keyword}{new} \hyperlink{class_colour_map}{ColourMap}();
+306             cM.\hyperlink{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{SetupData}( m\_IndexCount, m\_Renderer );
+307             cM.setVisible( \textcolor{keyword}{false} );
+308         \}
+309     \}
+\end{DoxyCode}
+\hypertarget{class_column_chart_a078fed3c67b6b8b05cc8fe75c6bcb4eb}{\index{Column\-Chart@{Column\-Chart}!main@{main}}
+\index{main@{main}!ColumnChart@{Column\-Chart}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Column\-Chart.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_column_chart_a078fed3c67b6b8b05cc8fe75c6bcb4eb}
+main method to carry out J\-Unit Tests 
+\begin{DoxyCode}
+388                                               \{
+389         \textcolor{comment}{// Test to display a single chart}
+390         \hyperlink{class_data_attribute}{DataAttribute} test = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+391         \hyperlink{class_column_chart}{ColumnChart} columnTest = \textcolor{keyword}{new} \hyperlink{class_column_chart_a4c421ca57f3eb716949c9e5b06507c3c}{ColumnChart}(test);
+392         
+393         Random generator = \textcolor{keyword}{new} Random();
+394         
+395         XYSeriesCollection dataSeries = \textcolor{keyword}{new} XYSeriesCollection();
+396         XYSeries dataset = \textcolor{keyword}{new} XYSeries(\textcolor{stringliteral}{"Test Series"}); 
+397         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0;i < LOOP;i++) \{
+398             \textcolor{keywordtype}{int} temp1 = generator.nextInt(LIMIT);
+399             \textcolor{keywordtype}{int} temp2 = generator.nextInt(LIMIT);
+400             dataset.add(temp1,temp2);
+401         \}
+402         dataSeries.addSeries(dataset);
+403         
+404          columnTest.ShowGraph(dataSeries);
+405          
+406          \textcolor{comment}{// Test to display the two charts}
+407          \hyperlink{class_data_attribute}{DataAttribute} secondTest = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+408          \hyperlink{class_column_chart}{ColumnChart} columnSecondTest = \textcolor{keyword}{new} \hyperlink{class_column_chart_a4c421ca57f3eb716949c9e5b06507c3c}{ColumnChart}(test,secondTest);
+409          
+410         XYSeriesCollection secondDataSeries = \textcolor{keyword}{new} XYSeriesCollection();
+411         XYSeries secondDataset = \textcolor{keyword}{new} XYSeries(\textcolor{stringliteral}{"Second Test Series"}); 
+412         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0;i < LOOP;i++) \{
+413             \textcolor{keywordtype}{int} temp1 = generator.nextInt(LIMIT);
+414             \textcolor{keywordtype}{int} temp2 = generator.nextInt(LIMIT);
+415             secondDataset.add(temp1,temp2);
+416         \}
+417         secondDataSeries.addSeries(dataset);
+418         secondDataSeries.addSeries(secondDataset);
+419          
+420         columnSecondTest.ShowGraph(dataSeries, secondDataSeries);
+421          
+422      \}
+\end{DoxyCode}
+\hypertarget{class_column_chart_add2a600244d03013679b95eb8f29f09d}{\index{Column\-Chart@{Column\-Chart}!Set\-Chart\-Title@{Set\-Chart\-Title}}
+\index{Set\-Chart\-Title@{Set\-Chart\-Title}!ColumnChart@{Column\-Chart}}
+\subsubsection[{Set\-Chart\-Title}]{\setlength{\rightskip}{0pt plus 5cm}boolean Column\-Chart.\-Set\-Chart\-Title (
+\begin{DoxyParamCaption}
+\item[{String}]{Chart\-Title}
+\end{DoxyParamCaption}
+)}}\label{class_column_chart_add2a600244d03013679b95eb8f29f09d}
+a test taking a String argument. 
+\begin{DoxyParams}{Parameters}
+{\em String} & -\/ Chart\-Title a String argument. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean -\/ The test results. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+162                                                      \{
+163         m\_ChartTitle = ChartTitle;
+164         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+165     \}
+\end{DoxyCode}
+\hypertarget{class_column_chart_a35cb0aa2a3888f2f02fe4994842a5741}{\index{Column\-Chart@{Column\-Chart}!Set\-Second\-Chart\-Title@{Set\-Second\-Chart\-Title}}
+\index{Set\-Second\-Chart\-Title@{Set\-Second\-Chart\-Title}!ColumnChart@{Column\-Chart}}
+\subsubsection[{Set\-Second\-Chart\-Title}]{\setlength{\rightskip}{0pt plus 5cm}boolean Column\-Chart.\-Set\-Second\-Chart\-Title (
+\begin{DoxyParamCaption}
+\item[{String}]{Chart\-Title}
+\end{DoxyParamCaption}
+)}}\label{class_column_chart_a35cb0aa2a3888f2f02fe4994842a5741}
+a second test taking a String argument. 
+\begin{DoxyParams}{Parameters}
+{\em String} & -\/ Chart\-Title a String argument. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean -\/ The test results. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+171                                                            \{
+172         m\_SecondChartTitle = ChartTitle;
+173         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+174     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_column_chart_8java}{Column\-Chart.\-java}\end{DoxyCompactItemize}

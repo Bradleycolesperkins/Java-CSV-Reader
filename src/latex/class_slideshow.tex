@@ -1,0 +1,406 @@
+\hypertarget{class_slideshow}{\section{Slideshow Class Reference}
+\label{class_slideshow}\index{Slideshow@{Slideshow}}
+}
+
+
+A class that creates a slideshow of a single \hyperlink{interface_chart}{Chart} or two \hyperlink{interface_chart}{Chart} visualizations \textbackslash{} see \hyperlink{_graph_8java}{Graph.\-java}.  
+
+
+Inheritance diagram for Slideshow\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_slideshow}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_slideshow_a28bfdbb62ff04edbcf2a6ff4e8277b27}{Slideshow} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_slideshow_a0fe21ea7ceb1b6a1574729c7cd48f263}{Slideshow} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting, String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} second\-Data, \hyperlink{class_dataset}{Dataset} second\-Dataset, \hyperlink{class_data_attribute}{Data\-Attribute} second\-Setting)
+\item 
+X\-Y\-Z\-Dataset \hyperlink{class_slideshow_a8eabfefadfab208b396dcfef42f052a1}{Create\-Bubble\-Chart\-Dataset} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data)
+\item 
+X\-Y\-Z\-Dataset \hyperlink{class_slideshow_a5f490654d036fbc20f7d96acf7cb6d0a}{Create\-Second\-Bubble\-Chart\-Dataset} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data)
+\item 
+J\-Free\-Chart \hyperlink{class_slideshow_ab4fdd0457bf5c09167538759056d4dc5}{Create\-Pie\-Chart} (Pie\-Dataset dataset)
+\item 
+J\-Free\-Chart \hyperlink{class_slideshow_a632f7d55c776bad2fcfa46e5b142fd67}{Create\-Second\-Pie\-Chart} (Pie\-Dataset dataset)
+\item 
+boolean \hyperlink{class_slideshow_aa6a1c8f9752646edcd00bde9e8b1bccf}{Get\-Pause\-J\-But\-Enabled} ()
+\item 
+boolean \hyperlink{class_slideshow_a64a069640e3a02812d71c946ba397aaf}{Get\-Resume\-Viz\-J\-But\-Enabled} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_slideshow_ae461089e26d26eb68382f376b8a457ef}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that creates a slideshow of a single \hyperlink{interface_chart}{Chart} or two \hyperlink{interface_chart}{Chart} visualizations \textbackslash{} see \hyperlink{_graph_8java}{Graph.\-java}. 
+
+\begin{DoxyDate}{Date}
+30/04/13 This class is responsible for making the slideshow It was made using J\-Free\-Chart and following examples on how to set up the charts It uses the \hyperlink{_graph_8java}{Graph.\-java} to return a J\-Free\-Chart 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_slideshow_a28bfdbb62ff04edbcf2a6ff4e8277b27}{\index{Slideshow@{Slideshow}!Slideshow@{Slideshow}}
+\index{Slideshow@{Slideshow}!Slideshow@{Slideshow}}
+\subsubsection[{Slideshow}]{\setlength{\rightskip}{0pt plus 5cm}Slideshow.\-Slideshow (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_slideshow_a28bfdbb62ff04edbcf2a6ff4e8277b27}
+creates a constructor taking in the following parameters\-:
+
+
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+73                                     \{
+74         m\_XYData = data;
+75         m\_PieData = data;
+76         m\_ScatterData = data; 
+77         m\_AreaData = data; 
+78         m\_PolarData =data;
+79         m\_LineData = data;
+80         m\_BubbleData = data;
+81         
+82         m\_Setting = setting;
+83         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+84         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+85         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+86         m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+87         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+88         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+89         m\_C3 = setting.\hyperlink{class_data_attribute_a802ca8ea739cff583380ea27647250c7}{GetSelectedZIndex}();
+90         
+91         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+92         m\_XMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+93         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+94         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+95         
+96         timerOption = \textcolor{keyword}{new} JFrame(\textcolor{stringliteral}{"Enter a timer"});
+97         \textcolor{keywordflow}{while} (m\_OptionPopup = \textcolor{keyword}{true})\{
+98             String userOption = JOptionPane.showInputDialog(timerOption, \textcolor{stringliteral}{"Please enter a timer"}
+99                     + \textcolor{stringliteral}{"delay in seconds:"});
+100               \textcolor{keywordflow}{if} (userOption.matches(\textcolor{stringliteral}{"[0-9]+"}))\{
+101                   System.out.println(\textcolor{stringliteral}{"Matches"});
+102                   m\_Timer = Integer.parseInt(userOption);
+103                   m\_Timer = m\_Timer * m\_Millisecond;
+104                   m\_OptionPopup = \textcolor{keyword}{false};
+105                   \textcolor{keywordflow}{break};
+106               \}
+107               System.out.println(\textcolor{stringliteral}{"Not entered match"});
+108         \} 
+109         
+110         CreateXYDataset(m\_XYData);
+111         CreatePieChartDataset(m\_PieData);
+112         \hyperlink{class_slideshow_a8eabfefadfab208b396dcfef42f052a1}{CreateBubbleChartDataset}(m\_BubbleData);
+113         ShowSlideshow( m\_XYDataset, m\_PieChartDataset, m\_XYDataset,
+114                 m\_XYDataset, m\_XYDataset, m\_XYDataset, m\_BubbleDataset);
+115    \}
+\end{DoxyCode}
+\hypertarget{class_slideshow_a0fe21ea7ceb1b6a1574729c7cd48f263}{\index{Slideshow@{Slideshow}!Slideshow@{Slideshow}}
+\index{Slideshow@{Slideshow}!Slideshow@{Slideshow}}
+\subsubsection[{Slideshow}]{\setlength{\rightskip}{0pt plus 5cm}Slideshow.\-Slideshow (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{String}]{second\-Data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{second\-Dataset, }
+\item[{{\bf Data\-Attribute}}]{second\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_slideshow_a0fe21ea7ceb1b6a1574729c7cd48f263}
+creates a constructor taking in the following parameters\-:
+
+
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & second\-Data -\/ second data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & second\-Dataset -\/ the second dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & second\-Setting -\/ Second Data attributes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+128                                          \{
+129 
+130           m\_XYData = data;
+131           m\_PieData = data;
+132           m\_ScatterData = data; 
+133           m\_AreaData = data; 
+134           m\_PolarData =data;
+135           m\_LineData = data;
+136           m\_BubbleData = data;
+137           m\_SecondXYData = data;
+138           m\_SecondPieData = data;
+139           m\_SecondScatterData = data; 
+140           m\_SecondAreaData = data; 
+141           m\_SecondPolarData =data;
+142           m\_SecondLineData = data;
+143           m\_SecondBubbleData = data;
+144           
+145           m\_Setting = setting;
+146           m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+147           m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+148           m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+149           m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+150           m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+151           m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+152           m\_C3 = setting.\hyperlink{class_data_attribute_a802ca8ea739cff583380ea27647250c7}{GetSelectedZIndex}();
+153           m\_SecondSetting = secondSetting;
+154           m\_SecondChartTitle = secondSetting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+155           m\_SecondXLabel = secondSetting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+156           m\_SecondYLabel = secondSetting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+157           m\_SecondRow = secondDataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+158           m\_SecondC1 = secondSetting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+159           m\_SecondC2 = secondSetting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();
+160           m\_SecondC3 = secondSetting.\hyperlink{class_data_attribute_ab8aad538c86b04b4b9a962b7e07e6bc3}{GetSecondSelectedZIndex}();      
+161            
+162           m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+163           m\_XMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+164           m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+165           m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+166            
+167           timerOption  = \textcolor{keyword}{new} JFrame(\textcolor{stringliteral}{"Enter a timer"});
+168             \textcolor{keywordflow}{while} (m\_OptionPopup = \textcolor{keyword}{true})\{
+169                 String userOption = JOptionPane.showInputDialog(timerOption, \textcolor{stringliteral}{"Please enter a timer"}
+170                         + \textcolor{stringliteral}{"delay in seconds:"});
+171                   \textcolor{keywordflow}{if} (userOption.matches(\textcolor{stringliteral}{"[0-9]+"}))\{
+172                       System.out.println(\textcolor{stringliteral}{"Matches"});
+173                       m\_Timer = Integer.parseInt(userOption);
+174                       m\_Timer = m\_Timer * m\_Millisecond;
+175                       m\_OptionPopup = \textcolor{keyword}{false};
+176                       \textcolor{keywordflow}{break};
+177                   \}
+178                   System.out.println(\textcolor{stringliteral}{"Not entered match"});
+179             \} 
+180           
+181           CreateXYDataset(m\_XYData);
+182           CreateSecondXYDataset(m\_SecondXYData);
+183           CreatePieChartDataset(m\_PieData);
+184           CreateSecondPieChartDataset(m\_SecondPieData);
+185           \hyperlink{class_slideshow_a8eabfefadfab208b396dcfef42f052a1}{CreateBubbleChartDataset}(m\_BubbleData);
+186           \hyperlink{class_slideshow_a5f490654d036fbc20f7d96acf7cb6d0a}{CreateSecondBubbleChartDataset}(m\_SecondBubbleData);
+187           ShowSecondSlideshow(  m\_XYDataset, m\_PieChartDataset, m\_XYDataset,
+188                 m\_XYDataset, m\_XYDataset, m\_XYDataset, m\_BubbleDataset,
+189                 m\_SecondXYDataset, m\_SecondPieChartDataset,
+190                 m\_SecondXYDataset,m\_SecondXYDataset, m\_SecondXYDataset, 
+191                 m\_SecondXYDataset, m\_SecondBubbleDataset);
+192 
+193     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_slideshow_a8eabfefadfab208b396dcfef42f052a1}{\index{Slideshow@{Slideshow}!Create\-Bubble\-Chart\-Dataset@{Create\-Bubble\-Chart\-Dataset}}
+\index{Create\-Bubble\-Chart\-Dataset@{Create\-Bubble\-Chart\-Dataset}!Slideshow@{Slideshow}}
+\subsubsection[{Create\-Bubble\-Chart\-Dataset}]{\setlength{\rightskip}{0pt plus 5cm}X\-Y\-Z\-Dataset Slideshow.\-Create\-Bubble\-Chart\-Dataset (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{class_slideshow_a8eabfefadfab208b396dcfef42f052a1}
+creates an X\-Y\-Z data set for the two selected columns
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-data} & -\/ pass the 2d array through \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dataset -\/ returns the new data set with new values 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+268                                                                  \{
+269             m\_BubbleDataset = \textcolor{keyword}{new} DefaultXYZDataset();
+270             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} r = 0; r < m\_Row;r++) \{
+271                 \textcolor{keywordtype}{double} xArray[] = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[m\_Row];
+272                 \textcolor{keywordtype}{double} yArray[] = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[m\_Row];
+273                 \textcolor{keywordtype}{double} zArray[] = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[m\_Row];
+274                 
+275                 xArray[r] = Double.parseDouble(data[m\_C1][r]);
+276                 yArray[r] = Double.parseDouble(data[m\_C2][r]);
+277                 zArray[r] = Double.parseDouble(data[m\_C3][r]);
+278                 
+279                 \textcolor{keywordtype}{double} ad3[][] = \{
+280                         xArray, yArray, zArray
+281                 \};
+282                 m\_BubbleDataset.addSeries(\textcolor{stringliteral}{"Series "} + r, ad3);
+283             \}
+284             \textcolor{keywordflow}{return} m\_BubbleDataset;
+285         \}
+\end{DoxyCode}
+\hypertarget{class_slideshow_ab4fdd0457bf5c09167538759056d4dc5}{\index{Slideshow@{Slideshow}!Create\-Pie\-Chart@{Create\-Pie\-Chart}}
+\index{Create\-Pie\-Chart@{Create\-Pie\-Chart}!Slideshow@{Slideshow}}
+\subsubsection[{Create\-Pie\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}J\-Free\-Chart Slideshow.\-Create\-Pie\-Chart (
+\begin{DoxyParamCaption}
+\item[{Pie\-Dataset}]{dataset}
+\end{DoxyParamCaption}
+)}}\label{class_slideshow_ab4fdd0457bf5c09167538759056d4dc5}
+creates a Pie \hyperlink{interface_chart}{Chart} using the Pie data set and sets the appearance and plot orientation 
+\begin{DoxyParams}{Parameters}
+{\em Pie\-Dataset} & dataset -\/ the dataset used to make the chart \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J\-Free\-Chart chart -\/ the chart 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+396                                                            \{
+397         
+398         JFreeChart chart = ChartFactory.createPieChart3D( 
+399                 m\_ChartTitle,
+400             dataset, \textcolor{keyword}{true},                          
+401             \textcolor{keyword}{true}, \textcolor{keyword}{false} );
+402         
+403         \textcolor{comment}{//xyPlot = chart.getXYPlot();}
+404         plotChart  = ( PiePlot3D ) chart.getPlot();      
+405         plotChart.setStartAngle( START\_ANGLE );
+406         plotChart.setDirection( Rotation.CLOCKWISE ); 
+407         plotChart.setForegroundAlpha(TRANSPARENCY); 
+408         \textcolor{keywordflow}{return} chart;       
+409     \}
+\end{DoxyCode}
+\hypertarget{class_slideshow_a5f490654d036fbc20f7d96acf7cb6d0a}{\index{Slideshow@{Slideshow}!Create\-Second\-Bubble\-Chart\-Dataset@{Create\-Second\-Bubble\-Chart\-Dataset}}
+\index{Create\-Second\-Bubble\-Chart\-Dataset@{Create\-Second\-Bubble\-Chart\-Dataset}!Slideshow@{Slideshow}}
+\subsubsection[{Create\-Second\-Bubble\-Chart\-Dataset}]{\setlength{\rightskip}{0pt plus 5cm}X\-Y\-Z\-Dataset Slideshow.\-Create\-Second\-Bubble\-Chart\-Dataset (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{class_slideshow_a5f490654d036fbc20f7d96acf7cb6d0a}
+creates a second X\-Y\-Z data set for the two selected columns
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-data} & -\/ pass the 2d array through \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dataset -\/ returns the new data set with new values 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+292                                                                        \{
+293             m\_SecondBubbleDataset = \textcolor{keyword}{new} DefaultXYZDataset();
+294             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} r = 0; r < m\_SecondRow;r++) \{
+295                 \textcolor{keywordtype}{double} xArray[] = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[m\_SecondRow];
+296                 \textcolor{keywordtype}{double} yArray[] = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[m\_SecondRow];
+297                 \textcolor{keywordtype}{double} zArray[] = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[m\_SecondRow];
+298                 
+299                 xArray[r] = Double.parseDouble(data[m\_SecondC1][r]);
+300                 yArray[r] = Double.parseDouble(data[m\_SecondC2][r]);
+301                 zArray[r] = Double.parseDouble(data[m\_SecondC3][r]);
+302                 
+303                 \textcolor{keywordtype}{double} ad3[][] = \{
+304                         xArray, yArray, zArray
+305                 \};
+306                 m\_SecondBubbleDataset.addSeries(\textcolor{stringliteral}{"Series "} + r, ad3);
+307             \}
+308             \textcolor{keywordflow}{return} m\_SecondBubbleDataset;
+309         \}
+\end{DoxyCode}
+\hypertarget{class_slideshow_a632f7d55c776bad2fcfa46e5b142fd67}{\index{Slideshow@{Slideshow}!Create\-Second\-Pie\-Chart@{Create\-Second\-Pie\-Chart}}
+\index{Create\-Second\-Pie\-Chart@{Create\-Second\-Pie\-Chart}!Slideshow@{Slideshow}}
+\subsubsection[{Create\-Second\-Pie\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}J\-Free\-Chart Slideshow.\-Create\-Second\-Pie\-Chart (
+\begin{DoxyParamCaption}
+\item[{Pie\-Dataset}]{dataset}
+\end{DoxyParamCaption}
+)}}\label{class_slideshow_a632f7d55c776bad2fcfa46e5b142fd67}
+creates a second Pie \hyperlink{interface_chart}{Chart} using the Pie data set and sets the appearance and plot orientation 
+\begin{DoxyParams}{Parameters}
+{\em Pie\-Dataset} & dataset -\/ the dataset used to make the chart \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J\-Free\-Chart chart -\/ the chart 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+416                                                                  \{
+417         
+418         JFreeChart chart = ChartFactory.createPieChart3D( 
+419                 m\_SecondChartTitle,
+420             dataset, \textcolor{keyword}{true},                          
+421             \textcolor{keyword}{true}, \textcolor{keyword}{false} );
+422         
+423         \textcolor{comment}{//xyPlot = chart.getXYPlot();}
+424         plotSecondChart  = ( PiePlot3D ) chart.getPlot();      
+425         plotSecondChart.setStartAngle( START\_ANGLE );
+426         plotSecondChart.setDirection( Rotation.CLOCKWISE ); 
+427         plotSecondChart.setForegroundAlpha(TRANSPARENCY); 
+428         \textcolor{keywordflow}{return} chart;       
+429     \}
+\end{DoxyCode}
+\hypertarget{class_slideshow_aa6a1c8f9752646edcd00bde9e8b1bccf}{\index{Slideshow@{Slideshow}!Get\-Pause\-J\-But\-Enabled@{Get\-Pause\-J\-But\-Enabled}}
+\index{Get\-Pause\-J\-But\-Enabled@{Get\-Pause\-J\-But\-Enabled}!Slideshow@{Slideshow}}
+\subsubsection[{Get\-Pause\-J\-But\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}boolean Slideshow.\-Get\-Pause\-J\-But\-Enabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_slideshow_aa6a1c8f9752646edcd00bde9e8b1bccf}
+Method to see if the pause button has been selected \begin{DoxyReturn}{Returns}
+m\-\_\-\-Pause 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+1255                                          \{
+1256         \textcolor{keywordflow}{return} m\_Pause;
+1257     \}
+\end{DoxyCode}
+\hypertarget{class_slideshow_a64a069640e3a02812d71c946ba397aaf}{\index{Slideshow@{Slideshow}!Get\-Resume\-Viz\-J\-But\-Enabled@{Get\-Resume\-Viz\-J\-But\-Enabled}}
+\index{Get\-Resume\-Viz\-J\-But\-Enabled@{Get\-Resume\-Viz\-J\-But\-Enabled}!Slideshow@{Slideshow}}
+\subsubsection[{Get\-Resume\-Viz\-J\-But\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}boolean Slideshow.\-Get\-Resume\-Viz\-J\-But\-Enabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_slideshow_a64a069640e3a02812d71c946ba397aaf}
+Method to see if the resume button has been selected \begin{DoxyReturn}{Returns}
+m\-\_\-\-Resume 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+1262                                              \{
+1263         \textcolor{keywordflow}{return} m\_ResumeButton.isEnabled();
+1264     \}   
+\end{DoxyCode}
+\hypertarget{class_slideshow_ae461089e26d26eb68382f376b8a457ef}{\index{Slideshow@{Slideshow}!main@{main}}
+\index{main@{main}!Slideshow@{Slideshow}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Slideshow.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_slideshow_ae461089e26d26eb68382f376b8a457ef}
+
+\begin{DoxyCode}
+1265                                            \{        
+1266             
+1267     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_slideshow_8java}{Slideshow.\-java}\end{DoxyCompactItemize}

@@ -1,0 +1,641 @@
+\hypertarget{class_more_setting_j_panel}{\section{More\-Setting\-J\-Panel Class Reference}
+\label{class_more_setting_j_panel}\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}}
+}
+
+
+A class designed to deal with the 'More Settings' panel.  
+
+
+Inheritance diagram for More\-Setting\-J\-Panel\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_more_setting_j_panel}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+J\-Text\-Field \hyperlink{class_more_setting_j_panel_a55adb7a6be529276552eb98cb3c76fd0}{Get\-X\-Axis\-Min\-Field} ()
+\item 
+J\-Text\-Field \hyperlink{class_more_setting_j_panel_ae412bd3a66df2b14af9aae95c6ee55d8}{Get\-X\-Axis\-Max\-Field} ()
+\item 
+J\-Text\-Field \hyperlink{class_more_setting_j_panel_a451f95a3e1c0231aded2bf8fa3b4421d}{Get\-Y\-Axis\-Min\-Field} ()
+\item 
+J\-Text\-Field \hyperlink{class_more_setting_j_panel_ab524a65ef89a39d61e7033e7495a53c4}{Get\-Y\-Axis\-Max\-Field} ()
+\item 
+J\-Text\-Field \hyperlink{class_more_setting_j_panel_ab091eb7f112297574ccd612011b91e73}{Get\-X\-Axis\-Scale\-Field} ()
+\item 
+J\-Text\-Field \hyperlink{class_more_setting_j_panel_a13bfe944b0b4a671dc37c1c87381024d}{Get\-Y\-Axis\-Scale\-Field} ()
+\item 
+J\-Toggle\-Button \hyperlink{class_more_setting_j_panel_ab1f181103d7e162919eb257a3b0d04ca}{Get\-Default\-Button} ()
+\item 
+double \hyperlink{class_more_setting_j_panel_a497d4195007c03bfd6dbf909904f001d}{Get\-X\-Axis\-Min} ()
+\item 
+double \hyperlink{class_more_setting_j_panel_a2de92046bd03e4d6173acf6528439f53}{Get\-X\-Axis\-Max} ()
+\item 
+double \hyperlink{class_more_setting_j_panel_a81ac83574297de3b0cce60b91af661ef}{Get\-Y\-Axis\-Min} ()
+\item 
+double \hyperlink{class_more_setting_j_panel_a3d22ee97ad0adefd68746ac67630861f}{Get\-Y\-Axis\-Max} ()
+\item 
+double \hyperlink{class_more_setting_j_panel_afb3b2d456021f75e7d5ca438da32c5ad}{Get\-X\-Axis\-Scale} ()
+\item 
+double \hyperlink{class_more_setting_j_panel_ae137e83634e54fdca50c6cfeff6e451e}{Get\-Y\-Axis\-Scale} ()
+\item 
+String \hyperlink{class_more_setting_j_panel_a3940f844aa7de03b4607a3ce010eaa1f}{Get\-Author} ()
+\item 
+String \hyperlink{class_more_setting_j_panel_a02e5419e3a676912f28da9c6bbebc464}{Get\-Description} ()
+\item 
+\hyperlink{class_more_setting_j_panel_ac87617b1baff19cf09ecf2d713b4b368}{More\-Setting\-J\-Panel} (\hyperlink{class_data_attribute}{Data\-Attribute} chart\-Setting)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_more_setting_j_panel_a313c7e51f47e39c3cb424850e044708c}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final int \hyperlink{class_more_setting_j_panel_a09bffa47a9133c9966cf18961bf3a46e}{F\-R\-A\-M\-E\-\_\-\-W\-I\-D\-T\-H} = 500
+\item 
+final int \hyperlink{class_more_setting_j_panel_affa56095abc301bb764a5711fd097ac8}{F\-R\-A\-M\-E\-\_\-\-H\-E\-I\-G\-H\-T} = 200
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class designed to deal with the 'More Settings' panel. 
+
+\begin{DoxyAuthor}{Author}
+P\-D\-M1 A4
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+14/04/2013 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_more_setting_j_panel_ac87617b1baff19cf09ecf2d713b4b368}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}}
+\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{More\-Setting\-J\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}More\-Setting\-J\-Panel.\-More\-Setting\-J\-Panel (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{chart\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_ac87617b1baff19cf09ecf2d713b4b368}
+
+\begin{DoxyCode}
+218                                                          \{
+219         super(\textcolor{stringliteral}{"Additional settings"});
+220         m\_ChartSetting = chartSetting;
+221         
+222         setSize(\textcolor{keyword}{new} Dimension(\hyperlink{class_more_setting_j_panel_a09bffa47a9133c9966cf18961bf3a46e}{FRAME\_WIDTH},\hyperlink{class_more_setting_j_panel_affa56095abc301bb764a5711fd097ac8}{FRAME\_HEIGHT}));
+223         
+224         m\_MainPanel = \textcolor{keyword}{new} JPanel();
+225         
+226         m\_XAxisMinLabel = \textcolor{keyword}{new} JLabel();
+227         m\_XAxisMaxLabel = \textcolor{keyword}{new} JLabel();
+228         m\_XAxisMinField = \textcolor{keyword}{new} JTextField(NUMBER\_FIELD\_LEN);
+229         m\_XAxisMaxField = \textcolor{keyword}{new} JTextField(NUMBER\_FIELD\_LEN);
+230         m\_XAxisMinField.setText(String.valueOf(m\_ChartSetting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}()));
+231         m\_XAxisMaxField.setText(String.valueOf(m\_ChartSetting.\hyperlink{class_data_attribute_ada370712422c7cbd21b7be4a0d88caf7}{GetXAxisMax}()));
+232         
+233         m\_YAxisMinLabel = \textcolor{keyword}{new} JLabel();
+234         m\_YAxisMaxLabel = \textcolor{keyword}{new} JLabel();
+235         m\_YAxisMinField = \textcolor{keyword}{new} JTextField(NUMBER\_FIELD\_LEN);
+236         m\_YAxisMaxField = \textcolor{keyword}{new} JTextField(NUMBER\_FIELD\_LEN);
+237         m\_YAxisMinField.setText(String.valueOf(m\_ChartSetting.\hyperlink{class_data_attribute_af0786b4de674874c0bb8ca9dbe1519c6}{GetYAxisMin}()));
+238         m\_YAxisMaxField.setText(String.valueOf(m\_ChartSetting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}()));
+239         
+240         m\_XAxisScaleLabel = \textcolor{keyword}{new} JLabel();
+241         m\_YAxisScaleLabel = \textcolor{keyword}{new} JLabel();
+242         m\_XAxisScaleField = \textcolor{keyword}{new} JTextField(NUMBER\_FIELD\_LEN);
+243         m\_YAxisScaleField = \textcolor{keyword}{new} JTextField(NUMBER\_FIELD\_LEN);
+244         m\_XAxisScaleField.setText(
+245                 String.valueOf(m\_ChartSetting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}()));
+246         m\_YAxisScaleField.setText(
+247                 String.valueOf(m\_ChartSetting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}()));
+248         
+249         m\_AuthorLabel = \textcolor{keyword}{new} JLabel();
+250         m\_AuthorField = \textcolor{keyword}{new} JTextField(TEXT\_FIELD\_LEN);
+251         m\_DesciptionLabel = \textcolor{keyword}{new} JLabel();
+252         
+253         m\_DescriptionField = \textcolor{keyword}{new} JTextArea();
+254         m\_DescriptionField.setLineWrap(\textcolor{keyword}{true});
+255         m\_DescriptionField.setWrapStyleWord(\textcolor{keyword}{true});
+256         
+257         m\_ApplyButton = \textcolor{keyword}{new} JButton();
+258         m\_DefaultButton = \textcolor{keyword}{new} JToggleButton();
+259         m\_DefaultButton.setSelected(\textcolor{keyword}{true});
+260 
+261         m\_XAxisMinLabel.setText(\textcolor{stringliteral}{"X min: "});
+262         m\_XAxisMaxLabel.setText(\textcolor{stringliteral}{"X max:"});
+263         m\_YAxisMinLabel.setText(\textcolor{stringliteral}{"Y min: "});
+264         m\_YAxisMaxLabel.setText(\textcolor{stringliteral}{"Y max:"});
+265 
+266         m\_XAxisScaleLabel.setText(\textcolor{stringliteral}{"X scale:"});
+267         m\_YAxisScaleLabel.setText(\textcolor{stringliteral}{"Y scale:"});
+268         m\_AuthorLabel.setText(\textcolor{stringliteral}{"Author:"});
+269         m\_DesciptionLabel.setText(\textcolor{stringliteral}{"Description:"});
+270 
+271         m\_ApplyButton.setText(\textcolor{stringliteral}{"Apply"});
+272         m\_DefaultButton.setText(\textcolor{stringliteral}{"Default"});
+273         
+274         SettingJPanelEventHandler handler = \textcolor{keyword}{new} SettingJPanelEventHandler();
+275         m\_ApplyButton.addActionListener(handler);
+276         m\_DefaultButton.addActionListener(handler);
+277         
+278 
+279         javax.swing.GroupLayout layout = \textcolor{keyword}{new} GroupLayout(m\_MainPanel);
+280         m\_MainPanel.setLayout(layout);
+281         layout.setHorizontalGroup(
+282             layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+283             .addGroup(layout.createSequentialGroup()
+284                 .addContainerGap()
+285                 .addGroup(layout.createParallelGroup(
+286                         GroupLayout.Alignment.LEADING)
+287                     .addGroup(layout.createSequentialGroup()
+288                         .addGroup(layout.createParallelGroup(
+289                                 GroupLayout.Alignment.LEADING)
+290                             .addGroup(layout.createSequentialGroup()
+291                                 .addComponent(m\_XAxisScaleLabel)
+292                                 .addPreferredGap(LayoutStyle.
+293                                         ComponentPlacement.UNRELATED)
+294                                 .addComponent(m\_XAxisScaleField, 
+295                                         GroupLayout.PREFERRED\_SIZE, 
+296                                         GroupLayout.DEFAULT\_SIZE, 
+297                                         GroupLayout.PREFERRED\_SIZE)
+298                                 .addGap(GAP\_1, GAP\_1, GAP\_1)
+299                                 .addComponent(m\_AuthorLabel))
+300                             .addGroup(layout.createSequentialGroup()
+301                                 .addComponent(m\_YAxisScaleLabel)
+302                                 .addPreferredGap(LayoutStyle
+303                                         .ComponentPlacement.UNRELATED)
+304                                 .addComponent(m\_YAxisScaleField, 
+305                                         GroupLayout.PREFERRED\_SIZE, 
+306                                         GroupLayout.DEFAULT\_SIZE, 
+307                                         GroupLayout.PREFERRED\_SIZE)))
+308                         .addPreferredGap(LayoutStyle
+309                                 .ComponentPlacement.RELATED,
+310                                 GroupLayout.DEFAULT\_SIZE, Short.MAX\_VALUE)
+311                         .addComponent(m\_AuthorField, 
+312                                 GroupLayout.PREFERRED\_SIZE, 
+313                                 GroupLayout.DEFAULT\_SIZE, 
+314                                 GroupLayout.PREFERRED\_SIZE))
+315                     .addGroup(layout.createSequentialGroup()
+316                         .addGroup(layout.createParallelGroup(
+317                                 GroupLayout.Alignment.LEADING)
+318                             .addGroup(layout.createSequentialGroup()
+319                                 .addComponent(m\_XAxisMinLabel)
+320                                 .addPreferredGap(LayoutStyle
+321                                         .ComponentPlacement.UNRELATED)
+322                                 .addComponent(m\_XAxisMinField,
+323                                         GroupLayout.PREFERRED\_SIZE, 
+324                                         GroupLayout.DEFAULT\_SIZE, 
+325                                         GroupLayout.PREFERRED\_SIZE)
+326                                 .addGap(GAP\_1, GAP\_1, GAP\_1)
+327                                 .addComponent(m\_YAxisMinLabel)
+328                                 .addPreferredGap(LayoutStyle
+329                                         .ComponentPlacement.UNRELATED)
+330                                 .addComponent(m\_YAxisMinField, 
+331                                         GroupLayout.PREFERRED\_SIZE, 
+332                                         GroupLayout.DEFAULT\_SIZE, 
+333                                         GroupLayout.PREFERRED\_SIZE))
+334                             .addGroup(layout.createSequentialGroup()
+335                                 .addComponent(m\_XAxisMaxLabel)
+336                                 .addPreferredGap(LayoutStyle
+337                                         .ComponentPlacement.UNRELATED)
+338                                 .addComponent(m\_XAxisMaxField, 
+339                                         GroupLayout.PREFERRED\_SIZE, 
+340                                         GroupLayout.DEFAULT\_SIZE, 
+341                                         GroupLayout.PREFERRED\_SIZE)
+342                                 .addGap(GAP\_1, GAP\_1, GAP\_1)
+343                                 .addComponent(m\_YAxisMaxLabel)
+344                                 .addPreferredGap(LayoutStyle
+345                                         .ComponentPlacement.UNRELATED)
+346                                 .addComponent(m\_YAxisMaxField, 
+347                                         GroupLayout.PREFERRED\_SIZE,
+348                                         GroupLayout.DEFAULT\_SIZE, 
+349                                         GroupLayout.PREFERRED\_SIZE)))
+350                         .addGap(0, 0, Short.MAX\_VALUE))
+351                     .addGroup(layout.createSequentialGroup()
+352                         .addComponent(m\_DesciptionLabel)
+353                         .addPreferredGap(LayoutStyle
+354                                 .ComponentPlacement.UNRELATED)
+355                         .addComponent(m\_DescriptionField))
+356                     .addGroup(GroupLayout.Alignment.TRAILING, 
+357                               layout.createSequentialGroup()
+358                         .addGap(0, 0, Short.MAX\_VALUE)
+359                         .addPreferredGap(LayoutStyle
+360                                 .ComponentPlacement.RELATED)
+361                         .addComponent(m\_DefaultButton)
+362                         .addComponent(m\_ApplyButton)))
+363                 .addContainerGap())
+364         );
+365         layout.setVerticalGroup(
+366             layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+367             .addGroup(layout.createSequentialGroup()
+368                 .addContainerGap()
+369                 .addGroup(layout.createParallelGroup(
+370                         GroupLayout.Alignment.BASELINE)
+371                     .addComponent(m\_XAxisMinLabel)
+372                     .addComponent(m\_XAxisMinField, 
+373                             GroupLayout.PREFERRED\_SIZE, 
+374                             GroupLayout.DEFAULT\_SIZE, 
+375                             GroupLayout.PREFERRED\_SIZE)
+376                     .addComponent(m\_YAxisMinLabel)
+377                     .addComponent(m\_YAxisMinField, 
+378                             GroupLayout.PREFERRED\_SIZE, 
+379                             GroupLayout.DEFAULT\_SIZE, 
+380                             GroupLayout.PREFERRED\_SIZE))
+381                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+382                 .addGroup(layout.createParallelGroup(
+383                         GroupLayout.Alignment.BASELINE)
+384                     .addComponent(m\_XAxisMaxLabel)
+385                     .addComponent(m\_XAxisMaxField, 
+386                             GroupLayout.PREFERRED\_SIZE, 
+387                             GroupLayout.DEFAULT\_SIZE, 
+388                             GroupLayout.PREFERRED\_SIZE)
+389                     .addComponent(m\_YAxisMaxLabel)
+390                     .addComponent(m\_YAxisMaxField, 
+391                             GroupLayout.PREFERRED\_SIZE, 
+392                             GroupLayout.DEFAULT\_SIZE,
+393                             GroupLayout.PREFERRED\_SIZE))
+394                 .addGroup(layout.createParallelGroup(
+395                         GroupLayout.Alignment.LEADING)
+396                     .addGroup(layout.createSequentialGroup()
+397                         .addGap(GAP\_1, GAP\_1, GAP\_1)
+398                         .addGroup(layout.createParallelGroup(
+399                                 GroupLayout.Alignment.BASELINE)
+400                             .addComponent(m\_XAxisScaleLabel)
+401                             .addComponent(m\_XAxisScaleField, 
+402                                     GroupLayout.PREFERRED\_SIZE, 
+403                                     GroupLayout.DEFAULT\_SIZE, 
+404                                     GroupLayout.PREFERRED\_SIZE))
+405                         .addPreferredGap(LayoutStyle
+406                                 .ComponentPlacement.RELATED)
+407                         .addGroup(layout.createParallelGroup(
+408                                 GroupLayout.Alignment.BASELINE)
+409                             .addComponent(m\_YAxisScaleLabel)
+410                             .addComponent(m\_YAxisScaleField, 
+411                                     GroupLayout.PREFERRED\_SIZE, 
+412                                     GroupLayout.DEFAULT\_SIZE, 
+413                                     GroupLayout.PREFERRED\_SIZE)))
+414                     .addGroup(layout.createSequentialGroup()
+415                         .addGap(GAP\_2, GAP\_2, GAP\_2)
+416                         .addGroup(layout.createParallelGroup(
+417                                 GroupLayout.Alignment.BASELINE)
+418                             .addComponent(m\_AuthorLabel)
+419                             .addComponent(m\_AuthorField, 
+420                                     GroupLayout.PREFERRED\_SIZE, 
+421                                     GroupLayout.DEFAULT\_SIZE, 
+422                                     GroupLayout.PREFERRED\_SIZE))))
+423                 .addGap(GAP\_1, GAP\_1, GAP\_1)
+424                 .addGroup(layout.createParallelGroup(
+425                         GroupLayout.Alignment.BASELINE)
+426                     .addComponent(m\_DesciptionLabel)
+427                     .addComponent(m\_DescriptionField, 
+428                             GroupLayout.PREFERRED\_SIZE, SIZE,
+429                             GroupLayout.PREFERRED\_SIZE))
+430                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+431                 .addGroup(layout.createParallelGroup(
+432                         GroupLayout.Alignment.BASELINE)
+433                     .addComponent(m\_ApplyButton)
+434                     .addComponent(m\_DefaultButton))
+435                 .addContainerGap(GroupLayout.DEFAULT\_SIZE, Short.MAX\_VALUE))
+436         );
+437         
+438         add(m\_MainPanel);
+439         setDefaultCloseOperation(JFrame.DISPOSE\_ON\_CLOSE);
+440         pack();
+441     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_more_setting_j_panel_a3940f844aa7de03b4607a3ce010eaa1f}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-Author@{Get\-Author}}
+\index{Get\-Author@{Get\-Author}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-Author}]{\setlength{\rightskip}{0pt plus 5cm}String More\-Setting\-J\-Panel.\-Get\-Author (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_a3940f844aa7de03b4607a3ce010eaa1f}
+Gets Authour Text
+
+\begin{DoxyReturn}{Returns}
+Author Field 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+200                               \{
+201         \textcolor{keywordflow}{return} m\_AuthorField.getText();
+202     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_ab1f181103d7e162919eb257a3b0d04ca}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-Default\-Button@{Get\-Default\-Button}}
+\index{Get\-Default\-Button@{Get\-Default\-Button}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-Default\-Button}]{\setlength{\rightskip}{0pt plus 5cm}J\-Toggle\-Button More\-Setting\-J\-Panel.\-Get\-Default\-Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_ab1f181103d7e162919eb257a3b0d04ca}
+Gets Default Button
+
+\begin{DoxyReturn}{Returns}
+Default Button 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+112                                             \{
+113         \textcolor{keywordflow}{return} m\_DefaultButton;
+114     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_a02e5419e3a676912f28da9c6bbebc464}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-Description@{Get\-Description}}
+\index{Get\-Description@{Get\-Description}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-Description}]{\setlength{\rightskip}{0pt plus 5cm}String More\-Setting\-J\-Panel.\-Get\-Description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_a02e5419e3a676912f28da9c6bbebc464}
+Gets Description Text
+
+\begin{DoxyReturn}{Returns}
+Description Text Field 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+208                                    \{
+209         \textcolor{keywordflow}{return} m\_DescriptionField.getText();
+210     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_a2de92046bd03e4d6173acf6528439f53}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-X\-Axis\-Max@{Get\-X\-Axis\-Max}}
+\index{Get\-X\-Axis\-Max@{Get\-X\-Axis\-Max}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-X\-Axis\-Max}]{\setlength{\rightskip}{0pt plus 5cm}double More\-Setting\-J\-Panel.\-Get\-X\-Axis\-Max (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_a2de92046bd03e4d6173acf6528439f53}
+Gets X Axis Max value
+
+\begin{DoxyReturn}{Returns}
+X Axis Max value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+134                                 \{
+135         \textcolor{keywordflow}{try} \{
+136             \textcolor{keywordflow}{return} Double.parseDouble(m\_XAxisMaxField.getText());
+137         \} \textcolor{keywordflow}{catch} (Exception e) \{
+138             error();
+139         \}
+140         \textcolor{keywordflow}{return} 0;
+141     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_ae412bd3a66df2b14af9aae95c6ee55d8}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-X\-Axis\-Max\-Field@{Get\-X\-Axis\-Max\-Field}}
+\index{Get\-X\-Axis\-Max\-Field@{Get\-X\-Axis\-Max\-Field}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-X\-Axis\-Max\-Field}]{\setlength{\rightskip}{0pt plus 5cm}J\-Text\-Field More\-Setting\-J\-Panel.\-Get\-X\-Axis\-Max\-Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_ae412bd3a66df2b14af9aae95c6ee55d8}
+Gets X Axis Max Field
+
+\begin{DoxyReturn}{Returns}
+X Axis Max Field 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+72                                          \{
+73         \textcolor{keywordflow}{return} m\_XAxisMaxField;
+74     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_a497d4195007c03bfd6dbf909904f001d}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-X\-Axis\-Min@{Get\-X\-Axis\-Min}}
+\index{Get\-X\-Axis\-Min@{Get\-X\-Axis\-Min}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-X\-Axis\-Min}]{\setlength{\rightskip}{0pt plus 5cm}double More\-Setting\-J\-Panel.\-Get\-X\-Axis\-Min (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_a497d4195007c03bfd6dbf909904f001d}
+Gets X Axis Min value
+
+\begin{DoxyReturn}{Returns}
+X Axis Min value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+121                                 \{
+122         \textcolor{keywordflow}{try} \{
+123             \textcolor{keywordflow}{return} Double.parseDouble(m\_XAxisMinField.getText());
+124         \} \textcolor{keywordflow}{catch} (Exception e) \{
+125             error();
+126         \}
+127         \textcolor{keywordflow}{return} 0;
+128     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_a55adb7a6be529276552eb98cb3c76fd0}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-X\-Axis\-Min\-Field@{Get\-X\-Axis\-Min\-Field}}
+\index{Get\-X\-Axis\-Min\-Field@{Get\-X\-Axis\-Min\-Field}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-X\-Axis\-Min\-Field}]{\setlength{\rightskip}{0pt plus 5cm}J\-Text\-Field More\-Setting\-J\-Panel.\-Get\-X\-Axis\-Min\-Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_a55adb7a6be529276552eb98cb3c76fd0}
+Gets X Axis Min Field
+
+\begin{DoxyReturn}{Returns}
+X Axis Min Field 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+64                                          \{
+65         \textcolor{keywordflow}{return} m\_XAxisMinField;
+66     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_afb3b2d456021f75e7d5ca438da32c5ad}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-X\-Axis\-Scale@{Get\-X\-Axis\-Scale}}
+\index{Get\-X\-Axis\-Scale@{Get\-X\-Axis\-Scale}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-X\-Axis\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}double More\-Setting\-J\-Panel.\-Get\-X\-Axis\-Scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_afb3b2d456021f75e7d5ca438da32c5ad}
+Gets X Axis Scale value
+
+\begin{DoxyReturn}{Returns}
+X Axis Scale value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+173                                   \{
+174         \textcolor{keywordflow}{try} \{
+175             \textcolor{keywordflow}{return} Double.parseDouble(m\_XAxisScaleField.getText());
+176         \} \textcolor{keywordflow}{catch} (Exception e) \{
+177             error();
+178         \}
+179         \textcolor{keywordflow}{return} 0;
+180     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_ab091eb7f112297574ccd612011b91e73}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-X\-Axis\-Scale\-Field@{Get\-X\-Axis\-Scale\-Field}}
+\index{Get\-X\-Axis\-Scale\-Field@{Get\-X\-Axis\-Scale\-Field}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-X\-Axis\-Scale\-Field}]{\setlength{\rightskip}{0pt plus 5cm}J\-Text\-Field More\-Setting\-J\-Panel.\-Get\-X\-Axis\-Scale\-Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_ab091eb7f112297574ccd612011b91e73}
+Gets X Axis Scale Field
+
+\begin{DoxyReturn}{Returns}
+X Axis Scale Field 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+96                                            \{
+97         \textcolor{keywordflow}{return} m\_XAxisScaleField;
+98     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_a3d22ee97ad0adefd68746ac67630861f}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-Y\-Axis\-Max@{Get\-Y\-Axis\-Max}}
+\index{Get\-Y\-Axis\-Max@{Get\-Y\-Axis\-Max}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-Y\-Axis\-Max}]{\setlength{\rightskip}{0pt plus 5cm}double More\-Setting\-J\-Panel.\-Get\-Y\-Axis\-Max (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_a3d22ee97ad0adefd68746ac67630861f}
+Gets Y Axis Max value
+
+\begin{DoxyReturn}{Returns}
+Y Axis Max value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+160                                 \{
+161         \textcolor{keywordflow}{try} \{
+162             \textcolor{keywordflow}{return} Double.parseDouble(m\_YAxisMaxField.getText());
+163         \} \textcolor{keywordflow}{catch} (Exception e) \{
+164             error();
+165         \}
+166         \textcolor{keywordflow}{return} 0;
+167     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_ab524a65ef89a39d61e7033e7495a53c4}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-Y\-Axis\-Max\-Field@{Get\-Y\-Axis\-Max\-Field}}
+\index{Get\-Y\-Axis\-Max\-Field@{Get\-Y\-Axis\-Max\-Field}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-Y\-Axis\-Max\-Field}]{\setlength{\rightskip}{0pt plus 5cm}J\-Text\-Field More\-Setting\-J\-Panel.\-Get\-Y\-Axis\-Max\-Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_ab524a65ef89a39d61e7033e7495a53c4}
+Gets Y Axis Max Field
+
+\begin{DoxyReturn}{Returns}
+X Axis Max Field 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+88                                          \{
+89         \textcolor{keywordflow}{return} m\_YAxisMaxField;
+90     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_a81ac83574297de3b0cce60b91af661ef}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-Y\-Axis\-Min@{Get\-Y\-Axis\-Min}}
+\index{Get\-Y\-Axis\-Min@{Get\-Y\-Axis\-Min}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-Y\-Axis\-Min}]{\setlength{\rightskip}{0pt plus 5cm}double More\-Setting\-J\-Panel.\-Get\-Y\-Axis\-Min (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_a81ac83574297de3b0cce60b91af661ef}
+Gets Y Axis Min value
+
+\begin{DoxyReturn}{Returns}
+Y Axis Min value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+147                                 \{
+148         \textcolor{keywordflow}{try} \{
+149             \textcolor{keywordflow}{return} Double.parseDouble(m\_YAxisMinField.getText());
+150         \} \textcolor{keywordflow}{catch} (Exception e) \{
+151             error();
+152         \}
+153         \textcolor{keywordflow}{return} 0;
+154     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_a451f95a3e1c0231aded2bf8fa3b4421d}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-Y\-Axis\-Min\-Field@{Get\-Y\-Axis\-Min\-Field}}
+\index{Get\-Y\-Axis\-Min\-Field@{Get\-Y\-Axis\-Min\-Field}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-Y\-Axis\-Min\-Field}]{\setlength{\rightskip}{0pt plus 5cm}J\-Text\-Field More\-Setting\-J\-Panel.\-Get\-Y\-Axis\-Min\-Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_a451f95a3e1c0231aded2bf8fa3b4421d}
+Gets Y Axis Min Field
+
+\begin{DoxyReturn}{Returns}
+Y Axis Min Field 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+80                                          \{
+81         \textcolor{keywordflow}{return} m\_YAxisMinField;
+82     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_ae137e83634e54fdca50c6cfeff6e451e}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-Y\-Axis\-Scale@{Get\-Y\-Axis\-Scale}}
+\index{Get\-Y\-Axis\-Scale@{Get\-Y\-Axis\-Scale}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-Y\-Axis\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}double More\-Setting\-J\-Panel.\-Get\-Y\-Axis\-Scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_ae137e83634e54fdca50c6cfeff6e451e}
+Gets Y Axis Scale value
+
+\begin{DoxyReturn}{Returns}
+Y Axis Scale value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+186                                   \{
+187 
+188         \textcolor{keywordflow}{try} \{
+189             \textcolor{keywordflow}{return} Double.parseDouble(m\_YAxisScaleField.getText());
+190         \} \textcolor{keywordflow}{catch} (Exception e) \{
+191             error();
+192         \}
+193         \textcolor{keywordflow}{return} 0;
+194     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_a13bfe944b0b4a671dc37c1c87381024d}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!Get\-Y\-Axis\-Scale\-Field@{Get\-Y\-Axis\-Scale\-Field}}
+\index{Get\-Y\-Axis\-Scale\-Field@{Get\-Y\-Axis\-Scale\-Field}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{Get\-Y\-Axis\-Scale\-Field}]{\setlength{\rightskip}{0pt plus 5cm}J\-Text\-Field More\-Setting\-J\-Panel.\-Get\-Y\-Axis\-Scale\-Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_more_setting_j_panel_a13bfe944b0b4a671dc37c1c87381024d}
+Gets Y Axis Scale Field
+
+\begin{DoxyReturn}{Returns}
+Y Axis Scale Field 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+104                                            \{
+105         \textcolor{keywordflow}{return} m\_YAxisScaleField;
+106     \}
+\end{DoxyCode}
+\hypertarget{class_more_setting_j_panel_a313c7e51f47e39c3cb424850e044708c}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!main@{main}}
+\index{main@{main}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void More\-Setting\-J\-Panel.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_more_setting_j_panel_a313c7e51f47e39c3cb424850e044708c}
+
+\begin{DoxyCode}
+488                                            \{
+489         \textcolor{keyword}{new} \hyperlink{class_more_setting_j_panel_ac87617b1baff19cf09ecf2d713b4b368}{MoreSettingJPanel}(null);
+490         
+491     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_more_setting_j_panel_affa56095abc301bb764a5711fd097ac8}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!F\-R\-A\-M\-E\-\_\-\-H\-E\-I\-G\-H\-T@{F\-R\-A\-M\-E\-\_\-\-H\-E\-I\-G\-H\-T}}
+\index{F\-R\-A\-M\-E\-\_\-\-H\-E\-I\-G\-H\-T@{F\-R\-A\-M\-E\-\_\-\-H\-E\-I\-G\-H\-T}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{F\-R\-A\-M\-E\-\_\-\-H\-E\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}final int More\-Setting\-J\-Panel.\-F\-R\-A\-M\-E\-\_\-\-H\-E\-I\-G\-H\-T = 200}}\label{class_more_setting_j_panel_affa56095abc301bb764a5711fd097ac8}
+\hypertarget{class_more_setting_j_panel_a09bffa47a9133c9966cf18961bf3a46e}{\index{More\-Setting\-J\-Panel@{More\-Setting\-J\-Panel}!F\-R\-A\-M\-E\-\_\-\-W\-I\-D\-T\-H@{F\-R\-A\-M\-E\-\_\-\-W\-I\-D\-T\-H}}
+\index{F\-R\-A\-M\-E\-\_\-\-W\-I\-D\-T\-H@{F\-R\-A\-M\-E\-\_\-\-W\-I\-D\-T\-H}!MoreSettingJPanel@{More\-Setting\-J\-Panel}}
+\subsubsection[{F\-R\-A\-M\-E\-\_\-\-W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}final int More\-Setting\-J\-Panel.\-F\-R\-A\-M\-E\-\_\-\-W\-I\-D\-T\-H = 500}}\label{class_more_setting_j_panel_a09bffa47a9133c9966cf18961bf3a46e}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_more_setting_j_panel_8java}{More\-Setting\-J\-Panel.\-java}\end{DoxyCompactItemize}

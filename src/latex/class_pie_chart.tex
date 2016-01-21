@@ -1,0 +1,714 @@
+\hypertarget{class_pie_chart}{\section{Pie\-Chart Class Reference}
+\label{class_pie_chart}\index{Pie\-Chart@{Pie\-Chart}}
+}
+
+
+A simple class that displays data in a single Pie \hyperlink{interface_chart}{Chart}, or two Pie \hyperlink{interface_chart}{Chart} visualisations.  
+
+
+Inheritance diagram for Pie\-Chart\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_pie_chart}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pie_chart_a14e2a6c33b864d41debeb28df658286d}{Pie\-Chart} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_pie_chart_aa7d3ab5c52b817c6731e1430831eaf39}{Pie\-Chart} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting, String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} second\-Data, \hyperlink{class_dataset}{Dataset} second\-Dataset, \hyperlink{class_data_attribute}{Data\-Attribute} second\-Setting)
+\item 
+\hyperlink{class_pie_chart_a122d771ebfd985bcb2b93e7f44719d0f}{Pie\-Chart} (\hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_pie_chart_aa2069046c7fa130fee473e17f57f570b}{Pie\-Chart} (\hyperlink{class_data_attribute}{Data\-Attribute} setting, \hyperlink{class_data_attribute}{Data\-Attribute} second\-Setting)
+\item 
+String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \hyperlink{class_pie_chart_a7916d8aa39dbd1c48a1dac3cd3245f23}{Get\-Data} ()
+\item 
+int \hyperlink{class_pie_chart_a30b3ea3e7a0e5c53f50f3db916353346}{Get\-Index\-Count} ()
+\item 
+int \hyperlink{class_pie_chart_a3f104bd6d571abec5b8af8b43fdd96d7}{Get\-No\-Cols} ()
+\item 
+int \hyperlink{class_pie_chart_afbfbd6da7482a63d068c644e9e8cb149}{Get\-No\-Rows} ()
+\item 
+String \hyperlink{class_pie_chart_a2c5f499766ccbe0f5a537910a372fd6e}{Set\-Label\-X} (String x\-Label)
+\item 
+boolean \hyperlink{class_pie_chart_aeea92be8ab84aa78e56ec5c4f90e308b}{Set\-Data} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data)
+\item 
+boolean \hyperlink{class_pie_chart_ad7812a5d88a05da851be00ac4728126c}{Set\-Index\-Count} (int index)
+\item 
+boolean \hyperlink{class_pie_chart_a0807bdf531833bcfa2ef97228ddfa770}{Set\-No\-Cols} (int cols)
+\item 
+boolean \hyperlink{class_pie_chart_ae80bc11611782f66bd3ad990baee963c}{Set\-No\-Rows} (int rows)
+\item 
+String \hyperlink{class_pie_chart_a2f762d12501691aa33335f33f1931f24}{Set\-Title} (String m\-\_\-chart\-Title)
+\item 
+void \hyperlink{class_pie_chart_ae30b814928c5a4bedb0cb86b48e18554}{action\-Performed} (Action\-Event e)
+\item 
+J\-Free\-Chart \hyperlink{class_pie_chart_abd00d9a07161c3fbf10bd6f19ec2750d}{Create\-Chart} (Pie\-Dataset dataset)
+\item 
+J\-Free\-Chart \hyperlink{class_pie_chart_afc121f4cb3d27f073711e844b7c26377}{Create\-Second\-Chart} (Pie\-Dataset dataset)
+\item 
+Boolean \hyperlink{class_pie_chart_aa9e53463d5ff3f5326fb92b25c89f349}{Show\-Chart} (Pie\-Dataset data)
+\item 
+Boolean \hyperlink{class_pie_chart_a38434bdbcc72eb384482dd372908e0ae}{Show\-Chart} (Pie\-Dataset data, Pie\-Dataset second\-Data)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_pie_chart_ab7e3bd074d520005660abe66a4ff00ff}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple class that displays data in a single Pie \hyperlink{interface_chart}{Chart}, or two Pie \hyperlink{interface_chart}{Chart} visualisations. 
+
+\begin{DoxyDate}{Date}
+30/04/2013 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_pie_chart_a14e2a6c33b864d41debeb28df658286d}{\index{Pie\-Chart@{Pie\-Chart}!Pie\-Chart@{Pie\-Chart}}
+\index{Pie\-Chart@{Pie\-Chart}!PieChart@{Pie\-Chart}}
+\subsubsection[{Pie\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Pie\-Chart.\-Pie\-Chart (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_a14e2a6c33b864d41debeb28df658286d}
+
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+34                                             \{
+35         
+36         m\_Data = data;
+37         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+38         m\_Setting = setting;
+39         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+40         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+41         m\_Col = dataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+42         m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+43         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+44         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+45         
+46         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+47         m\_XMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+48         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+49         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+50         
+51         CreateDataset( m\_Data );
+52         \hyperlink{class_pie_chart_aa9e53463d5ff3f5326fb92b25c89f349}{ShowChart}( m\_dataset );
+53     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_aa7d3ab5c52b817c6731e1430831eaf39}{\index{Pie\-Chart@{Pie\-Chart}!Pie\-Chart@{Pie\-Chart}}
+\index{Pie\-Chart@{Pie\-Chart}!PieChart@{Pie\-Chart}}
+\subsubsection[{Pie\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Pie\-Chart.\-Pie\-Chart (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{String}]{second\-Data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{second\-Dataset, }
+\item[{{\bf Data\-Attribute}}]{second\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_aa7d3ab5c52b817c6731e1430831eaf39}
+creates a constructor taking in the following parameters\-:
+
+
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & second\-Data -\/ second data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & second\-Dataset -\/ the second dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & second\-Setting -\/ Second Data attributes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+66                                          \{
+67 
+68         m\_Data = data;
+69         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+70         m\_Setting = setting;
+71         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+72         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+73         m\_Col = dataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+74         m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+75         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+76         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+77         
+78         m\_SecondData = data;
+79         m\_SecondChartTitle = setting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+80         m\_SecondSetting = secondSetting;
+81         m\_SecondXLabel = setting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+82         m\_SecondYLabel = setting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+83         m\_SecondCol = dataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+84         m\_SecondRow = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+85         m\_SecondC1 = setting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+86         m\_SecondC2 = setting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();
+87         
+88         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+89         m\_XMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+90         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+91         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+92         
+93         m\_SecondXMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+94         m\_SecondXMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+95         m\_SecondXScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+96         m\_SecondYScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+97         
+98 
+99         CreateDataset( m\_Data );
+100         CreateSecondDataset(m\_SecondData);
+101         \hyperlink{class_pie_chart_aa9e53463d5ff3f5326fb92b25c89f349}{ShowChart}( m\_dataset, m\_secondDataset );       
+102     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_a122d771ebfd985bcb2b93e7f44719d0f}{\index{Pie\-Chart@{Pie\-Chart}!Pie\-Chart@{Pie\-Chart}}
+\index{Pie\-Chart@{Pie\-Chart}!PieChart@{Pie\-Chart}}
+\subsubsection[{Pie\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Pie\-Chart.\-Pie\-Chart (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_a122d771ebfd985bcb2b93e7f44719d0f}
+constructor for J\-Unit Tests 
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+107                                            \{
+108         
+109         m\_Setting = setting;
+110         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+111         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+112         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+113         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+114         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+115         
+116         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+117         m\_XMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+118         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+119         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+120     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_aa2069046c7fa130fee473e17f57f570b}{\index{Pie\-Chart@{Pie\-Chart}!Pie\-Chart@{Pie\-Chart}}
+\index{Pie\-Chart@{Pie\-Chart}!PieChart@{Pie\-Chart}}
+\subsubsection[{Pie\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Pie\-Chart.\-Pie\-Chart (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{{\bf Data\-Attribute}}]{second\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_aa2069046c7fa130fee473e17f57f570b}
+second empty constructor for J\-Unit Tests 
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+{\em second\-Setting} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+127                                                                         \{
+128         
+129         m\_Setting = setting;
+130         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+131         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+132         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+133         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+134         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+135         
+136         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+137         m\_XMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+138         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+139         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+140         
+141         m\_SecondSetting = secondSetting;
+142         m\_SecondChartTitle = secondSetting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+143         m\_SecondXLabel = secondSetting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+144         m\_SecondYLabel = secondSetting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+145         m\_SecondC1 = secondSetting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+146         m\_SecondC2 = secondSetting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();
+147         
+148         m\_SecondXMin = secondSetting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+149         m\_SecondXMax = secondSetting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+150         m\_SecondXScale = secondSetting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+151         m\_SecondYScale = secondSetting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+152     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_pie_chart_ae30b814928c5a4bedb0cb86b48e18554}{\index{Pie\-Chart@{Pie\-Chart}!action\-Performed@{action\-Performed}}
+\index{action\-Performed@{action\-Performed}!PieChart@{Pie\-Chart}}
+\subsubsection[{action\-Performed}]{\setlength{\rightskip}{0pt plus 5cm}void Pie\-Chart.\-action\-Performed (
+\begin{DoxyParamCaption}
+\item[{Action\-Event}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_ae30b814928c5a4bedb0cb86b48e18554}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & -\/ action button to allow choosers to select a colour \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+279                                                  \{
+280         \textcolor{keywordflow}{if}( e.getSource() == colChangeButton ) \{
+281             \hyperlink{class_colour_map}{ColourMap} cM = \textcolor{keyword}{new} \hyperlink{class_colour_map}{ColourMap}();
+282             cM.\hyperlink{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{SetupData}( m\_IndexCount,plotChart );
+283             cM.setVisible( \textcolor{keyword}{false} );
+284         \}
+285     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_abd00d9a07161c3fbf10bd6f19ec2750d}{\index{Pie\-Chart@{Pie\-Chart}!Create\-Chart@{Create\-Chart}}
+\index{Create\-Chart@{Create\-Chart}!PieChart@{Pie\-Chart}}
+\subsubsection[{Create\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}J\-Free\-Chart Pie\-Chart.\-Create\-Chart (
+\begin{DoxyParamCaption}
+\item[{Pie\-Dataset}]{dataset}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_abd00d9a07161c3fbf10bd6f19ec2750d}
+create the 3\-D pie chart and set the appearance 
+\begin{DoxyParams}{Parameters}
+{\em dataset} & -\/ pass the pie dataset through \\
+\hline
+{\em chart\-Title} & -\/ pass through the chart title \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ a 3\-D piechart 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+293                                                         \{
+294         
+295         JFreeChart chart = ChartFactory.createPieChart3D( 
+296                 m\_ChartTitle,
+297             m\_dataset, \textcolor{keyword}{true},                          
+298             \textcolor{keyword}{true}, \textcolor{keyword}{false} );
+299         
+300         \textcolor{comment}{//xyPlot = chart.getXYPlot();}
+301         plotChart  = ( PiePlot3D ) chart.getPlot();      
+302         plotChart.setStartAngle( START\_ANGLE );
+303         plotChart.setDirection( Rotation.CLOCKWISE ); 
+304         plotChart.setForegroundAlpha(TRANSPARENCY); 
+305         \textcolor{keywordflow}{return} chart;       
+306     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_afc121f4cb3d27f073711e844b7c26377}{\index{Pie\-Chart@{Pie\-Chart}!Create\-Second\-Chart@{Create\-Second\-Chart}}
+\index{Create\-Second\-Chart@{Create\-Second\-Chart}!PieChart@{Pie\-Chart}}
+\subsubsection[{Create\-Second\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}J\-Free\-Chart Pie\-Chart.\-Create\-Second\-Chart (
+\begin{DoxyParamCaption}
+\item[{Pie\-Dataset}]{dataset}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_afc121f4cb3d27f073711e844b7c26377}
+creates the second 3\-D pie chart and set the appearance 
+\begin{DoxyParams}{Parameters}
+{\em dataset} & -\/ pass the pie dataset through \\
+\hline
+{\em secon\-Chart\-Title} & -\/ pass through the second chart title \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ a 3\-D piechart 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+313                                                               \{
+314         JFreeChart chart = ChartFactory.createPieChart3D( 
+315                 m\_SecondChartTitle,
+316             m\_secondDataset, \textcolor{keyword}{true},                          
+317             \textcolor{keyword}{true}, \textcolor{keyword}{false} );
+318         
+319         \textcolor{comment}{//xyPlot = chart.getXYPlot();}
+320         plotChart  = ( PiePlot3D ) chart.getPlot();      
+321         plotChart.setStartAngle( START\_ANGLE );
+322         plotChart.setDirection( Rotation.CLOCKWISE ); 
+323         plotChart.setForegroundAlpha(TRANSPARENCY); 
+324         \textcolor{keywordflow}{return} chart;       
+325     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_a7916d8aa39dbd1c48a1dac3cd3245f23}{\index{Pie\-Chart@{Pie\-Chart}!Get\-Data@{Get\-Data}}
+\index{Get\-Data@{Get\-Data}!PieChart@{Pie\-Chart}}
+\subsubsection[{Get\-Data}]{\setlength{\rightskip}{0pt plus 5cm}String \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} Pie\-Chart.\-Get\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_a7916d8aa39dbd1c48a1dac3cd3245f23}
+\begin{DoxyReturn}{Returns}
+-\/ return a variable which stores the data. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+157                                 \{
+158         \textcolor{keywordflow}{return} m\_Data;
+159     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_a30b3ea3e7a0e5c53f50f3db916353346}{\index{Pie\-Chart@{Pie\-Chart}!Get\-Index\-Count@{Get\-Index\-Count}}
+\index{Get\-Index\-Count@{Get\-Index\-Count}!PieChart@{Pie\-Chart}}
+\subsubsection[{Get\-Index\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int Pie\-Chart.\-Get\-Index\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_a30b3ea3e7a0e5c53f50f3db916353346}
+\begin{DoxyReturn}{Returns}
+-\/ return a variable with the current index of each pie slice. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+164                                \{
+165         \textcolor{keywordflow}{return} m\_IndexCount;
+166     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_a3f104bd6d571abec5b8af8b43fdd96d7}{\index{Pie\-Chart@{Pie\-Chart}!Get\-No\-Cols@{Get\-No\-Cols}}
+\index{Get\-No\-Cols@{Get\-No\-Cols}!PieChart@{Pie\-Chart}}
+\subsubsection[{Get\-No\-Cols}]{\setlength{\rightskip}{0pt plus 5cm}int Pie\-Chart.\-Get\-No\-Cols (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_a3f104bd6d571abec5b8af8b43fdd96d7}
+\begin{DoxyReturn}{Returns}
+-\/ a variable which returns the current number of columns 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+170                            \{
+171         \textcolor{keywordflow}{return} m\_Col;
+172     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_afbfbd6da7482a63d068c644e9e8cb149}{\index{Pie\-Chart@{Pie\-Chart}!Get\-No\-Rows@{Get\-No\-Rows}}
+\index{Get\-No\-Rows@{Get\-No\-Rows}!PieChart@{Pie\-Chart}}
+\subsubsection[{Get\-No\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}int Pie\-Chart.\-Get\-No\-Rows (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_afbfbd6da7482a63d068c644e9e8cb149}
+\begin{DoxyReturn}{Returns}
+-\/ a variable which returns the current number of rows 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+176                            \{
+177         \textcolor{keywordflow}{return} m\_Row;
+178     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_ab7e3bd074d520005660abe66a4ff00ff}{\index{Pie\-Chart@{Pie\-Chart}!main@{main}}
+\index{main@{main}!PieChart@{Pie\-Chart}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Pie\-Chart.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_pie_chart_ab7e3bd074d520005660abe66a4ff00ff}
+Main method which implement 3 unit tests for each 'set' method 
+\begin{DoxyParams}{Parameters}
+{\em args} & -\/ no user input needed \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+452                                             \{
+453         \hyperlink{class_data_attribute}{DataAttribute} test = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+454         \hyperlink{class_pie_chart}{PieChart} pieChartTest = \textcolor{keyword}{new} \hyperlink{class_pie_chart_a14e2a6c33b864d41debeb28df658286d}{PieChart}(test);
+455         
+456         \textcolor{keyword}{final} PieDataset datasetTest = createTestDataset();
+457         pieChartTest.\hyperlink{class_pie_chart_aa9e53463d5ff3f5326fb92b25c89f349}{ShowChart}(datasetTest);
+458         
+459         \hyperlink{class_data_attribute}{DataAttribute} secondTest = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+460         \hyperlink{class_pie_chart}{PieChart} secondPieChartTest = \textcolor{keyword}{new} \hyperlink{class_pie_chart_a14e2a6c33b864d41debeb28df658286d}{PieChart}(secondTest);
+461         
+462         \textcolor{keyword}{final} PieDataset secondDatasetTest = createTestDataset();
+463         secondPieChartTest.\hyperlink{class_pie_chart_aa9e53463d5ff3f5326fb92b25c89f349}{ShowChart}(datasetTest, secondDatasetTest);      
+464     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_aeea92be8ab84aa78e56ec5c4f90e308b}{\index{Pie\-Chart@{Pie\-Chart}!Set\-Data@{Set\-Data}}
+\index{Set\-Data@{Set\-Data}!PieChart@{Pie\-Chart}}
+\subsubsection[{Set\-Data}]{\setlength{\rightskip}{0pt plus 5cm}boolean Pie\-Chart.\-Set\-Data (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_aeea92be8ab84aa78e56ec5c4f90e308b}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & -\/ variable to test if m\-\_\-\-Int\-Data has any errors \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ returns boolean if test is true 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+197                                               \{
+198         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+199         \textcolor{keywordflow}{if} ( data == null && test == \textcolor{keyword}{true} ) \{
+200             System.err.println( \textcolor{stringliteral}{"PieChart::setData() ***Warning, data set to: "} 
+201                     + data );
+202         \}
+203         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( test == \textcolor{keyword}{true} ) \{
+204             System.out.println( \textcolor{stringliteral}{"PieChart::setData() file location set to: "}
+205                     + data );
+206         \}
+207             m\_Data = data;
+208             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+209     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_ad7812a5d88a05da851be00ac4728126c}{\index{Pie\-Chart@{Pie\-Chart}!Set\-Index\-Count@{Set\-Index\-Count}}
+\index{Set\-Index\-Count@{Set\-Index\-Count}!PieChart@{Pie\-Chart}}
+\subsubsection[{Set\-Index\-Count}]{\setlength{\rightskip}{0pt plus 5cm}boolean Pie\-Chart.\-Set\-Index\-Count (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_ad7812a5d88a05da851be00ac4728126c}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & -\/ variable to test if m\-\_\-\-Index\-Count has any errors \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ returns boolean if test is true 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+214                                               \{
+215         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+216         \textcolor{keywordflow}{if} ( index < 0 && test == \textcolor{keyword}{true} ) \{
+217             System.err.println( \textcolor{stringliteral}{"PieChart::setIndexCount() ***Warning, index "}
+218                         + \textcolor{stringliteral}{"set to: "} + index );
+219         \}
+220         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( test == \textcolor{keyword}{true} ) \{
+221             System.out.println( \textcolor{stringliteral}{"PieChart::setIndexCount() index set to: "} 
+222                     + index );
+223         \}
+224         m\_IndexCount = index;
+225         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+226     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_a2c5f499766ccbe0f5a537910a372fd6e}{\index{Pie\-Chart@{Pie\-Chart}!Set\-Label\-X@{Set\-Label\-X}}
+\index{Set\-Label\-X@{Set\-Label\-X}!PieChart@{Pie\-Chart}}
+\subsubsection[{Set\-Label\-X}]{\setlength{\rightskip}{0pt plus 5cm}String Pie\-Chart.\-Set\-Label\-X (
+\begin{DoxyParamCaption}
+\item[{String}]{x\-Label}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_a2c5f499766ccbe0f5a537910a372fd6e}
+
+\begin{DoxyParams}{Parameters}
+{\em x\-Label} & -\/ the x\-Label to be passed from the users to the chart \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+183                                              \{
+184         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+185         
+186         \textcolor{keywordflow}{if} ( ( ( xLabel.isEmpty() )||( xLabel.length() > MAX\_LABEL\_LENGTH ) ) 
+187                && ( test == true ) ) \{
+188             System.err.println( \textcolor{stringliteral}{"ScatterPlotGraph::SetLabelX "} + xLabel );
+189     \}
+190         
+191         \textcolor{keywordflow}{return} xLabel;
+192     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_a0807bdf531833bcfa2ef97228ddfa770}{\index{Pie\-Chart@{Pie\-Chart}!Set\-No\-Cols@{Set\-No\-Cols}}
+\index{Set\-No\-Cols@{Set\-No\-Cols}!PieChart@{Pie\-Chart}}
+\subsubsection[{Set\-No\-Cols}]{\setlength{\rightskip}{0pt plus 5cm}boolean Pie\-Chart.\-Set\-No\-Cols (
+\begin{DoxyParamCaption}
+\item[{int}]{cols}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_a0807bdf531833bcfa2ef97228ddfa770}
+
+\begin{DoxyParams}{Parameters}
+{\em cols} & -\/ variable to test if m\-\_\-\-No\-Of\-Cols has any errors \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ returns boolean if test is true 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+231                                          \{
+232         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+233         \textcolor{keywordflow}{if} ( cols < 0 && test == \textcolor{keyword}{true} ) \{
+234             System.err.println( \textcolor{stringliteral}{"PieChart::setNoCols() ***Warning, cols "}
+235                         + \textcolor{stringliteral}{"set to: "} + cols );
+236         \}
+237         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( test == \textcolor{keyword}{true} ) \{
+238             System.out.println( \textcolor{stringliteral}{"PieChart::setNoCols() cols set to: "} 
+239                     + cols );
+240         \}
+241         m\_Col = cols;
+242         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+243     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_ae80bc11611782f66bd3ad990baee963c}{\index{Pie\-Chart@{Pie\-Chart}!Set\-No\-Rows@{Set\-No\-Rows}}
+\index{Set\-No\-Rows@{Set\-No\-Rows}!PieChart@{Pie\-Chart}}
+\subsubsection[{Set\-No\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}boolean Pie\-Chart.\-Set\-No\-Rows (
+\begin{DoxyParamCaption}
+\item[{int}]{rows}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_ae80bc11611782f66bd3ad990baee963c}
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & -\/ variable to test if m\-\_\-\-No\-Of\-Rows has any errors \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ returns boolean if test is true 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+248                                          \{
+249         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+250         \textcolor{keywordflow}{if} ( rows < 0 && test == \textcolor{keyword}{true} ) \{
+251             System.err.println( \textcolor{stringliteral}{"PieChart::setNoRows() ***Warning, rows "}
+252                         + \textcolor{stringliteral}{"set to: "} + rows );
+253         \}
+254         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( test == \textcolor{keyword}{true} ) \{
+255             System.out.println( \textcolor{stringliteral}{"PieChart::setNoRows() rows set to: "} 
+256                     + rows );
+257         \}
+258         m\_Row = rows;
+259         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+260     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_a2f762d12501691aa33335f33f1931f24}{\index{Pie\-Chart@{Pie\-Chart}!Set\-Title@{Set\-Title}}
+\index{Set\-Title@{Set\-Title}!PieChart@{Pie\-Chart}}
+\subsubsection[{Set\-Title}]{\setlength{\rightskip}{0pt plus 5cm}String Pie\-Chart.\-Set\-Title (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-chart\-Title}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_a2f762d12501691aa33335f33f1931f24}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-chart\-Title} & -\/ the title to be passed from users for the chart \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+265                                                   \{
+266         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+267         
+268         \textcolor{keywordflow}{if} ( ( ( m\_chartTitle.isEmpty() )||( m\_chartTitle.length() > MAX\_CHART\_TITLE\_LENGTH ) )
+269                && ( test == true ) ) \{
+270             System.err.println( \textcolor{stringliteral}{"ScatterPlotGraph::SetTitle "} + m\_chartTitle );
+271         \}
+272         
+273         \textcolor{keywordflow}{return} m\_chartTitle;
+274     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_aa9e53463d5ff3f5326fb92b25c89f349}{\index{Pie\-Chart@{Pie\-Chart}!Show\-Chart@{Show\-Chart}}
+\index{Show\-Chart@{Show\-Chart}!PieChart@{Pie\-Chart}}
+\subsubsection[{Show\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Pie\-Chart.\-Show\-Chart (
+\begin{DoxyParamCaption}
+\item[{Pie\-Dataset}]{data}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_aa9e53463d5ff3f5326fb92b25c89f349}
+visualises the Pie chart using J\-Free\-Chart and sets the default size and appearance of the window and graph
+
+
+\begin{DoxyParams}{Parameters}
+{\em datas} & -\/ passes the Pie data through \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true -\/ returns test results 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+369                                               \{
+370         JFreeChart chart = \hyperlink{class_pie_chart_abd00d9a07161c3fbf10bd6f19ec2750d}{CreateChart}(data);         
+371         ChartPanel chartPanel = \textcolor{keyword}{new} ChartPanel( chart );           
+372                 
+373         \textcolor{comment}{/* instantiate colour options */}
+374         JPanel colourButtonPanel = \textcolor{keyword}{new} JPanel( \textcolor{keyword}{new} BorderLayout() );
+375         colChangeButton = \textcolor{keyword}{new} JButton( \textcolor{stringliteral}{"Change Colours"} );
+376         colourButtonPanel.add( colChangeButton,BorderLayout.SOUTH );
+377         colChangeButton.addActionListener( \hyperlink{class_pie_chart}{PieChart}.this );
+378         
+379         JFrame test = \textcolor{keyword}{new} JFrame();
+380         test.setLayout(\textcolor{keyword}{new} BorderLayout());
+381         test.setSize( FRAME\_WIDTH, FRAME\_HEIGHT );
+382         test.setTitle(\textcolor{stringliteral}{"Pie Chart"});
+383         test.setDefaultCloseOperation(JFrame.DISPOSE\_ON\_CLOSE);
+384         test.add(chartPanel, BorderLayout.NORTH);
+385         test.add(\textcolor{keyword}{new} \hyperlink{class_information_j_panel}{InformationJPanel}(m\_Setting), BorderLayout.CENTER);
+386         test.add(colourButtonPanel, BorderLayout.SOUTH);
+387         test.setVisible(\textcolor{keyword}{true});
+388         
+389         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+390     \}
+\end{DoxyCode}
+\hypertarget{class_pie_chart_a38434bdbcc72eb384482dd372908e0ae}{\index{Pie\-Chart@{Pie\-Chart}!Show\-Chart@{Show\-Chart}}
+\index{Show\-Chart@{Show\-Chart}!PieChart@{Pie\-Chart}}
+\subsubsection[{Show\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Boolean Pie\-Chart.\-Show\-Chart (
+\begin{DoxyParamCaption}
+\item[{Pie\-Dataset}]{data, }
+\item[{Pie\-Dataset}]{second\-Data}
+\end{DoxyParamCaption}
+)}}\label{class_pie_chart_a38434bdbcc72eb384482dd372908e0ae}
+visualises the Pie chart using J\-Free\-Chart and sets the default size and appearance of the window and graph
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & -\/ passes the Pie data through \\
+\hline
+{\em second\-Data} & -\/ passes the second Pie data through \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true -\/ returns test results 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+399                                                                      \{
+400         JFreeChart chart = \hyperlink{class_pie_chart_abd00d9a07161c3fbf10bd6f19ec2750d}{CreateChart}(data);
+401         JFreeChart secondChart = \hyperlink{class_pie_chart_afc121f4cb3d27f073711e844b7c26377}{CreateSecondChart}(data);
+402         ChartPanel chartPanel = \textcolor{keyword}{new} ChartPanel( chart );           
+403         ChartPanel secondChartPanel = \textcolor{keyword}{new} ChartPanel( secondChart );  
+404         chartPanel.setPreferredSize( \textcolor{keyword}{new} java.awt.Dimension( CHART\_WIDTH, CHART\_HEIGHT ) );
+405         secondChartPanel.setPreferredSize( \textcolor{keyword}{new} java.awt.Dimension( CHART\_WIDTH, CHART\_HEIGHT ) );
+406                 
+407         \textcolor{comment}{/* instantiate colour options */}
+408         JPanel colourButtonPanel = \textcolor{keyword}{new} JPanel( \textcolor{keyword}{new} BorderLayout() );
+409         colChangeButton = \textcolor{keyword}{new} JButton( \textcolor{stringliteral}{"Change Colours"} );
+410         colourButtonPanel.add( colChangeButton,BorderLayout.SOUTH );
+411         colChangeButton.addActionListener( \hyperlink{class_pie_chart}{PieChart}.this );
+412         
+413         JPanel charts = \textcolor{keyword}{new} JPanel();
+414         charts.add( chartPanel, BorderLayout.WEST );
+415         charts.add( secondChartPanel, BorderLayout.EAST );
+416         
+417         JFrame test = \textcolor{keyword}{new} JFrame();
+418         test.setLayout(\textcolor{keyword}{new} BorderLayout());
+419         test.setSize( LARGE\_FRAME\_WIDTH, LARGE\_FRAME\_HEIGHT );
+420         test.setTitle(\textcolor{stringliteral}{"Pie Chart"});
+421         test.setDefaultCloseOperation(JFrame.DISPOSE\_ON\_CLOSE);
+422         test.add(charts, BorderLayout.NORTH);
+423         test.add(\textcolor{keyword}{new} \hyperlink{class_information_j_panel}{InformationJPanel}(m\_Setting), BorderLayout.CENTER);
+424         test.add(colourButtonPanel, BorderLayout.SOUTH);
+425         test.setVisible(\textcolor{keyword}{true});
+426         
+427         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+428     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_pie_chart_8java}{Pie\-Chart.\-java}\end{DoxyCompactItemize}

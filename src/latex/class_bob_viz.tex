@@ -1,0 +1,418 @@
+\hypertarget{class_bob_viz}{\section{Bob\-Viz Class Reference}
+\label{class_bob_viz}\index{Bob\-Viz@{Bob\-Viz}}
+}
+
+
+This class provides the user with a simple G\-U\-I system. It initiates all instances used throughout the application.  
+
+
+Inheritance diagram for Bob\-Viz\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_bob_viz}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_bob_viz_a362406b3528e341eb5f8339e28ae7a17}{Bob\-Viz} ()
+\item 
+boolean \hyperlink{class_bob_viz_a76ae5d60149c159834708456b28d9222}{Set\-B\-V} (\hyperlink{class_bob_viz}{Bob\-Viz} bv)
+\item 
+\hyperlink{class_about_j_panel}{About\-J\-Panel} \hyperlink{class_bob_viz_aac948a35c1e508b168aad19efba2053d}{Get\-About\-J\-Pan} ()
+\item 
+\hyperlink{class_data_attribute}{Data\-Attribute} \hyperlink{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{Get\-Data\-Attribute} ()
+\item 
+\hyperlink{class_data_attribute}{Data\-Attribute} \hyperlink{class_bob_viz_a3bbdcd2d94adf10bfd50ae6eefe90717}{Get\-Second\-Data\-Attribute} ()
+\item 
+\hyperlink{class_dataset}{Dataset} \hyperlink{class_bob_viz_ab8866566b53e78c66e29a4d68406b860}{Get\-Dataset} ()
+\item 
+\hyperlink{class_dataset}{Dataset} \hyperlink{class_bob_viz_a2826dca37585b5effe3a2f2222f17ada}{Get\-Second\-Dataset} ()
+\item 
+\hyperlink{class_import_j_panel}{Import\-J\-Panel} \hyperlink{class_bob_viz_a93eb7320a1f76d531874cd0bfe5c6b71}{Get\-Import\-J\-Pan} ()
+\item 
+\hyperlink{class_table}{Table} \hyperlink{class_bob_viz_a52e7c8f67daa12f4882a396e557e8ed4}{Get\-Table\-J\-Pan} ()
+\item 
+\hyperlink{class_table}{Table} \hyperlink{class_bob_viz_afce2ebaa330fc80c477b7156fc5bc32e}{Get\-Second\-Table\-J\-Pan} ()
+\item 
+\hyperlink{class_setting_j_panel}{Setting\-J\-Panel} \hyperlink{class_bob_viz_a10dab616869fe644d16c2ccf78627af5}{Get\-Setting\-J\-Pan} ()
+\item 
+\hyperlink{class_more_setting_j_panel}{More\-Setting\-J\-Panel} \hyperlink{class_bob_viz_a26ad68d96e3524c2eb53425f59deab8a}{Get\-More\-Setting\-J\-Pan} ()
+\item 
+\hyperlink{class_viz_type_j_panel}{Viz\-Type\-J\-Panel} \hyperlink{class_bob_viz_a35af0807f9fca7a0773ce8217b2065c7}{Get\-Viz\-Type\-J\-Pan} ()
+\item 
+\hyperlink{class_status_j_panel}{Status\-J\-Panel} \hyperlink{class_bob_viz_a31b771c2acf2b72658beb4f3eecab892}{Get\-Status\-J\-Pan} ()
+\item 
+\hyperlink{class_selection_viz_j_panel}{Selection\-Viz\-J\-Panel} \hyperlink{class_bob_viz_a4b1e563e0fa60594fa0beb1d50438824}{Get\-Generate\-Viz\-J\-Pan} ()
+\item 
+\hyperlink{class_visualisation}{Visualisation} \hyperlink{class_bob_viz_a239767cb7f7f32710826f9efc91b4af9}{Get\-Viz} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides the user with a simple G\-U\-I system. It initiates all instances used throughout the application. 
+
+\begin{DoxyDate}{Date}
+-\/30/03/2013 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_bob_viz_a362406b3528e341eb5f8339e28ae7a17}{\index{Bob\-Viz@{Bob\-Viz}!Bob\-Viz@{Bob\-Viz}}
+\index{Bob\-Viz@{Bob\-Viz}!BobViz@{Bob\-Viz}}
+\subsubsection[{Bob\-Viz}]{\setlength{\rightskip}{0pt plus 5cm}Bob\-Viz.\-Bob\-Viz (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_a362406b3528e341eb5f8339e28ae7a17}
+
+\begin{DoxyCode}
+25                     \{
+26         \textcolor{comment}{/* create new JPanel which will hold all GUI components */}
+27         JPanel top = \textcolor{keyword}{new} JPanel();
+28         \textcolor{comment}{/* create a new JPanel which will hold the current status of program */}
+29         m\_StatusJPan = \textcolor{keyword}{new} \hyperlink{class_status_j_panel}{StatusJPanel}();
+30         
+31         \textcolor{comment}{/* set frame title for BobViz */}
+32         setTitle( FRAME\_TITLE );
+33         \textcolor{comment}{/* set frame height and width for BobViz */}
+34         setSize( FRAME\_WIDTH, FRAME\_HEIGHT );
+35         setResizable( \textcolor{keyword}{false} );
+36         setLayout( \textcolor{keyword}{new} BorderLayout() );
+37         setDefaultCloseOperation( JFrame.EXIT\_ON\_CLOSE );
+38 
+39         \textcolor{comment}{/* create new menu bar for BobViz */}
+40         m\_MenuBar = \textcolor{keyword}{new} JMenuBar();
+41 
+42         \textcolor{comment}{/* create new menu */}
+43         m\_FileMenu = \textcolor{keyword}{new} JMenu( FILE\_MENU );
+44 
+45         \textcolor{comment}{/* create new menu items */}
+46         m\_ImportCSVItem = \textcolor{keyword}{new} JMenuItem( FILE\_IMPORTCSV );
+47         m\_ExitItem = \textcolor{keyword}{new} JMenuItem( FILE\_EXIT );
+48         m\_HelpConItem = \textcolor{keyword}{new} JMenuItem( FILE\_HELPCON );
+49         
+50         \textcolor{comment}{/* add menu items to file menu */}
+51         m\_FileMenu.add( m\_ImportCSVItem );
+52         m\_FileMenu.add( m\_ExitItem );
+53 
+54         \textcolor{comment}{/* make new help menu */}
+55         m\_HelpMenu = \textcolor{keyword}{new} JMenu( FILE\_HELP );
+56         
+57         \textcolor{comment}{/* add menu bars to menu */}
+58         m\_MenuBar.add( m\_FileMenu );
+59         m\_MenuBar.add( m\_HelpMenu );
+60         
+61         \textcolor{comment}{/* make new help content menu item */}
+62         \textcolor{comment}{/* add helpConItem to menu */}
+63         m\_HelpMenu.add( m\_HelpConItem );
+64         
+65         \textcolor{comment}{/* add menu bar to BobViz */}
+66         setJMenuBar( m\_MenuBar );
+67         
+68         \textcolor{comment}{/* add the mouse listener for menu */}
+69         MouseListener popupListener = \textcolor{keyword}{new} PopupListener();
+70         m\_ImportCSVItem.addMouseListener( popupListener );
+71         m\_ExitItem.addMouseListener( popupListener );
+72         
+73         \textcolor{comment}{/* create new logo for BobViz */}
+74         ImageIcon bvIcon = \textcolor{keyword}{new} ImageIcon( LOGO\_DIR );
+75         \textcolor{comment}{/* add icon to JLabel */}
+76         JLabel bobTitleJPan = \textcolor{keyword}{new} JLabel( bvIcon );
+77         
+78         \textcolor{comment}{/* make new instances of all panels */}
+79         m\_AboutJPan = \textcolor{keyword}{new} \hyperlink{class_about_j_panel}{AboutJPanel}();
+80         m\_ImportJPan = \textcolor{keyword}{new} \hyperlink{class_import_j_panel}{ImportJPanel}();
+81         m\_VizTypeJPan = \textcolor{keyword}{new} \hyperlink{class_viz_type_j_panel}{VizTypeJPanel}();
+82         m\_SettingJPan = \textcolor{keyword}{new} \hyperlink{class_setting_j_panel}{SettingJPanel}();
+83         m\_SelectionVizJPan = \textcolor{keyword}{new} \hyperlink{class_selection_viz_j_panel}{SelectionVizJPanel}();
+84         
+85         \textcolor{comment}{/* set top panel with FlowLayout layout */}
+86         top.setLayout( \textcolor{keyword}{new} FlowLayout( FlowLayout.CENTER ) );
+87         \textcolor{comment}{/* add all panels and titles to top JPanel */}
+88         top.add( bobTitleJPan );
+89         top.add( m\_AboutJPan );
+90         top.add( m\_ImportJPan );
+91         top.add( m\_VizTypeJPan );
+92         top.add( m\_SettingJPan );
+93         top.add( m\_SelectionVizJPan );
+94         
+95         \textcolor{comment}{/* add top and m\_StatusJPan to BobViz */}
+96         add( top, BorderLayout.CENTER );
+97         add( m\_StatusJPan, BorderLayout.SOUTH );
+98         
+99         setVisible( \textcolor{keyword}{true} );
+100   
+101     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_bob_viz_aac948a35c1e508b168aad19efba2053d}{\index{Bob\-Viz@{Bob\-Viz}!Get\-About\-J\-Pan@{Get\-About\-J\-Pan}}
+\index{Get\-About\-J\-Pan@{Get\-About\-J\-Pan}!BobViz@{Bob\-Viz}}
+\subsubsection[{Get\-About\-J\-Pan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf About\-J\-Panel} Bob\-Viz.\-Get\-About\-J\-Pan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_aac948a35c1e508b168aad19efba2053d}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{class_about_j_panel}{About\-J\-Panel} instance 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+123                                       \{
+124         \textcolor{keywordflow}{return} m\_AboutJPan;
+125     \}
+\end{DoxyCode}
+\hypertarget{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}{\index{Bob\-Viz@{Bob\-Viz}!Get\-Data\-Attribute@{Get\-Data\-Attribute}}
+\index{Get\-Data\-Attribute@{Get\-Data\-Attribute}!BobViz@{Bob\-Viz}}
+\subsubsection[{Get\-Data\-Attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data\-Attribute} Bob\-Viz.\-Get\-Data\-Attribute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_acc980a6db181f9ace3279e5dd3fd23b8}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{class_data_attribute}{Data\-Attribute} instance 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+130                                             \{
+131         \textcolor{keywordflow}{return} m\_DataAttribute;
+132     \}
+\end{DoxyCode}
+\hypertarget{class_bob_viz_ab8866566b53e78c66e29a4d68406b860}{\index{Bob\-Viz@{Bob\-Viz}!Get\-Dataset@{Get\-Dataset}}
+\index{Get\-Dataset@{Get\-Dataset}!BobViz@{Bob\-Viz}}
+\subsubsection[{Get\-Dataset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dataset} Bob\-Viz.\-Get\-Dataset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_ab8866566b53e78c66e29a4d68406b860}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{class_dataset}{Dataset} instance 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+144                                 \{
+145         \textcolor{keywordflow}{return} m\_Dataset;
+146     \}
+\end{DoxyCode}
+\hypertarget{class_bob_viz_a4b1e563e0fa60594fa0beb1d50438824}{\index{Bob\-Viz@{Bob\-Viz}!Get\-Generate\-Viz\-J\-Pan@{Get\-Generate\-Viz\-J\-Pan}}
+\index{Get\-Generate\-Viz\-J\-Pan@{Get\-Generate\-Viz\-J\-Pan}!BobViz@{Bob\-Viz}}
+\subsubsection[{Get\-Generate\-Viz\-J\-Pan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Selection\-Viz\-J\-Panel} Bob\-Viz.\-Get\-Generate\-Viz\-J\-Pan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_a4b1e563e0fa60594fa0beb1d50438824}
+\begin{DoxyReturn}{Returns}
+the Generate\-Viz\-J\-Panel instance 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+211                                                    \{
+212         \textcolor{keywordflow}{return} m\_SelectionVizJPan;
+213     \}
+\end{DoxyCode}
+\hypertarget{class_bob_viz_a93eb7320a1f76d531874cd0bfe5c6b71}{\index{Bob\-Viz@{Bob\-Viz}!Get\-Import\-J\-Pan@{Get\-Import\-J\-Pan}}
+\index{Get\-Import\-J\-Pan@{Get\-Import\-J\-Pan}!BobViz@{Bob\-Viz}}
+\subsubsection[{Get\-Import\-J\-Pan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Import\-J\-Panel} Bob\-Viz.\-Get\-Import\-J\-Pan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_a93eb7320a1f76d531874cd0bfe5c6b71}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{class_import_j_panel}{Import\-J\-Panel} instance 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+158                                         \{
+159         \textcolor{keywordflow}{return} m\_ImportJPan;
+160     \}
+\end{DoxyCode}
+\hypertarget{class_bob_viz_a26ad68d96e3524c2eb53425f59deab8a}{\index{Bob\-Viz@{Bob\-Viz}!Get\-More\-Setting\-J\-Pan@{Get\-More\-Setting\-J\-Pan}}
+\index{Get\-More\-Setting\-J\-Pan@{Get\-More\-Setting\-J\-Pan}!BobViz@{Bob\-Viz}}
+\subsubsection[{Get\-More\-Setting\-J\-Pan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf More\-Setting\-J\-Panel} Bob\-Viz.\-Get\-More\-Setting\-J\-Pan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_a26ad68d96e3524c2eb53425f59deab8a}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{class_more_setting_j_panel}{More\-Setting\-J\-Panel} instance 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+190                                                   \{
+191         \textcolor{keywordflow}{return} m\_MoreSettingJPan;
+192     \}
+\end{DoxyCode}
+\hypertarget{class_bob_viz_a3bbdcd2d94adf10bfd50ae6eefe90717}{\index{Bob\-Viz@{Bob\-Viz}!Get\-Second\-Data\-Attribute@{Get\-Second\-Data\-Attribute}}
+\index{Get\-Second\-Data\-Attribute@{Get\-Second\-Data\-Attribute}!BobViz@{Bob\-Viz}}
+\subsubsection[{Get\-Second\-Data\-Attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data\-Attribute} Bob\-Viz.\-Get\-Second\-Data\-Attribute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_a3bbdcd2d94adf10bfd50ae6eefe90717}
+\begin{DoxyReturn}{Returns}
+the second \hyperlink{class_data_attribute}{Data\-Attribute} instance 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+137                                                   \{
+138         \textcolor{keywordflow}{return} m\_SecondDataAttribute;
+139     \}
+\end{DoxyCode}
+\hypertarget{class_bob_viz_a2826dca37585b5effe3a2f2222f17ada}{\index{Bob\-Viz@{Bob\-Viz}!Get\-Second\-Dataset@{Get\-Second\-Dataset}}
+\index{Get\-Second\-Dataset@{Get\-Second\-Dataset}!BobViz@{Bob\-Viz}}
+\subsubsection[{Get\-Second\-Dataset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dataset} Bob\-Viz.\-Get\-Second\-Dataset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_a2826dca37585b5effe3a2f2222f17ada}
+\begin{DoxyReturn}{Returns}
+the second \hyperlink{class_dataset}{Dataset} instance 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+151                                       \{
+152         \textcolor{keywordflow}{return} m\_SecondDataset;
+153     \}
+\end{DoxyCode}
+\hypertarget{class_bob_viz_afce2ebaa330fc80c477b7156fc5bc32e}{\index{Bob\-Viz@{Bob\-Viz}!Get\-Second\-Table\-J\-Pan@{Get\-Second\-Table\-J\-Pan}}
+\index{Get\-Second\-Table\-J\-Pan@{Get\-Second\-Table\-J\-Pan}!BobViz@{Bob\-Viz}}
+\subsubsection[{Get\-Second\-Table\-J\-Pan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Table} Bob\-Viz.\-Get\-Second\-Table\-J\-Pan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_afce2ebaa330fc80c477b7156fc5bc32e}
+\begin{DoxyReturn}{Returns}
+m\-\_\-\-Table\-J\-Pan 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+173                                       \{
+174         m\_SecondTableJPan = \textcolor{keyword}{new} \hyperlink{class_table}{Table}(m\_BV.m\_Dataset.\hyperlink{class_dataset_a5dee243bdd911795f92cc1db5ffe5ad3}{GetArrayBackwards}(), 
+175                 m\_BV.m\_Dataset.\hyperlink{class_dataset_a96f1d135554aa77ded034853a84c4244}{GetColHeaders}(), m\_BV.m\_Dataset.
+      \hyperlink{class_dataset_a91fb1f2a983e9e5bef10864c0f4ec465}{GetFileLocation}(),
+176                 m\_BV.m\_SecondDataset.\hyperlink{class_dataset_a5dee243bdd911795f92cc1db5ffe5ad3}{GetArrayBackwards}(), 
+177                 m\_BV.m\_SecondDataset.\hyperlink{class_dataset_a96f1d135554aa77ded034853a84c4244}{GetColHeaders}(),  m\_BV.m\_SecondDataset.
+      \hyperlink{class_dataset_a91fb1f2a983e9e5bef10864c0f4ec465}{GetFileLocation}());
+178         \textcolor{keywordflow}{return} m\_SecondTableJPan;
+179     \}
+\end{DoxyCode}
+\hypertarget{class_bob_viz_a10dab616869fe644d16c2ccf78627af5}{\index{Bob\-Viz@{Bob\-Viz}!Get\-Setting\-J\-Pan@{Get\-Setting\-J\-Pan}}
+\index{Get\-Setting\-J\-Pan@{Get\-Setting\-J\-Pan}!BobViz@{Bob\-Viz}}
+\subsubsection[{Get\-Setting\-J\-Pan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Setting\-J\-Panel} Bob\-Viz.\-Get\-Setting\-J\-Pan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_a10dab616869fe644d16c2ccf78627af5}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{class_setting_j_panel}{Setting\-J\-Panel} instance 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+183                                           \{
+184         \textcolor{keywordflow}{return} m\_SettingJPan;
+185     \}
+\end{DoxyCode}
+\hypertarget{class_bob_viz_a31b771c2acf2b72658beb4f3eecab892}{\index{Bob\-Viz@{Bob\-Viz}!Get\-Status\-J\-Pan@{Get\-Status\-J\-Pan}}
+\index{Get\-Status\-J\-Pan@{Get\-Status\-J\-Pan}!BobViz@{Bob\-Viz}}
+\subsubsection[{Get\-Status\-J\-Pan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\-J\-Panel} Bob\-Viz.\-Get\-Status\-J\-Pan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_a31b771c2acf2b72658beb4f3eecab892}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{class_status_j_panel}{Status\-J\-Panel} instance 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+204                                         \{
+205         \textcolor{keywordflow}{return} m\_StatusJPan;
+206     \}
+\end{DoxyCode}
+\hypertarget{class_bob_viz_a52e7c8f67daa12f4882a396e557e8ed4}{\index{Bob\-Viz@{Bob\-Viz}!Get\-Table\-J\-Pan@{Get\-Table\-J\-Pan}}
+\index{Get\-Table\-J\-Pan@{Get\-Table\-J\-Pan}!BobViz@{Bob\-Viz}}
+\subsubsection[{Get\-Table\-J\-Pan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Table} Bob\-Viz.\-Get\-Table\-J\-Pan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_a52e7c8f67daa12f4882a396e557e8ed4}
+\begin{DoxyReturn}{Returns}
+m\-\_\-\-Table\-J\-Pan 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+165                                 \{
+166         m\_TableJPan = \textcolor{keyword}{new} \hyperlink{class_table}{Table}(m\_BV.m\_Dataset.\hyperlink{class_dataset_a5dee243bdd911795f92cc1db5ffe5ad3}{GetArrayBackwards}(), 
+167                 m\_BV.m\_Dataset.\hyperlink{class_dataset_a96f1d135554aa77ded034853a84c4244}{GetColHeaders}(), m\_BV.m\_Dataset.
+      \hyperlink{class_dataset_a91fb1f2a983e9e5bef10864c0f4ec465}{GetFileLocation}());
+168         \textcolor{keywordflow}{return} m\_TableJPan;
+169     \}
+\end{DoxyCode}
+\hypertarget{class_bob_viz_a239767cb7f7f32710826f9efc91b4af9}{\index{Bob\-Viz@{Bob\-Viz}!Get\-Viz@{Get\-Viz}}
+\index{Get\-Viz@{Get\-Viz}!BobViz@{Bob\-Viz}}
+\subsubsection[{Get\-Viz}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Visualisation} Bob\-Viz.\-Get\-Viz (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_a239767cb7f7f32710826f9efc91b4af9}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{class_visualisation}{Visualisation} instance 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+218                                   \{
+219         \textcolor{keywordflow}{return} m\_Visualisation;
+220     \} 
+\end{DoxyCode}
+\hypertarget{class_bob_viz_a35af0807f9fca7a0773ce8217b2065c7}{\index{Bob\-Viz@{Bob\-Viz}!Get\-Viz\-Type\-J\-Pan@{Get\-Viz\-Type\-J\-Pan}}
+\index{Get\-Viz\-Type\-J\-Pan@{Get\-Viz\-Type\-J\-Pan}!BobViz@{Bob\-Viz}}
+\subsubsection[{Get\-Viz\-Type\-J\-Pan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Viz\-Type\-J\-Panel} Bob\-Viz.\-Get\-Viz\-Type\-J\-Pan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_a35af0807f9fca7a0773ce8217b2065c7}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{class_viz_type_j_panel}{Viz\-Type\-J\-Panel} instance 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+197                                           \{
+198         \textcolor{keywordflow}{return} m\_VizTypeJPan;
+199     \}
+\end{DoxyCode}
+\hypertarget{class_bob_viz_a76ae5d60149c159834708456b28d9222}{\index{Bob\-Viz@{Bob\-Viz}!Set\-B\-V@{Set\-B\-V}}
+\index{Set\-B\-V@{Set\-B\-V}!BobViz@{Bob\-Viz}}
+\subsubsection[{Set\-B\-V}]{\setlength{\rightskip}{0pt plus 5cm}boolean Bob\-Viz.\-Set\-B\-V (
+\begin{DoxyParamCaption}
+\item[{{\bf Bob\-Viz}}]{bv}
+\end{DoxyParamCaption}
+)}}\label{class_bob_viz_a76ae5d60149c159834708456b28d9222}
+
+\begin{DoxyParams}{Parameters}
+{\em bv} & -\/ a \hyperlink{class_bob_viz}{Bob\-Viz} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E on success 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+107                                       \{
+108         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+109         \textcolor{keywordflow}{if}( ( test == \textcolor{keyword}{true} ) && ( bv == null) ) \{
+110             System.err.println( \textcolor{stringliteral}{"AboutJPanel::SetBV() ***Warning, GroupPDM2"}
+111                     + \textcolor{stringliteral}{"application is null. Value sent: "} + bv );
+112         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( test == \textcolor{keyword}{true} ) \{
+113             System.out.println( \textcolor{stringliteral}{"AboutJPanel::SetBV() GroupPDM2"}
+114                     + \textcolor{stringliteral}{"application. Value sent: "} + bv );
+115         \}
+116         m\_BV = bv;
+117         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+118     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_bob_viz_8java}{Bob\-Viz.\-java}\end{DoxyCompactItemize}

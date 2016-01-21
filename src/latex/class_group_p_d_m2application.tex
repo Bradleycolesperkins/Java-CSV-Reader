@@ -1,0 +1,63 @@
+\hypertarget{class_group_p_d_m2application}{\section{Group\-P\-D\-M2application Class Reference}
+\label{class_group_p_d_m2application}\index{Group\-P\-D\-M2application@{Group\-P\-D\-M2application}}
+}
+
+
+This class creates a new instance of \hyperlink{class_bob_viz}{Bob\-Viz} and parses it to all panels to ensure only one instance of \hyperlink{class_bob_viz}{Bob\-Viz} is ever used.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_group_p_d_m2application_a8f329b12b58123c51f842ed1a80ce1cb}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class creates a new instance of \hyperlink{class_bob_viz}{Bob\-Viz} and parses it to all panels to ensure only one instance of \hyperlink{class_bob_viz}{Bob\-Viz} is ever used. 
+
+\begin{DoxyAuthor}{Author}
+Rhys Owen A4, Leopold Stiegler A5, Bradley Coles-\/\-Perkins A6 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+01/03/2013 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_group_p_d_m2application_a8f329b12b58123c51f842ed1a80ce1cb}{\index{Group\-P\-D\-M2application@{Group\-P\-D\-M2application}!main@{main}}
+\index{main@{main}!GroupPDM2application@{Group\-P\-D\-M2application}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Group\-P\-D\-M2application.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_group_p_d_m2application_a8f329b12b58123c51f842ed1a80ce1cb}
+This class is used to execute all instances. This makes object programming easier. 
+\begin{DoxyParams}{Parameters}
+{\em args} & -\/user input not used \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+19                                              \{
+20         \textcolor{comment}{/* create new instance of BobViz */}
+21         \hyperlink{class_bob_viz}{BobViz} bv = \textcolor{keyword}{new} \hyperlink{class_bob_viz}{BobViz}();
+22         
+23         \textcolor{comment}{/* send all instances of bv to all classes */}
+24         bv.\hyperlink{class_bob_viz_a239767cb7f7f32710826f9efc91b4af9}{GetViz}().\hyperlink{class_visualisation_a8e092a6855febe448999fd1109bc7764}{SetBV}(bv);
+25         bv.\hyperlink{class_bob_viz_a93eb7320a1f76d531874cd0bfe5c6b71}{GetImportJPan}().\hyperlink{class_import_j_panel_afea28d8fd4cbe3b480a93a4e7121a41d}{SetBV}(bv);
+26         bv.\hyperlink{class_bob_viz_a10dab616869fe644d16c2ccf78627af5}{GetSettingJPan}().\hyperlink{class_setting_j_panel_aabfaa9fb1f2cfc91197b0b5cf10e538d}{SetBV}(bv);
+27         bv.\hyperlink{class_bob_viz_aac948a35c1e508b168aad19efba2053d}{GetAboutJPan}().\hyperlink{class_about_j_panel_a134c5a6eee7daba01d35a1ca05ddcca1}{SetBV}(bv);
+28         bv.\hyperlink{class_bob_viz_ab8866566b53e78c66e29a4d68406b860}{GetDataset}().\hyperlink{class_dataset_a8de6f8ac02f8378a5510f8014fb2e65f}{SetBV}(bv);
+29         bv.\hyperlink{class_bob_viz_a31b771c2acf2b72658beb4f3eecab892}{GetStatusJPan}().\hyperlink{class_status_j_panel_a80d2f3a1eba1516b449115fb8464cfac}{SetBV}(bv);
+30         bv.\hyperlink{class_bob_viz_a35af0807f9fca7a0773ce8217b2065c7}{GetVizTypeJPan}().\hyperlink{class_viz_type_j_panel_a83704bbce2513028139d3acea7a85907}{SetBV}(bv);
+31         bv.\hyperlink{class_bob_viz_a4b1e563e0fa60594fa0beb1d50438824}{GetGenerateVizJPan}().\hyperlink{class_selection_viz_j_panel_a6287ea60b41d461f06b609340d9c38b4}{SetBV}(bv);
+32         
+33         bv.\hyperlink{class_bob_viz_a76ae5d60149c159834708456b28d9222}{SetBV}(bv);
+34     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_group_p_d_m2application_8java}{Group\-P\-D\-M2application.\-java}\end{DoxyCompactItemize}

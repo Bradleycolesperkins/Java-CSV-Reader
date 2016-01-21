@@ -1,0 +1,297 @@
+\hypertarget{class_import_j_panel}{\section{Import\-J\-Panel Class Reference}
+\label{class_import_j_panel}\index{Import\-J\-Panel@{Import\-J\-Panel}}
+}
+
+
+This class provides a import (C\-S\-V file) procedure.  
+
+
+Inheritance diagram for Import\-J\-Panel\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_import_j_panel}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_import_j_panel_af9586e0f15e12d4358ee009fcd4192fa}{Import\-J\-Panel} ()
+\item 
+boolean \hyperlink{class_import_j_panel_aebc2247f219f26a2a4f51d297b82134f}{Set\-Import\-C\-S\-V} ()
+\item 
+boolean \hyperlink{class_import_j_panel_a2b16a63729e57fdffbcbb42806554929}{Set\-Import\-Second\-C\-S\-V} ()
+\item 
+boolean \hyperlink{class_import_j_panel_afea28d8fd4cbe3b480a93a4e7121a41d}{Set\-B\-V} (\hyperlink{class_bob_viz}{Bob\-Viz} bv)
+\item 
+boolean \hyperlink{class_import_j_panel_a9b488ed902bf925d4f48ed5052614f75}{Get\-First\-Check} ()
+\item 
+boolean \hyperlink{class_import_j_panel_a58a46639a66bbf6ccd78f9a826b7bf81}{Get\-Second\-Check} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides a import (C\-S\-V file) procedure. 
+
+\begin{DoxyDate}{Date}
+-\/01/03/2013 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{_dataset_8java}{Dataset.\-java} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_import_j_panel_af9586e0f15e12d4358ee009fcd4192fa}{\index{Import\-J\-Panel@{Import\-J\-Panel}!Import\-J\-Panel@{Import\-J\-Panel}}
+\index{Import\-J\-Panel@{Import\-J\-Panel}!ImportJPanel@{Import\-J\-Panel}}
+\subsubsection[{Import\-J\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}Import\-J\-Panel.\-Import\-J\-Panel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_import_j_panel_af9586e0f15e12d4358ee009fcd4192fa}
+
+\begin{DoxyCode}
+23                           \{
+24         \textcolor{comment}{/* create dimension for ImportJPanel */}
+25         Dimension size = getPreferredSize();
+26         size.width = WIDTH;
+27         size.height = HEIGHT;
+28         setPreferredSize( size );
+29         
+30         setBorder( BorderFactory.createTitledBorder(
+31                 BorderFactory.createLineBorder( Color.GRAY ), IMPORT\_CSV
+32                 + \textcolor{stringliteral}{"..."} ) );
+33         
+34         \textcolor{comment}{/* create new import text field for ImportJPanel */}
+35         m\_ImportTField = \textcolor{keyword}{new} JTextField( TEXT\_FIELD\_LEN );
+36         \textcolor{comment}{/* create new browse button for ImportJPanel */}
+37         m\_BrowseJBut = \textcolor{keyword}{new} JButton( BROWSE );
+38         
+39         \textcolor{comment}{/* create new import text field for ImportJPanel */}
+40         m\_ImportSecondTField = \textcolor{keyword}{new} JTextField( TEXT\_FIELD\_LEN );
+41         \textcolor{comment}{/* create new browse button for ImportJPanel */}
+42         m\_BrowseSecondJBut = \textcolor{keyword}{new} JButton( BROWSE );
+43         
+44         m\_ImportTField.setEnabled( \textcolor{keyword}{false} );
+45         JLabel blank  = \textcolor{keyword}{new} JLabel(\textcolor{stringliteral}{"                                                   "});
+46         JLabel about1 = \textcolor{keyword}{new} JLabel(\textcolor{stringliteral}{"<HTML><center>Enter first CSV file:</center></HTML>"});
+47         JLabel about2 = \textcolor{keyword}{new} JLabel(\textcolor{stringliteral}{"<HTML><center><p>Enter second CSV file:<br></center>"}
+48                         + \textcolor{stringliteral}{"(Leave blank if you wish to visualise one CSV file)</p></HTML>"});
+49         
+50         \textcolor{comment}{/* add import field and browse button to ImportJPanel */}
+51         add( about1 );
+52         add( blank );
+53         add( m\_ImportTField );
+54         add( m\_BrowseJBut );
+55         add( about2 );
+56         add( m\_ImportSecondTField );
+57         add( m\_BrowseSecondJBut );
+58         
+59         \textcolor{comment}{/* set listeners */}
+60         ImportJPanelEventHandler iJEventHandler = \textcolor{keyword}{new} 
+61                 ImportJPanelEventHandler();
+62         m\_BrowseJBut.addActionListener( iJEventHandler );
+63         m\_BrowseSecondJBut.addActionListener( iJEventHandler );
+64         m\_BrowseSecondJBut.setEnabled(\textcolor{keyword}{false});  
+65     \}    
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_import_j_panel_a9b488ed902bf925d4f48ed5052614f75}{\index{Import\-J\-Panel@{Import\-J\-Panel}!Get\-First\-Check@{Get\-First\-Check}}
+\index{Get\-First\-Check@{Get\-First\-Check}!ImportJPanel@{Import\-J\-Panel}}
+\subsubsection[{Get\-First\-Check}]{\setlength{\rightskip}{0pt plus 5cm}boolean Import\-J\-Panel.\-Get\-First\-Check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_import_j_panel_a9b488ed902bf925d4f48ed5052614f75}
+Boolean to check if browse button has been selected 
+\begin{DoxyCode}
+203                                    \{
+204         \textcolor{keywordflow}{return} firstCheck;
+205     \}
+\end{DoxyCode}
+\hypertarget{class_import_j_panel_a58a46639a66bbf6ccd78f9a826b7bf81}{\index{Import\-J\-Panel@{Import\-J\-Panel}!Get\-Second\-Check@{Get\-Second\-Check}}
+\index{Get\-Second\-Check@{Get\-Second\-Check}!ImportJPanel@{Import\-J\-Panel}}
+\subsubsection[{Get\-Second\-Check}]{\setlength{\rightskip}{0pt plus 5cm}boolean Import\-J\-Panel.\-Get\-Second\-Check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_import_j_panel_a58a46639a66bbf6ccd78f9a826b7bf81}
+Boolean to check if second browse button has been selected 
+\begin{DoxyCode}
+207                                     \{
+208         \textcolor{keywordflow}{return} secondCheck;
+209     \}
+\end{DoxyCode}
+\hypertarget{class_import_j_panel_afea28d8fd4cbe3b480a93a4e7121a41d}{\index{Import\-J\-Panel@{Import\-J\-Panel}!Set\-B\-V@{Set\-B\-V}}
+\index{Set\-B\-V@{Set\-B\-V}!ImportJPanel@{Import\-J\-Panel}}
+\subsubsection[{Set\-B\-V}]{\setlength{\rightskip}{0pt plus 5cm}boolean Import\-J\-Panel.\-Set\-B\-V (
+\begin{DoxyParamCaption}
+\item[{{\bf Bob\-Viz}}]{bv}
+\end{DoxyParamCaption}
+)}}\label{class_import_j_panel_afea28d8fd4cbe3b480a93a4e7121a41d}
+
+\begin{DoxyParams}{Parameters}
+{\em bv} & -\/ a \hyperlink{class_bob_viz}{Bob\-Viz} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E on success 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+190                                       \{
+191         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+192         \textcolor{keywordflow}{if}((test == \textcolor{keyword}{true}) && (bv == null)) \{
+193             System.err.println(\textcolor{stringliteral}{"ImportJPanel::SetBV() ***Warning, object"}
+194                     + \textcolor{stringliteral}{"is null. Value sent: "} + bv);
+195         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (test == \textcolor{keyword}{true}) \{
+196             System.out.println(\textcolor{stringliteral}{"ImportJPanel::SetBV() Object is valid. Value"}
+197                     + \textcolor{stringliteral}{"sent: "} + bv);
+198         \}
+199         m\_BV = bv;
+200         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+201     \}
+\end{DoxyCode}
+\hypertarget{class_import_j_panel_aebc2247f219f26a2a4f51d297b82134f}{\index{Import\-J\-Panel@{Import\-J\-Panel}!Set\-Import\-C\-S\-V@{Set\-Import\-C\-S\-V}}
+\index{Set\-Import\-C\-S\-V@{Set\-Import\-C\-S\-V}!ImportJPanel@{Import\-J\-Panel}}
+\subsubsection[{Set\-Import\-C\-S\-V}]{\setlength{\rightskip}{0pt plus 5cm}boolean Import\-J\-Panel.\-Set\-Import\-C\-S\-V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_import_j_panel_aebc2247f219f26a2a4f51d297b82134f}
+The method for importing a C\-S\-V file. This method will validate and pass the C\-S\-V file from the G\-U\-I to the dataset class. \begin{DoxyReturn}{Returns}
+T\-R\-U\-E if successful 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+72                                   \{
+73         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+74         \textcolor{keywordflow}{if}( test == \textcolor{keyword}{true} ) \{
+75             updateStatus( WAIT\_FOR\_FILE );
+76             \textcolor{comment}{/* set file location */}
+77             m\_BV.\hyperlink{class_bob_viz_ab8866566b53e78c66e29a4d68406b860}{GetDataset}().\hyperlink{class_dataset_a26dd0cb28ef8622366d67e21c38b5b0d}{SetFileLocationGUI}();
+78             \textcolor{comment}{/* set file location in Dataset */}
+79             m\_ImportTField.setText( m\_BV.\hyperlink{class_bob_viz_ab8866566b53e78c66e29a4d68406b860}{GetDataset}().\hyperlink{class_dataset_a91fb1f2a983e9e5bef10864c0f4ec465}{GetFileLocation}() );
+80             \textcolor{comment}{/* check for correct file extension */}
+81             updateStatus( CHECK\_FILE\_TYPE );
+82             \textcolor{comment}{/* check if CSV file */}
+83             System.out.println(m\_BV.\hyperlink{class_bob_viz_ab8866566b53e78c66e29a4d68406b860}{GetDataset}().\hyperlink{class_dataset_a01147d9ebdff4ce95ed092143b4c5659}{CheckFileType}());
+84             \textcolor{keywordflow}{if}( m\_BV.\hyperlink{class_bob_viz_ab8866566b53e78c66e29a4d68406b860}{GetDataset}().\hyperlink{class_dataset_a01147d9ebdff4ce95ed092143b4c5659}{CheckFileType}() ) \{
+85                 updateStatus( ATEMPT\_TO\_READ );
+86                 \textcolor{comment}{/* if a CSV file, attempt to read */}
+87                 \textcolor{keywordflow}{if}( m\_BV.\hyperlink{class_bob_viz_ab8866566b53e78c66e29a4d68406b860}{GetDataset}().\hyperlink{class_dataset_a54d25635d79320caa77a9d6695e5cf3d}{ReadFile}() ) \{
+88                     \textcolor{keywordflow}{if}(m\_BV.\hyperlink{class_bob_viz_ab8866566b53e78c66e29a4d68406b860}{GetDataset}().\hyperlink{class_dataset_a4a0a7e2a2a175ca3d0cebf9431b0e3f4}{GetErrors}() >0)\{
+89                         \hyperlink{class_error}{Error} err = \textcolor{keyword}{new} \hyperlink{class_error}{Error}();
+90                         \textcolor{keywordflow}{if}(err.\hyperlink{class_error_a56c2216c6ebe6f6b18625d901358ae77}{ReadError}( m\_BV.\hyperlink{class_bob_viz_ab8866566b53e78c66e29a4d68406b860}{GetDataset}().
+      \hyperlink{class_dataset_a4a0a7e2a2a175ca3d0cebf9431b0e3f4}{GetErrors}()) == 
+91                                 \textcolor{keyword}{true} )\{
+92                             m\_BV.\hyperlink{class_bob_viz_ab8866566b53e78c66e29a4d68406b860}{GetDataset}().\hyperlink{class_dataset_abddca267426cbfcbc9a7d250ec53a5e5}{ReadFileBasic}( m\_BV.
+      \hyperlink{class_bob_viz_ab8866566b53e78c66e29a4d68406b860}{GetDataset}().
+93                                     GetFileLocation() );
+94                             
+95                         \}
+96                             
+97                     \}
+98                     updateStatus( FILE\_READ\_OK );
+99                     m\_BV.\hyperlink{class_bob_viz_a10dab616869fe644d16c2ccf78627af5}{GetSettingJPan}().\hyperlink{class_setting_j_panel_afb2b0736bdf6a8a724066b4a7c78a25f}{SetVizSysType}( m\_BV.
+      \hyperlink{class_bob_viz_ab8866566b53e78c66e29a4d68406b860}{GetDataset}().
+100                             GetColHeaders() );
+101                     \textcolor{comment}{/* enable setting panel components */}
+102                     m\_BV.\hyperlink{class_bob_viz_a10dab616869fe644d16c2ccf78627af5}{GetSettingJPan}().\hyperlink{class_setting_j_panel_a0867f721026a690933334532d59fd1c0}{SetSettingsEnabled}( \textcolor{keyword}{true} );
+103                     m\_BV.\hyperlink{class_bob_viz_a4b1e563e0fa60594fa0beb1d50438824}{GetGenerateVizJPan}().
+      \hyperlink{class_selection_viz_j_panel_ab942f7a1e094e8d3df0df172499c8878}{SetVizJButEnabled}( \textcolor{keyword}{true} );
+104                     m\_BV.\hyperlink{class_bob_viz_a4b1e563e0fa60594fa0beb1d50438824}{GetGenerateVizJPan}().
+      \hyperlink{class_selection_viz_j_panel_afe28337fc26eb95b02450f6138977c90}{SetSlideshowVizJButEnabled}( \textcolor{keyword}{true} );
+105                     m\_BrowseSecondJBut.setEnabled(\textcolor{keyword}{true});
+106                     firstCheck = \textcolor{keyword}{true};
+107                 \textcolor{comment}{/* if file cannot be read */}
+108                 \} \textcolor{keywordflow}{else} \{
+109                     
+110                 \}
+111             \} \textcolor{keywordflow}{else} \{
+112                 \textcolor{comment}{/* inform user of wrong file extension */}
+113                 JOptionPane.showMessageDialog( null, INVALID\_FILE );
+114                 updateStatus( INVALID\_FILE );
+115                 m\_BV.\hyperlink{class_bob_viz_a4b1e563e0fa60594fa0beb1d50438824}{GetGenerateVizJPan}().\hyperlink{class_selection_viz_j_panel_ab942f7a1e094e8d3df0df172499c8878}{SetVizJButEnabled}(\textcolor{keyword}{false});
+116                 m\_BV.\hyperlink{class_bob_viz_a10dab616869fe644d16c2ccf78627af5}{GetSettingJPan}().\hyperlink{class_setting_j_panel_a0867f721026a690933334532d59fd1c0}{SetSettingsEnabled}(\textcolor{keyword}{false});
+117             \}
+118         \}
+119         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+120     \}
+\end{DoxyCode}
+\hypertarget{class_import_j_panel_a2b16a63729e57fdffbcbb42806554929}{\index{Import\-J\-Panel@{Import\-J\-Panel}!Set\-Import\-Second\-C\-S\-V@{Set\-Import\-Second\-C\-S\-V}}
+\index{Set\-Import\-Second\-C\-S\-V@{Set\-Import\-Second\-C\-S\-V}!ImportJPanel@{Import\-J\-Panel}}
+\subsubsection[{Set\-Import\-Second\-C\-S\-V}]{\setlength{\rightskip}{0pt plus 5cm}boolean Import\-J\-Panel.\-Set\-Import\-Second\-C\-S\-V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_import_j_panel_a2b16a63729e57fdffbcbb42806554929}
+The method for importing a second C\-S\-V file. This method will validate and pass the C\-S\-V file from the G\-U\-I to the dataset class. \begin{DoxyReturn}{Returns}
+T\-R\-U\-E if successful 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+127                                         \{
+128         \textcolor{keywordtype}{boolean} test = \textcolor{keyword}{true};
+129         \textcolor{keywordflow}{if}( test == \textcolor{keyword}{true} ) \{
+130             updateStatus( WAIT\_FOR\_FILE );
+131             \textcolor{comment}{/* set file location */}
+132             m\_BV.\hyperlink{class_bob_viz_a2826dca37585b5effe3a2f2222f17ada}{GetSecondDataset}().\hyperlink{class_dataset_a26dd0cb28ef8622366d67e21c38b5b0d}{SetFileLocationGUI}();
+133             \textcolor{comment}{/* set file location in Dataset */}
+134             m\_ImportSecondTField.setText( m\_BV.\hyperlink{class_bob_viz_a2826dca37585b5effe3a2f2222f17ada}{GetSecondDataset}().
+      \hyperlink{class_dataset_a91fb1f2a983e9e5bef10864c0f4ec465}{GetFileLocation}() );
+135             \textcolor{comment}{/* check for correct file extension */}
+136             updateStatus( CHECK\_FILE\_TYPE );
+137             \textcolor{comment}{/* check if CSV file */}
+138             System.out.println(m\_BV.\hyperlink{class_bob_viz_a2826dca37585b5effe3a2f2222f17ada}{GetSecondDataset}().
+      \hyperlink{class_dataset_a01147d9ebdff4ce95ed092143b4c5659}{CheckFileType}());
+139             \textcolor{keywordflow}{if}( m\_BV.\hyperlink{class_bob_viz_a2826dca37585b5effe3a2f2222f17ada}{GetSecondDataset}().\hyperlink{class_dataset_a01147d9ebdff4ce95ed092143b4c5659}{CheckFileType}() ) \{
+140                 updateStatus( ATEMPT\_TO\_READ );
+141                 \textcolor{comment}{/* if a CSV file, attempt to read */}
+142                 \textcolor{keywordflow}{if}( m\_BV.\hyperlink{class_bob_viz_a2826dca37585b5effe3a2f2222f17ada}{GetSecondDataset}().\hyperlink{class_dataset_a54d25635d79320caa77a9d6695e5cf3d}{ReadFile}() ) \{
+143                     \textcolor{keywordflow}{if}(m\_BV.\hyperlink{class_bob_viz_a2826dca37585b5effe3a2f2222f17ada}{GetSecondDataset}().\hyperlink{class_dataset_a4a0a7e2a2a175ca3d0cebf9431b0e3f4}{GetErrors}() >0)\{
+144                         \hyperlink{class_error}{Error} err = \textcolor{keyword}{new} \hyperlink{class_error}{Error}();
+145                         \textcolor{keywordflow}{if}(err.\hyperlink{class_error_a56c2216c6ebe6f6b18625d901358ae77}{ReadError}( m\_BV.\hyperlink{class_bob_viz_a2826dca37585b5effe3a2f2222f17ada}{GetSecondDataset}().
+      \hyperlink{class_dataset_a4a0a7e2a2a175ca3d0cebf9431b0e3f4}{GetErrors}()) == 
+146                                 \textcolor{keyword}{true} )\{
+147                             m\_BV.\hyperlink{class_bob_viz_a2826dca37585b5effe3a2f2222f17ada}{GetSecondDataset}().
+      \hyperlink{class_dataset_abddca267426cbfcbc9a7d250ec53a5e5}{ReadFileBasic}( m\_BV.\hyperlink{class_bob_viz_a2826dca37585b5effe3a2f2222f17ada}{GetSecondDataset}().
+148                                     GetFileLocation() );
+149                             
+150                         \}
+151                             
+152                     \}
+153                     updateStatus( FILE\_READ\_OK );
+154                     m\_BV.\hyperlink{class_bob_viz_a10dab616869fe644d16c2ccf78627af5}{GetSettingJPan}().\hyperlink{class_setting_j_panel_a8c7f693b437db5e8890346d34b68f034}{SetSecondVizSysType}( m\_BV.
+      \hyperlink{class_bob_viz_a2826dca37585b5effe3a2f2222f17ada}{GetSecondDataset}().
+155                             GetColHeaders() );
+156                     \textcolor{comment}{/* enable setting panel components */}
+157                     m\_BV.\hyperlink{class_bob_viz_a10dab616869fe644d16c2ccf78627af5}{GetSettingJPan}().\hyperlink{class_setting_j_panel_af44d07f356aa8217418fe0878a50f48d}{SetSecondSettingsEnabled}( \textcolor{keyword}{
+      true} );
+158                     m\_BV.\hyperlink{class_bob_viz_a4b1e563e0fa60594fa0beb1d50438824}{GetGenerateVizJPan}().
+      \hyperlink{class_selection_viz_j_panel_ab942f7a1e094e8d3df0df172499c8878}{SetVizJButEnabled}( \textcolor{keyword}{true} );
+159                     m\_BV.\hyperlink{class_bob_viz_a4b1e563e0fa60594fa0beb1d50438824}{GetGenerateVizJPan}().
+      \hyperlink{class_selection_viz_j_panel_afe28337fc26eb95b02450f6138977c90}{SetSlideshowVizJButEnabled}( \textcolor{keyword}{true} );
+160                     secondCheck = \textcolor{keyword}{true};
+161                 \textcolor{comment}{/* if file cannot be read */}
+162                 \} \textcolor{keywordflow}{else} \{
+163                     
+164                 \}
+165             \} \textcolor{keywordflow}{else} \{
+166                 \textcolor{comment}{/* inform user of wrong file extension */}
+167                 JOptionPane.showMessageDialog( null, INVALID\_FILE );
+168                 updateStatus( INVALID\_FILE );
+169                 m\_BV.\hyperlink{class_bob_viz_a4b1e563e0fa60594fa0beb1d50438824}{GetGenerateVizJPan}().\hyperlink{class_selection_viz_j_panel_ab942f7a1e094e8d3df0df172499c8878}{SetVizJButEnabled}(\textcolor{keyword}{false});
+170                 m\_BV.\hyperlink{class_bob_viz_a10dab616869fe644d16c2ccf78627af5}{GetSettingJPan}().\hyperlink{class_setting_j_panel_af44d07f356aa8217418fe0878a50f48d}{SetSecondSettingsEnabled}(\textcolor{keyword}{false})
+      ;
+171             \}
+172         \}
+173         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+174     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_import_j_panel_8java}{Import\-J\-Panel.\-java}\end{DoxyCompactItemize}

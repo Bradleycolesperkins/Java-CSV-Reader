@@ -1,0 +1,430 @@
+\hypertarget{class_line_chart}{\section{Line\-Chart Class Reference}
+\label{class_line_chart}\index{Line\-Chart@{Line\-Chart}}
+}
+
+
+A class that creates a Line \hyperlink{interface_chart}{Chart} visualisation from a 2\-D Array of data.  
+
+
+Inheritance diagram for Line\-Chart\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_line_chart}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_line_chart_a72fd793f59eb636f6898b73faf9a6a51}{Line\-Chart} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_line_chart_a23bb447a62c77b3a383022ebeb71671e}{Line\-Chart} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} data, \hyperlink{class_dataset}{Dataset} dataset, \hyperlink{class_data_attribute}{Data\-Attribute} setting, String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} second\-Data, \hyperlink{class_dataset}{Dataset} second\-Dataset, \hyperlink{class_data_attribute}{Data\-Attribute} second\-Setting)
+\item 
+\hyperlink{class_line_chart_a4fe8691f64b91f0b18b54696b75e2741}{Line\-Chart} (\hyperlink{class_data_attribute}{Data\-Attribute} setting)
+\item 
+\hyperlink{class_line_chart_a04d4c60dedbe697b63370bd90414967f}{Line\-Chart} (\hyperlink{class_data_attribute}{Data\-Attribute} setting, \hyperlink{class_data_attribute}{Data\-Attribute} second\-Setting)
+\item 
+void \hyperlink{class_line_chart_a4c982382761a6da94b9ced6ab33ff171}{action\-Performed} (Action\-Event e)
+\item 
+String \hyperlink{class_line_chart_a94c65c917dd3d6e0e6e7498f9b68913f}{Set\-Label\-X} (String m\-\_\-x\-Label)
+\item 
+String \hyperlink{class_line_chart_a64bfe8a0a1a86efad6b5fdaf9ec5d349}{Set\-Seond\-Label\-X} (String m\-\_\-x\-Label)
+\item 
+String \hyperlink{class_line_chart_ad8947897530ac460222792e166c46880}{Set\-Label\-Y} (String m\-\_\-y\-Label)
+\item 
+String \hyperlink{class_line_chart_ad3254d9956692f4bddc7ede0951a648d}{Set\-Second\-Label\-Y} (String m\-\_\-y\-Label)
+\item 
+String \hyperlink{class_line_chart_a22370334f144ff41b288f09aeff798ea}{Set\-Title} (String graph\-Title)
+\item 
+String \hyperlink{class_line_chart_a27a8002b045b904d09c8d345fb6595a2}{Set\-Second\-Title} (String graph\-Title)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_line_chart_aa0459f87c24132d6639b89949bb54022}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that creates a Line \hyperlink{interface_chart}{Chart} visualisation from a 2\-D Array of data. 
+
+\begin{DoxyDate}{Date}
+30/04/13 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_line_chart_a72fd793f59eb636f6898b73faf9a6a51}{\index{Line\-Chart@{Line\-Chart}!Line\-Chart@{Line\-Chart}}
+\index{Line\-Chart@{Line\-Chart}!LineChart@{Line\-Chart}}
+\subsubsection[{Line\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Line\-Chart.\-Line\-Chart (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_line_chart_a72fd793f59eb636f6898b73faf9a6a51}
+creates a constructor taking in the following parameters\-:
+
+
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+43                                                \{
+44         
+45         m\_Data = data;
+46         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+47         m\_Setting = setting;
+48         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+49         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+50         m\_Col = dataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+51         m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+52         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+53         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+54         
+55         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+56         m\_XMax = setting.\hyperlink{class_data_attribute_ada370712422c7cbd21b7be4a0d88caf7}{GetXAxisMax}();
+57         m\_YMin = setting.\hyperlink{class_data_attribute_af0786b4de674874c0bb8ca9dbe1519c6}{GetYAxisMin}();
+58         m\_YMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+59         
+60         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+61         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+62         
+63         createDataset(m\_Data);
+64         showChart(m\_Dataset);
+65     \}  
+\end{DoxyCode}
+\hypertarget{class_line_chart_a23bb447a62c77b3a383022ebeb71671e}{\index{Line\-Chart@{Line\-Chart}!Line\-Chart@{Line\-Chart}}
+\index{Line\-Chart@{Line\-Chart}!LineChart@{Line\-Chart}}
+\subsubsection[{Line\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Line\-Chart.\-Line\-Chart (
+\begin{DoxyParamCaption}
+\item[{String}]{data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{dataset, }
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{String}]{second\-Data\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Dataset}}]{second\-Dataset, }
+\item[{{\bf Data\-Attribute}}]{second\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_line_chart_a23bb447a62c77b3a383022ebeb71671e}
+creates a constructor taking in the following parameters\-:
+
+
+\begin{DoxyParams}{Parameters}
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & data -\/ data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & dataset -\/ the dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & setting -\/ Data attributes \\
+\hline
+{\em String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & second\-Data -\/ second data used to create the visualisation. \\
+\hline
+{\em \hyperlink{class_dataset}{Dataset}} & second\-Dataset -\/ the second dataset used (rows and columns) \\
+\hline
+{\em \hyperlink{class_data_attribute}{Data\-Attribute}} & second\-Setting -\/ Second Data attributes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+78                                          \{
+79         
+80         m\_Data = data;
+81         m\_SecondData = secondData;
+82         
+83         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+84         m\_SecondChartTitle = secondSetting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+85         
+86         m\_Setting = setting;
+87         m\_SecondSetting = secondSetting;
+88         
+89         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+90         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+91         m\_SecondXLabel = secondSetting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+92         m\_SecondYLabel = secondSetting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+93         
+94         m\_Col = dataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+95         m\_Row = dataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+96         m\_SecondCol = secondDataset.\hyperlink{class_dataset_ab922bef50c8aa1531de8704731779246}{GetNoOfCols}();
+97         m\_SecondRow = secondDataset.\hyperlink{class_dataset_a91257a605317576e87e1c32e54739e51}{GetNoOfRows}();
+98         
+99         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+100         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+101 
+102         m\_SecondC1 = secondSetting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+103         m\_SecondC2 = secondSetting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();
+104         
+105         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+106         m\_XMax = setting.\hyperlink{class_data_attribute_ada370712422c7cbd21b7be4a0d88caf7}{GetXAxisMax}();
+107         m\_YMin = setting.\hyperlink{class_data_attribute_af0786b4de674874c0bb8ca9dbe1519c6}{GetYAxisMin}();
+108         m\_YMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+109         
+110         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+111         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+112 
+113         createDataset(m\_Data);
+114         createSecondDataset(m\_SecondData);
+115         showChart(m\_Dataset, m\_SecondDataset);
+116     \}  
+\end{DoxyCode}
+\hypertarget{class_line_chart_a4fe8691f64b91f0b18b54696b75e2741}{\index{Line\-Chart@{Line\-Chart}!Line\-Chart@{Line\-Chart}}
+\index{Line\-Chart@{Line\-Chart}!LineChart@{Line\-Chart}}
+\subsubsection[{Line\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Line\-Chart.\-Line\-Chart (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting}
+\end{DoxyParamCaption}
+)}}\label{class_line_chart_a4fe8691f64b91f0b18b54696b75e2741}
+constructor for J\-Unit Tests 
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+121                                             \{
+122         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+123         m\_Setting = setting;
+124         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+125         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+126         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+127         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+128         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+129         m\_XMax = setting.\hyperlink{class_data_attribute_ada370712422c7cbd21b7be4a0d88caf7}{GetXAxisMax}();
+130         m\_YMin = setting.\hyperlink{class_data_attribute_af0786b4de674874c0bb8ca9dbe1519c6}{GetYAxisMin}();
+131         m\_YMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+132         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+133         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+134     \}
+\end{DoxyCode}
+\hypertarget{class_line_chart_a04d4c60dedbe697b63370bd90414967f}{\index{Line\-Chart@{Line\-Chart}!Line\-Chart@{Line\-Chart}}
+\index{Line\-Chart@{Line\-Chart}!LineChart@{Line\-Chart}}
+\subsubsection[{Line\-Chart}]{\setlength{\rightskip}{0pt plus 5cm}Line\-Chart.\-Line\-Chart (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\-Attribute}}]{setting, }
+\item[{{\bf Data\-Attribute}}]{second\-Setting}
+\end{DoxyParamCaption}
+)}}\label{class_line_chart_a04d4c60dedbe697b63370bd90414967f}
+second constructor for J\-Unit Tests 
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+139                                                                          \{
+140         m\_ChartTitle = setting.\hyperlink{class_data_attribute_ade9747a192ba22fe1020e874bff6a48c}{GetTitle}();
+141         m\_Setting = setting;
+142         m\_XLabel = setting.\hyperlink{class_data_attribute_aecb451704a87d77dd80dbad8a19099d1}{GetAxisLabelX}();
+143         m\_YLabel = setting.\hyperlink{class_data_attribute_af5f68794cd0195d42135d5e48120ccc0}{GetAxisLabelY}();
+144         m\_C1 = setting.\hyperlink{class_data_attribute_a0f4a54973bc44b0526f78bda945dc81b}{GetSelectedXIndex}();
+145         m\_C2 = setting.\hyperlink{class_data_attribute_a82e7519853d9f470ea183dd0c39a03d6}{GetSelectedYIndex}();
+146         m\_XMin = setting.\hyperlink{class_data_attribute_afa9da883abc4abad5f64c045de114c50}{GetXAxisMin}();
+147         m\_XMax = setting.\hyperlink{class_data_attribute_ada370712422c7cbd21b7be4a0d88caf7}{GetXAxisMax}();
+148         m\_YMin = setting.\hyperlink{class_data_attribute_af0786b4de674874c0bb8ca9dbe1519c6}{GetYAxisMin}();
+149         m\_YMax = setting.\hyperlink{class_data_attribute_a81243eb8f7008e05e74b0f3571d2f08d}{GetYAxisMax}();
+150         m\_XScale = setting.\hyperlink{class_data_attribute_a5a1de25600487aa958a19ce01151fea4}{GetXAxisScale}();
+151         m\_YScale = setting.\hyperlink{class_data_attribute_a95259727ce91efc0e0eaa28487d944c5}{GetYAxisScale}();
+152         
+153         m\_SecondChartTitle = secondSetting.\hyperlink{class_data_attribute_a4079522c93025fce7569eaed585f4aeb}{GetSecondTitle}();
+154         m\_SecondSetting = secondSetting;
+155         m\_SecondXLabel = secondSetting.\hyperlink{class_data_attribute_a8ace4cb1fee9e2abeabe3efc9a190c8f}{GetSecondAxisLabelX}();
+156         m\_SecondYLabel = secondSetting.\hyperlink{class_data_attribute_a6efb7e067317898feefbbf6bd472b998}{GetSecondAxisLabelY}();
+157         m\_SecondC1 = secondSetting.\hyperlink{class_data_attribute_a7f501790eee650ddf9ac17c4f63a3995}{GetSecondSelectedXIndex}();
+158         m\_SecondC2 = secondSetting.\hyperlink{class_data_attribute_a6f61ad05915f4aa31ad3dba00596da64}{GetSecondSelectedYIndex}();
+159     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_line_chart_a4c982382761a6da94b9ced6ab33ff171}{\index{Line\-Chart@{Line\-Chart}!action\-Performed@{action\-Performed}}
+\index{action\-Performed@{action\-Performed}!LineChart@{Line\-Chart}}
+\subsubsection[{action\-Performed}]{\setlength{\rightskip}{0pt plus 5cm}void Line\-Chart.\-action\-Performed (
+\begin{DoxyParamCaption}
+\item[{Action\-Event}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_line_chart_a4c982382761a6da94b9ced6ab33ff171}
+allows user to select the colour of the points on the line chart 
+\begin{DoxyCode}
+163                                                  \{
+164         \textcolor{keywordflow}{if}( e.getSource() == colChangeButton ) \{
+165             \hyperlink{class_colour_map}{ColourMap} cM = \textcolor{keyword}{new} \hyperlink{class_colour_map}{ColourMap}();
+166             cM.\hyperlink{class_colour_map_a9f696ea699b7fc471bb2dde6f1d1ce09}{SetupData}( m\_Plot.getSeriesCount(), 
+167                           m\_Renderer );
+168             cM.setVisible( \textcolor{keyword}{false} );
+169         \}
+170     \}
+\end{DoxyCode}
+\hypertarget{class_line_chart_aa0459f87c24132d6639b89949bb54022}{\index{Line\-Chart@{Line\-Chart}!main@{main}}
+\index{main@{main}!LineChart@{Line\-Chart}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Line\-Chart.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_line_chart_aa0459f87c24132d6639b89949bb54022}
+main method to carry out J\-Unit Tests 
+\begin{DoxyCode}
+473                                              \{
+474          \textcolor{comment}{// Test to display a single chart}
+475         \hyperlink{class_data_attribute}{DataAttribute} test = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+476         \hyperlink{class_line_chart}{LineChart} lineChartTest = \textcolor{keyword}{new} \hyperlink{class_line_chart_a72fd793f59eb636f6898b73faf9a6a51}{LineChart}(test);
+477         
+478         \textcolor{keyword}{final} XYDataset datasetTest = createDataset();
+479         lineChartTest.showChart(datasetTest);
+480 
+481         \textcolor{comment}{// Test to display the two charts}
+482         \hyperlink{class_data_attribute}{DataAttribute} secondTest = \hyperlink{class_data_attribute}{DataAttribute}.
+      \hyperlink{class_data_attribute_a9c7a1923698c1530fa38c959596199bc}{GetTestDataAttribute}();
+483         
+484         \hyperlink{class_line_chart}{LineChart} secondLineChartTest = \textcolor{keyword}{new} \hyperlink{class_line_chart_a72fd793f59eb636f6898b73faf9a6a51}{LineChart}(test, secondTest);
+485         
+486         \textcolor{keyword}{final} XYDataset firstDatasetTest = createDataset();
+487         \textcolor{keyword}{final} XYDataset secondDatasetTest = createSecondDataset();
+488         
+489         secondLineChartTest.showChart(firstDatasetTest,secondDatasetTest);
+490         
+491     \}
+\end{DoxyCode}
+\hypertarget{class_line_chart_a94c65c917dd3d6e0e6e7498f9b68913f}{\index{Line\-Chart@{Line\-Chart}!Set\-Label\-X@{Set\-Label\-X}}
+\index{Set\-Label\-X@{Set\-Label\-X}!LineChart@{Line\-Chart}}
+\subsubsection[{Set\-Label\-X}]{\setlength{\rightskip}{0pt plus 5cm}String Line\-Chart.\-Set\-Label\-X (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-x\-Label}
+\end{DoxyParamCaption}
+)}}\label{class_line_chart_a94c65c917dd3d6e0e6e7498f9b68913f}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-x\-Label} & -\/ the x axis label passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-label\-X -\/ returns the user's x label value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+176                                                \{
+177         m\_XLabel = m\_xLabel;
+178         \textcolor{keywordflow}{return} m\_XLabel;
+179     \}
+\end{DoxyCode}
+\hypertarget{class_line_chart_ad8947897530ac460222792e166c46880}{\index{Line\-Chart@{Line\-Chart}!Set\-Label\-Y@{Set\-Label\-Y}}
+\index{Set\-Label\-Y@{Set\-Label\-Y}!LineChart@{Line\-Chart}}
+\subsubsection[{Set\-Label\-Y}]{\setlength{\rightskip}{0pt plus 5cm}String Line\-Chart.\-Set\-Label\-Y (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-y\-Label}
+\end{DoxyParamCaption}
+)}}\label{class_line_chart_ad8947897530ac460222792e166c46880}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-y\-Label} & -\/ the y axis label passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-label\-Y -\/ returns the user's y label value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+194                                                \{
+195         String m\_labelY = m\_yLabel;
+196         \textcolor{keywordflow}{return} m\_labelY;
+197     \}
+\end{DoxyCode}
+\hypertarget{class_line_chart_ad3254d9956692f4bddc7ede0951a648d}{\index{Line\-Chart@{Line\-Chart}!Set\-Second\-Label\-Y@{Set\-Second\-Label\-Y}}
+\index{Set\-Second\-Label\-Y@{Set\-Second\-Label\-Y}!LineChart@{Line\-Chart}}
+\subsubsection[{Set\-Second\-Label\-Y}]{\setlength{\rightskip}{0pt plus 5cm}String Line\-Chart.\-Set\-Second\-Label\-Y (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-y\-Label}
+\end{DoxyParamCaption}
+)}}\label{class_line_chart_ad3254d9956692f4bddc7ede0951a648d}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-y\-Label} & -\/ the y axis label passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-\-Second\-Label\-Y -\/ returns the user's second y label value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+202                                                      \{
+203         m\_SecondYLabel = m\_yLabel;
+204         \textcolor{keywordflow}{return} m\_SecondYLabel;
+205     \}
+\end{DoxyCode}
+\hypertarget{class_line_chart_a27a8002b045b904d09c8d345fb6595a2}{\index{Line\-Chart@{Line\-Chart}!Set\-Second\-Title@{Set\-Second\-Title}}
+\index{Set\-Second\-Title@{Set\-Second\-Title}!LineChart@{Line\-Chart}}
+\subsubsection[{Set\-Second\-Title}]{\setlength{\rightskip}{0pt plus 5cm}String Line\-Chart.\-Set\-Second\-Title (
+\begin{DoxyParamCaption}
+\item[{String}]{graph\-Title}
+\end{DoxyParamCaption}
+)}}\label{class_line_chart_a27a8002b045b904d09c8d345fb6595a2}
+
+\begin{DoxyParams}{Parameters}
+{\em String} & graph\-Title -\/ the title passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Second\-Graph\-Title -\/ returns the user's second title value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+219                                                       \{
+220         m\_SecondChartTitle = graphTitle;
+221         \textcolor{keywordflow}{return} m\_SecondChartTitle;
+222     \} 
+\end{DoxyCode}
+\hypertarget{class_line_chart_a64bfe8a0a1a86efad6b5fdaf9ec5d349}{\index{Line\-Chart@{Line\-Chart}!Set\-Seond\-Label\-X@{Set\-Seond\-Label\-X}}
+\index{Set\-Seond\-Label\-X@{Set\-Seond\-Label\-X}!LineChart@{Line\-Chart}}
+\subsubsection[{Set\-Seond\-Label\-X}]{\setlength{\rightskip}{0pt plus 5cm}String Line\-Chart.\-Set\-Seond\-Label\-X (
+\begin{DoxyParamCaption}
+\item[{String}]{m\-\_\-x\-Label}
+\end{DoxyParamCaption}
+)}}\label{class_line_chart_a64bfe8a0a1a86efad6b5fdaf9ec5d349}
+
+\begin{DoxyParams}{Parameters}
+{\em m\-\_\-x\-Label} & -\/ the second x axis label passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\-\_\-\-Second\-Label\-X -\/ returns the user's second x label value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+185                                                     \{
+186         m\_SecondXLabel = m\_xLabel;
+187         \textcolor{keywordflow}{return} m\_SecondXLabel;
+188     \}
+\end{DoxyCode}
+\hypertarget{class_line_chart_a22370334f144ff41b288f09aeff798ea}{\index{Line\-Chart@{Line\-Chart}!Set\-Title@{Set\-Title}}
+\index{Set\-Title@{Set\-Title}!LineChart@{Line\-Chart}}
+\subsubsection[{Set\-Title}]{\setlength{\rightskip}{0pt plus 5cm}String Line\-Chart.\-Set\-Title (
+\begin{DoxyParamCaption}
+\item[{String}]{graph\-Title}
+\end{DoxyParamCaption}
+)}}\label{class_line_chart_a22370334f144ff41b288f09aeff798ea}
+
+\begin{DoxyParams}{Parameters}
+{\em String} & graph\-Title -\/ the title passed from users to the graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+graph\-Title -\/ returns the user's title value 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+211                                                 \{
+212         String m\_title = graphTitle;
+213         \textcolor{keywordflow}{return} m\_title;
+214     \} 
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_line_chart_8java}{Line\-Chart.\-java}\end{DoxyCompactItemize}
